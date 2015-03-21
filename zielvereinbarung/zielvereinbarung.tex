@@ -3,6 +3,8 @@
 \author{}
 \date{11.03.2015}
 
+\usepackage[utf8]{inputenc}
+
 \begin{document}
 \maketitle
 
@@ -17,7 +19,29 @@ Diese Planarität zu erreichen ist ein wichtiges Ziel von \emph{Topologiekontrol
 
 Ein weiterer Punkt ist, dass diese Netze willkürlich groß werden können.
 Deshalb führt ein \emph{zentralisierter} Algorithmus zu einer sehr langen Laufzeit mit hohem Energieverbrauch, weil die Menge der versendeten Nachrichten in Abhängigkeit zur globalen Netzgröße steht.
+Aus diesem Grund werden lokale Algorithmen genutzt, welche nur ihre k-hop-Nachbarschaft kennen müssen.
+Reaktive Algorithmen müssen nicht einmal ihre gesamte 1-hop-Nachbarschaft kennen, was zur enormen Einsparung von Nachrichten führt.
 
-Damit die Nachrichten nicht über beliebig lange Pfade geroutet werden, wird eine Beschränkung der Pfadverlängerung gewünscht. 
+Damit die Nachrichten nicht über beliebig lange Pfade geroutet werden, wird eine konstante Beschränkung der Pfadverlängerung gewünscht. 
 Pfadverlängerungen entstehen, wenn (spezielle) kantenlöschende Algorithmen auf Graphen angewendet werden.
+
+\section{Problemstellung}
+Es gilt einen Algorithmus zu entwickeln, welcher alle in der Einleitung genannten Aspekte berücksichtigt.
+Zusammengefasst sind dies folgende:
+\begin{enumerate}
+\item Der Ergebnisgraph muss planar sein
+\item Die t-Spanner Eigenschaft muss erfüllt sein
+\item Der Ausgangsgrad eines jeden Knotens ist konstant beschränkt.
+\item Der Algorithmus muss reaktiv arbeiten.
+\item Der Algorithmus muss streng lokal sein.
+\end{enumerate}
+Das Besondere an dieser Konstellation ist, dass zur Zeit keine (nutzbaren) Algorithmen existieren, welche \emph{alle} oben genannten Eigenschaften erfüllen.
+
+\section{Verfahren}
+
+
+\section{Ziele}
+\section{Voraussichtlicher Aufbau der Arbeit}
+\section{Ablaufplan}
+
 \end{document}
