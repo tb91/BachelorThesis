@@ -1,9 +1,12 @@
-\documentclass[a4paper,DIV10,12pt,headsepline,smallheadings]{scrreprt}
+\documentclass[a4paper,DIV10,10pt,headsepline,smallheadings]{scrreprt}
 \title{Zielvereinbarung zur Bachelorarbeit von Tim Budweg} 
 \author{}
 \date{11.03.2015}
 
 \usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
 
 \begin{document}
 \maketitle
@@ -32,16 +35,41 @@ Zusammengefasst sind dies folgende:
 \item Der Ergebnisgraph muss planar sein
 \item Die t-Spanner Eigenschaft muss erfüllt sein
 \item Der Ausgangsgrad eines jeden Knotens ist konstant beschränkt.
-\item Der Algorithmus muss reaktiv arbeiten.
+\item Der Algorithmus muss reaktiv konstruiert werden.
 \item Der Algorithmus muss streng lokal sein.
 \end{enumerate}
-Das Besondere an dieser Konstellation ist, dass zur Zeit keine (nutzbaren) Algorithmen existieren, welche \emph{alle} oben genannten Eigenschaften erfüllen.
+Das Besondere an dieser Konstellation ist, dass zur Zeit keine (nutzbaren) reaktiven Algorithmen existieren, welche \emph{alle} oben genannten Eigenschaften erfüllen.
 
 \section{Verfahren}
+Der zu entwickelnde Algorithmus baut auf dem Paper "On geometric Spanners of Eclidean and Unit Disk Graphs" auf.
+Der dort beschriebene Algorithmus "Modified Yao Step" bekommt als Input, einen Graphen, der ein planaren Spanner ist und sorgt dafür, dass alle Knoten einen konstanten Ausgangsgrad bekommen, indem für jeden Kegel, welche um jeden Knoten liegen, genau eine Kante ausgewählt wird.
+Kegel, welche keine Knoten enthalten, erhöhen diese Anzahl.
+Der angesprochene Input-Graph wird im Paper mit $LDel^2(U) $ beschrieben.
+Dieser Algorithmus ist jedoch nicht reaktiv konstruierbar.(Florentin nochmal fragen)
 
 
 \section{Ziele}
+Die Aufgabe in der Bachelorarbeit ist, einen Ersatz für $LDel^2(U) $ zu finden und den "Modified Yao Step" so abzuändern, dass nicht jeder Knoten seine vollständige 2-hop-Nachbarschaft kennen lernen muss.
+Es ist zu beweisen, dass ein Graph mindestens genauso gut geeignet ist, $LDel^2(U) $ zu ersetzen.
+Ein Kandidat dafür ist die Partial Delaunay Triangulation, welche reaktiv konstruiert werden kann und vom Aufbau ähnlich zu $LDel^2(U) $ ist.
+Eine reaktive Version des "Modified Yao Steps" soll gefunden werden.
+Falls dies möglich ist, soll der gefundene Algorithmus im Java-Framework Sinalgo implementiert werden.
 \section{Voraussichtlicher Aufbau der Arbeit}
+
+
 \section{Ablaufplan}
+
+\begin{table}[h]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ll}
+ April & Literaturrecherche, Prüfung von PDT und schriftliches Formulieren davon,\\ & Entwicklung des Algorithmus \\
+ Mai &  Prüfung des Algorithmus und ggf. Implementierung in Sinalgo\\
+ Juni &   Implementierung in Sinalgo, Schreiben der Arbeit\\
+ Juli &  Implementierung in Sinalgo, Schreiben der Arbeit\\
+ August & Abgabe einer Vorabversion, Vorbereiten des Abschlussvortrags \\
+ September & Verbesserung und Abgabe der Finalversion, Abschlussvortrag
+\end{tabular}
+}
+\end{table}
 
 \end{document}
