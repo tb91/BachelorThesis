@@ -29,23 +29,27 @@ Damit die Nachrichten nicht über beliebig lange Pfade geroutet werden, wird ein
 Pfadverlängerungen entstehen, wenn (spezielle) kantenlöschende Algorithmen auf Graphen angewendet werden.
 
 \section{Problemstellung}
+Algorithmen, welche fordern, dass jeder Knoten seine 1-oder-2-hop-Nachbarschaft kennt, sind hinsichtlich des Nachrichtenaufwandes nicht so effizient wie Algorithmen, die dies nicht benötigen.
+Die Sensornetzknoten haben meist limitierte Energieressourcen und teure Nachrichtenübermittlungen kann durch den Verzicht auf die Kenntnis der gesamten k-hop-Nachbarschaft reduziert werden, was längere Knotenlaufzeiten ermöglicht.
 Es gilt einen Algorithmus zu entwickeln, welcher alle in der Einleitung genannten Aspekte berücksichtigt.
 Zusammengefasst sind dies folgende:
 \begin{enumerate}
 \item Der Ergebnisgraph muss planar sein
 \item Die t-Spanner Eigenschaft muss erfüllt sein
 \item Der Ausgangsgrad eines jeden Knotens ist konstant beschränkt.
-\item Der Algorithmus muss reaktiv konstruiert werden.
+\item Der Graph muss reaktiv konstruiert werden.
 \item Der Algorithmus muss streng lokal sein.
 \end{enumerate}
 Das Besondere an dieser Konstellation ist, dass zur Zeit keine (nutzbaren) reaktiven Algorithmen existieren, welche \emph{alle} oben genannten Eigenschaften erfüllen.
 
 \section{Verfahren}
 Der zu entwickelnde Algorithmus baut auf dem Paper "On geometric Spanners of Eclidean and Unit Disk Graphs" auf.
-Der dort beschriebene Algorithmus "Modified Yao Step" bekommt als Input, einen Graphen, der ein planaren Spanner ist und sorgt dafür, dass alle Knoten einen konstanten Ausgangsgrad bekommen, indem für jeden Kegel, welche um jeden Knoten liegen, genau eine Kante ausgewählt wird.
+Der dort beschriebene Algorithmus "Modified Yao Step" bekommt als Input einen Graphen, der ein planarer Spanner ist und sorgt dafür, dass alle Knoten einen konstanten Ausgangsgrad bekommen, indem für jeden Kegel, welche um jeden Knoten liegen, genau eine Kante ausgewählt wird.
 Kegel, welche keine Knoten enthalten, erhöhen diese Anzahl.
 Der angesprochene Input-Graph wird im Paper mit $LDel^2(U) $ beschrieben.
 Dieser Algorithmus ist jedoch nicht reaktiv konstruierbar.(Florentin nochmal fragen)
+Deshalb muss ein valider Ersatz gefunden werden.
+Ein Kandidat dafür ist die Partial Delaunay Triangulation.
 
 
 \section{Ziele}
@@ -55,7 +59,13 @@ Ein Kandidat dafür ist die Partial Delaunay Triangulation, welche reaktiv konst
 Eine reaktive Version des "Modified Yao Steps" soll gefunden werden.
 Falls dies möglich ist, soll der gefundene Algorithmus im Java-Framework Sinalgo implementiert werden.
 \section{Voraussichtlicher Aufbau der Arbeit}
-
+\begin{enumerate}
+\item Einleitung
+\item Beschreibung des Algorithmus
+\item Reaktive Konstruktion
+\item Beweis der Korrektheit
+\item Beschreibung der Programmierung
+\end{enumerate}
 
 \section{Ablaufplan}
 

@@ -1,5 +1,5 @@
 \documentclass[a4paper,twoside, onecolumn]{IEEEtran}
-\title{Bachelor thesis from Tim Budweg} 
+\title{Bachelor thesis by Tim Budweg} 
 \author{}
 \date{11.03.2015}
 
@@ -19,30 +19,29 @@ Another use case is
 \section{Algorithm}
 \section{Reactive construction}
 \section{Proof}
-In the paper from \cite{kanj} they use 
 This proof is adapted from \cite{kanj}.
-In a style similar to the proof from \cite{kanj}, we define the partial delaunay triangulation (PTD) as follows:
+In a style similar to the proof from \cite{kanj}, we define the Partial Delaunay Triangulation (PTD) as follows:
 \begin{emptycircle}
 \label{emptycircle}
 An edge XY of U is in the PDT if and only if there is a circle trough X and Y whose interior contains no point of U that is a 2-hop neighbor of X or Y.
 \end{emptycircle}
 We need to show that the inward and outward path are still valid for PDT.
-To do so, we must proof several properties, which are shown in figure
+To do so, we must proof several properties, which are shown in figure $\cdots $
 
 \begin{emptyregion}
 If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of (O) subtended by chord CB and away from A contain no points that are two hop neighbors of A, B and C.
 \end{emptyregion}
 
-Since the edge CA is only contained in the graph G if there is a circle through C and A which contains no points of G.
-The region of the circle $\bigcirc{ABC} $ subtended by chord CA and away from B is by Lemma \ref{emptycircle} always contained completely in the circle through C and A.
-So it must be empty, too.
+The edge CA is only contained in the graph G if there is a circle through C and A which contains no points of G.
+The region of the circle $\bigcirc{ABC} $ subtended by chord CA and away from B is always contained completely in the circle through C and A.
+Therefore, it must be empty, too.
 For an illustration of this lemma have a look at figure \ref{fig:region}.
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\linewidth]{noPointinRegion.eps}
-\caption{The red marked region contains no Points of G}
+\caption{The red marked region contains no Points of G because it is contained in $\bigcirc{ACD} $ which must be empty by definition.}
 \label{fig:region}
 \end{figure}
 
