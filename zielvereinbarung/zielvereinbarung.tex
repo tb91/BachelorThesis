@@ -40,30 +40,32 @@ Zusammengefasst sind dies folgende:
 \item Der Graph muss reaktiv konstruiert werden.
 \item Der Algorithmus muss streng lokal sein.
 \end{enumerate}
-Das Besondere an dieser Konstellation ist, dass zur Zeit keine (nutzbaren) reaktiven Algorithmen existieren, welche \emph{alle} oben genannten Eigenschaften erfüllen.
+Das Besondere an dieser Konstellation ist, dass zur Zeit keine reaktiven Algorithmen existieren, welche \emph{alle} oben genannten Eigenschaften erfüllen.
 
 \section{Verfahren}
 Der zu entwickelnde Algorithmus baut auf dem Paper "On geometric Spanners of Eclidean and Unit Disk Graphs" auf.
 Der dort beschriebene Algorithmus "Modified Yao Step" bekommt als Input einen Graphen, der ein planarer Spanner ist und sorgt dafür, dass alle Knoten einen konstanten Ausgangsgrad bekommen, indem für jeden Kegel, welche um jeden Knoten liegen, genau eine Kante ausgewählt wird.
 Kegel, welche keine Knoten enthalten, erhöhen diese Anzahl.
-Der angesprochene Input-Graph wird im Paper mit $LDel^2(U) $ beschrieben.
-Dieser Algorithmus ist jedoch nicht reaktiv konstruierbar.(Florentin nochmal fragen)
+Der angesprochene Input-Graph wird im Paper mit $LDel^2(U) $ beschrieben (Dreiecke, dessen Umkreis keine 2-hop-Nachbarn der Eckpunkte des Dreiecks enthält.).
+Bisher ist jedoch kein reaktiver Algorithmus bekannt um $LDel^2(U) $ zu erzeugen.
 Deshalb muss ein valider Ersatz gefunden werden.
-Ein Kandidat dafür ist die Partial Delaunay Triangulation.
-
+Wenn dieser Schritt erledigt ist, muss der "Modified Yao Step", so umgeschrieben werden, dass er reaktiv ist.
 
 \section{Ziele}
 Die Aufgabe in der Bachelorarbeit ist, einen Ersatz für $LDel^2(U) $ zu finden und den "Modified Yao Step" so abzuändern, dass nicht jeder Knoten seine vollständige 2-hop-Nachbarschaft kennen lernen muss.
 Es ist zu beweisen, dass ein Graph mindestens genauso gut geeignet ist, $LDel^2(U) $ zu ersetzen.
 Ein Kandidat dafür ist die Partial Delaunay Triangulation, welche reaktiv konstruiert werden kann und vom Aufbau ähnlich zu $LDel^2(U) $ ist.
 Eine reaktive Version des "Modified Yao Steps" soll gefunden werden.
-Falls dies möglich ist, soll der gefundene Algorithmus im Java-Framework Sinalgo implementiert werden.
+Der formale Beweis ist erwünscht, sollte dieser jedoch nicht vollzogen werden können, behalte ich mir vor einen empirischen Beweis anzuführen.
+Ich programmiere meinen Algorithmus im Java-Framework Sinalgo und versuche durch geeignete Tests, die oben genannten Ziele zu zeigen.
+
 \section{Voraussichtlicher Aufbau der Arbeit}
 \begin{enumerate}
 \item Einleitung
 \item Beschreibung des Algorithmus
 \item Reaktive Konstruktion
 \item Beweis der Korrektheit
+\item Diskussion & Fazit
 \item Beschreibung der Programmierung
 \end{enumerate}
 
