@@ -6,6 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\usepackage{enumitem}
 
 
 \begin{document}
@@ -27,8 +28,10 @@ Reaktive Algorithmen müssen nicht einmal ihre gesamte 1-hop-Nachbarschaft kenne
 
 Damit die Nachrichten nicht über beliebig lange Pfade geroutet werden, wird eine konstante Beschränkung der Pfadverlängerung gewünscht. 
 Pfadverlängerungen entstehen, wenn (spezielle) kantenlöschende Algorithmen auf Graphen angewendet werden.
-Es können einmal die euklidische Länge der Kanten konstant beschränkt sein oder auch die Anzahl der Hops, die eine Nachricht von Knoten zu Knoten springen müsste.
-Sogenannte Euklidische Spanner beschränken die euklidische Länge und topologische Spanner 
+Es können einmal die euklidische Länge der Kanten konstant beschränkt sein oder die Anzahl der Hops, die eine Nachricht von Knoten zu Knoten springen müsste.
+Sogenannte Euklidische Spanner beschränken die euklidische Länge und topologische Spanner beschränken den Hop-Umweg.
+Ein euklidischer Spanner, dessen Knoten eine konstante Ausgangsgradbeschränkung haben, kann auch ein topologische Spanner sein und deshalb soll die Eigenschaft der Knotenausgangsgradbeschränkung erfüllt werden.
+
 
 \section{Problemstellung}
 Algorithmen, welche fordern, dass jeder Knoten seine 1-oder-2-hop-Nachbarschaft kennt, sind hinsichtlich des Nachrichtenaufwandes nicht so effizient wie Algorithmen, die dies nicht benötigen.
@@ -62,17 +65,16 @@ Der formale Beweis ist erwünscht, sollte dieser jedoch nicht vollzogen werden k
 Ich programmiere meinen Algorithmus im Java-Framework Sinalgo und versuche durch geeignete Tests, die oben genannten Ziele zu zeigen.
 
 \section{Voraussichtlicher Aufbau der Arbeit}
-\begin{enumerate}
+\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
 \item Einleitung
 \item Beschreibung des Algorithmus
 \item Reaktive Konstruktion
 \item Beweis der Korrektheit
-\item Diskussion & Fazit
+\item Diskussion \& Fazit
 \item Beschreibung der Programmierung
 \end{enumerate}
 
 \section{Ablaufplan}
-
 \begin{table}[h]
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{ll}
