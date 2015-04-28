@@ -27,6 +27,8 @@ Reaktive Algorithmen müssen nicht einmal ihre gesamte 1-hop-Nachbarschaft kenne
 
 Damit die Nachrichten nicht über beliebig lange Pfade geroutet werden, wird eine konstante Beschränkung der Pfadverlängerung gewünscht. 
 Pfadverlängerungen entstehen, wenn (spezielle) kantenlöschende Algorithmen auf Graphen angewendet werden.
+Es können einmal die euklidische Länge der Kanten konstant beschränkt sein oder auch die Anzahl der Hops, die eine Nachricht von Knoten zu Knoten springen müsste.
+Sogenannte Euklidische Spanner beschränken die euklidische Länge und topologische Spanner 
 
 \section{Problemstellung}
 Algorithmen, welche fordern, dass jeder Knoten seine 1-oder-2-hop-Nachbarschaft kennt, sind hinsichtlich des Nachrichtenaufwandes nicht so effizient wie Algorithmen, die dies nicht benötigen.
