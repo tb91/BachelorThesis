@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \graphicspath{{figures/eps/}}
 
+
 \newtheorem{emptycircle}{Lemma}[section]
 \newtheorem{emptyregion}{Lemma}[section]
 \begin{document}
@@ -35,19 +36,18 @@ An edge XY of U is in the PDT graph if and only if there exists a circle trough 
 This can be verified since the original PTD-Definition from \cite{pdt} is defined like above, except that the circle must not contain \emph{any} nodes of U. 
 If this region contains no nodes at all, it cannot contain nodes which are 2-hop-neighbors of X or Y either.  
 
-The following Delaunay Graph property will be used to
+Additionally, the following Delaunay Graph property is being used:
 \begin{emptyregion}
+\label{emptyregion}
 If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbors of A, B and C.
 \end{emptyregion}
+
+
 
 We need to show that the inward and outward path are still valid for PDT.
 To do so, we must proof these properties:
 
 
-The edge CA is only contained in the graph G if there is a circle through C and A which contains no points of G.
-The region of the circle $\bigcirc{ABC} $ subtended by chord CA and away from B is always contained completely in the circle through C and A.
-Therefore, it must be empty, too.
-For an illustration of this lemma see figure \ref{fig:region}.
 
 
 \begin{figure}[h!]
@@ -57,7 +57,9 @@ For an illustration of this lemma see figure \ref{fig:region}.
 \label{fig:region}
 \end{figure}
 
-\section{Diskussion and Conclusion}
+
+
+\section{Discussion and Conclusion}
 
 \section{Programming}
 
