@@ -22,26 +22,32 @@ Another use case is
 The authors of \cite{kanj} use $LDel^{(2)}(U) $ as the underlying subgraph of the Modified Yao Step.
 $LDel^{(2)}(U) $ is defined as the subgraph of U in which the circumcircle of every triangle does not contain a 2-hop-neighbor of the nodes which create the triangle.
 However, it is not known whether $LDel^{(2)}(U) $ can be constructed reactively.
-At this point I want to introduce the Partial Delaunay Triangulation (PDT) \cite(pdt) which might be a valid replacement.
+At this point I want to introduce the \emph{Partial Delaunay Triangulation (PDT)} \cite{pdt} which might be a valid replacement.
+The following part of this work will examine the possibility of this replacement.
 
-
-This proof is adapted from \cite{kanj}.
-In a style similar to the proof from \cite{kanj}, we define the Partial Delaunay Triangulation (PTD) as follows:
+At first, note that the style of this proof is adapted from \cite{kanj}.
+Let U be the Unit Disk Graph of the Euklidean Graph of a Node Set S.
+In a style similar to the definition of $LDel^{(2)}(U) $ from \cite{kanj}, we define the Partial Delaunay Triangulation as follows:
 \begin{emptycircle}
 \label{emptycircle}
 An edge XY of U is in the PDT graph if and only if there exists a circle trough X and Y whose interior contains no point of U that is a 2-hop neighbor of X or Y.
 \end{emptycircle}
-We need to show that the inward and outward path are still valid for PDT.
-To do so, we must proof several properties, which are shown in figure $\cdots $
+This can be verified since the original PTD-Definition from \cite{pdt} is defined like above, except that the circle must not contain \emph{any} nodes of U. 
+If this region contains no nodes at all, it cannot contain nodes which are 2-hop-neighbors of X or Y either.  
 
+The following Delaunay Graph property will be used to
 \begin{emptyregion}
 If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbors of A, B and C.
 \end{emptyregion}
 
+We need to show that the inward and outward path are still valid for PDT.
+To do so, we must proof these properties:
+
+
 The edge CA is only contained in the graph G if there is a circle through C and A which contains no points of G.
 The region of the circle $\bigcirc{ABC} $ subtended by chord CA and away from B is always contained completely in the circle through C and A.
 Therefore, it must be empty, too.
-For an illustration of this lemma have a look at figure \ref{fig:region}.
+For an illustration of this lemma see figure \ref{fig:region}.
 
 
 \begin{figure}[h!]
