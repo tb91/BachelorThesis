@@ -27,7 +27,7 @@ At this point I want to introduce the \emph{Partial Delaunay Triangulation (PDT)
 The following part of this work will examine the possibility of this replacement.
 
 At first, note that the style of this proof is adapted from \cite{kanj}.
-Let U be the Unit Disk Graph of the Euklidean Graph of a Node Set S.
+Let U be the Unit Disk Graph of the Euclidean Graph of a Node Set S.
 In a style similar to the definition of $LDel^{(2)}(U) $ from \cite{kanj}, we define the Partial Delaunay Triangulation as follows:
 \begin{emptycircle}
 \label{emptycircle}
@@ -39,14 +39,19 @@ If this region contains no nodes at all, it cannot contain nodes which are 2-hop
 Additionally, the following Delaunay Graph property is being used:
 \begin{emptyregion}
 \label{emptyregion}
-If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbors of A, B and C.
+If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
 \end{emptyregion}
 
 
 
 We need to show that the inward and outward path are still valid for PDT.
 To do so, we must proof these properties:
-
+\begin{enumerate}
+\item $|CA| + \sum\nolimits_{i=0}^{r-1} |M_iM_{i+1}| \leq (1+2\pi (k*\cos{\frac{\pi}{k}})^{-1})|CB| $
+\item There is no edge in G between any pair $M_i $ and $M_j $ lying in the closed region delimited by CA, CB and the edges of p, for any i and j satisfying $0 \leq i < j-1 \leq r $ 
+\item $\angle{M_{i-1}M_iM_{i+1}} > \frac{k-2}{k}\pi $, for $i=1, ..., r-1 $ 
+\item $\angle{CAM_1} \geq \frac{\pi}{2}-\frac{\pi}{k} $
+\end{enumerate}
 
 
 
