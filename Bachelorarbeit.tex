@@ -42,6 +42,17 @@ Additionally, the following Delaunay Graph property is being used:
 If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
 \end{emptyregion}
 
+See Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
+This property also holds true for PDT.
+$CA $ is a PDT edge which means there is a circle with C and A on it's border which does not contain any node (or at least non two-hop-neighbour of C or A) of U.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.2\linewidth]{noPointinRegion.eps}
+\caption{The red marked region contains no Points of G because it is contained in $\bigcirc{ACD} $ which must be empty by definition.}
+\label{fig:empty_region}
+\end{figure}
 
 
 We need to show that the inward and outward path are still valid for PDT.
