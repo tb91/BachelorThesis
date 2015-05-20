@@ -39,19 +39,26 @@ If this region contains no nodes at all, it cannot contain nodes which are 2-hop
 Additionally, the following Delaunay Graph property is being used:
 \begin{emptyregion}
 \label{emptyregion}
-If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
+If CA and CB are edges of the PDT Graph then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
 \end{emptyregion}
+
 
 See Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
 This property also holds true for PDT.
-$CA $ is a PDT edge. That means there is a circle $c_1 $ with C and A on it's border which does not contain any node (or at least non two-hop-neighbour of C or A) of U.
+
+Since $CA $ is a PDT edge there is a circle $c_1 $ with C and A on it's border which does not contain any node (or at least non two-hop-neighbour of C or A) of U.
 Suppose we take another third Point D, which is not in the Set U, to identify the circle $c_1 $.
 No matter where the third point D of this circle is, the region, in the following named $R_1 $, of $\bigcirc{ABC} $ delimited by chord $CA $ away from B is always contained completely in the circle $c_1 $ and, therefore, empty.
-By symmetry of circles it is sufficient to put D into the $\triangle{ABC} $ and move it on a straight line from the middle point $M_{CA} $ of edge CA to B not leaving the triangle.
+By symmetry of circles it is sufficient to put D on a line  $l $ which is defined as the median line of $CA $. 
+There are two possibilities on which D can be located. %check located at?
+First, D is contained in the Gabriel Graph
+If D moves away from B crossing $CA $ we get the same circles as D moves to B away from $M_{CA} $.
+If D crosses B, B is contained in the circle, hence $CA $ cannot be a PTD edge which it is following definition of this circle.
 If D is barely in the triangle near $M_{CA} $, $R_1 $ is contained in $\bigcirc{ABC} $.
 If D is barely in the triangle near $B $, $R_1 $ is also contained in $\bigcirc{ABC} $. 
 
 
+With this lemma in hand Keil and Gutwin ref proved the existence of a path between the Points $A $ and $B $ in the region $R_1 $.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\linewidth]{noPointinRegion.eps}
