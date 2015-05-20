@@ -44,13 +44,18 @@ If CA and CB are edges of G then the region of $(O)=\bigcirc{ABC} $ subtended by
 
 See Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
 This property also holds true for PDT.
-$CA $ is a PDT edge which means there is a circle with C and A on it's border which does not contain any node (or at least non two-hop-neighbour of C or A) of U.
+$CA $ is a PDT edge. That means there is a circle $c_1 $ with C and A on it's border which does not contain any node (or at least non two-hop-neighbour of C or A) of U.
+Suppose we take another third Point D, which is not in the Set U, to identify the circle $c_1 $.
+No matter where the third point D of this circle is, the region, in the following named $R_1 $, of $\bigcirc{ABC} $ delimited by chord $CA $ away from B is always contained completely in the circle $c_1 $ and, therefore, empty.
+By symmetry of circles it is sufficient to put D into the $\triangle{ABC} $ and move it on a straight line from the middle point $M_{CA} $ of edge CA to B not leaving the triangle.
+If D is barely in the triangle near $M_{CA} $, $R_1 $ is contained in $\bigcirc{ABC} $.
+If D is barely in the triangle near $B $, $R_1 $ is also contained in $\bigcirc{ABC} $. 
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\linewidth]{noPointinRegion.eps}
-\caption{The red marked region contains no Points of G because it is contained in $\bigcirc{ACD} $ which must be empty by definition.}
+\caption{The red marked region contains no Points of G because it is always contained in $\bigcirc{ACD} $ which must be empty by definition.}
 \label{fig:empty_region}
 \end{figure}
 
