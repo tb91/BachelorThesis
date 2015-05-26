@@ -1,0 +1,120 @@
+% --------------------------------------------------------------------
+% Beamer Template 
+% --------------------------------------------------------------------
+% Necessary infos for documentstyle
+\documentclass[compress]{beamer}
+
+\usetheme{Stud}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % nicht benoetigt, in folien wird eh nicht getrennt
+\usepackage{ngerman}
+\usepackage{graphicx}
+%\usepackage{color}% color wird bereits von beamer geladen
+\usepackage{verbatim}
+\usepackage{psfrag}
+\usepackage{math}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{enumerate}
+
+% --------------------------- Helpers ----------------------------
+% to use these texts in two languages
+% changes the parameter within {#}
+% 1 = German
+% 2 = English
+\def\twolang#1#2{#1} 
+\let\2=\twolang
+
+% --------------------------------------------------------------------
+
+
+\bibliographystyle{alphadin}
+\graphicspath{{images/}}
+
+
+% --------------------------------------------------------------------
+\title{Antrittsvortrag zur Bachelorarbeit}
+\subtitle{}
+\author[T. Budweg]{Tim Budweg}
+\institute{
+  \texttt{tbudweg@uni-koblenz.de} \\
+  \vspace{0.2cm}
+  \2{Institut für Informatik\\
+  Universität Koblenz-Landau}{Institute for Computer Science\\
+  University of Koblenz and Landau}
+}
+\date{3. Juni 2015}
+% --------------------------------------------------------------------
+
+
+
+% document
+\begin{document}
+
+\frame{\titlepage}
+
+%\logo{...} erst hier, damit es nicht mit auf die Titelseite kommt!
+\logo{\pgfuseimage{logo}}
+
+\part{Overview}
+\section{\2{Überblick}{Overview}}
+\frame{
+  \frametitle{\2{Überblick}{Overview}}
+  \tableofcontents[part=2,hideallsubsections]
+}
+
+% ====================================================================
+% ====================================================================
+
+% here comes the real content which is part of scontent.tex
+\part{Content}
+
+% ---------------------------------------------------------------------------
+% - For showing graphics and text on one slide use:
+%   \begin{columns}[T]
+%	\begin{column}[T]{.5\linewidth}
+%	    \includegraphics[width=\linewidth]{<filename>}
+%	\end{column}
+%	\begin{column}[T]{.5\linewidth}
+%	    <content>
+%	\end{column}
+%   \end{columns}
+% ---------------------------------------------------------------------------
+
+\section{Einleitung}
+
+\subsection{}
+
+\begin{frame}
+Anwendungsbereiche drahtloser ad-hoc Netze:
+\begin{itemize}
+	\item Katastrophenkontrolle
+	\item Messtechnik
+	\item Intelligentes Zuhause
+\end{itemize}
+\end{frame}
+
+
+
+\section{Ziele}
+\subsection{}
+\begin{frame}
+Folgende Eigenschaften müssen erfüllt sein:
+\begin{itemize}
+  \item Ergebnisgraph ist ein euklidischer t-Spanner
+  \item Ergebnisgraph ist planar
+  \item reaktive Konstruktion des Graphen
+  \item Der Algorithmus muss streng lokal arbeiten
+\end{itemize}
+\end{frame}
+
+\subsection{}
+\begin{frame}
+\begin{itemize}
+	\item Der Modified Yao Step
+\end{itemize}
+\end{frame}
+
+
+\end{document}

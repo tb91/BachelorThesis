@@ -1,0 +1,53 @@
+\ProvidesPackageRCS $Header: beamerthemeStud.sty,v 1.0 2008/12/04 16:53:10 droege Exp  $
+
+% by Detlev Droege, droege@uni-koblenz.de, December 2008
+% AGAS 'external' style -- needs no Logos and other environment
+
+\beamer@compresstrue% compressed by default
+\edef\beamerAGASsetColor{\relax}
+%
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\DeclareOptionBeamer{nocompress}{\beamer@compressfalse}
+\DeclareOptionBeamer{back}{\edef\beamerAGASsetColor{\expandafter\noexpand\csname beamerAGASshade#1\endcsname}}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+% AGAS is based on Dresden, copy its setup:
+\useoutertheme[footline=authorinstitutetitle]{miniframes}
+\usecolortheme{whale}
+\usecolortheme{orchid}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercolor{titlelike}{parent=structure}
+% end Dresden setup
+
+\setbeamercovered{transparent}
+
+\mode<presentation>
+{
+  % Farben ermittelt mittels Color-Schemer auf der Basis von ??blau?? der Schrift
+  \def\beamerAGASshadeblue{\definecolor{shadeback}{RGB}{38,38,134}}
+  \def\beamerAGASshadebrown{\definecolor{shadeback}{RGB}{178,115,52}}
+  \def\beamerAGASshadepetrol{\definecolor{shadeback}{RGB}{52,178,178}}%gn
+  \def\beamerAGASshadered{\definecolor{shadeback}{RGB}{178,52,52}}%rt
+  \def\beamerAGASshadeyellow{\definecolor{shadeback}{RGB}{206,206,85}}%ge
+  \def\beamerAGASshadewhite{\definecolor{shadeback}{RGB}{255,255,255}}%ge
+  % Default:
+  \beamerAGASshadeblue
+  \beamerAGASsetColor
+  \setbeamertemplate{background canvas}[vertical shading][bottom=shadeback!15,top=shadeback!0]
+  %
+  \pgfdeclareimage[height=1pt]{logo}{images/dummy-logo}% dummy
+  \titlegraphic{}
+}
+
+\setbeamertemplate{footline}
+{
+\begin{beamercolorbox}{section in head/foot}
+\vskip2pt ~ \insertshortauthor\ -- \inserttitle\ \hfill \2{Folie}{Slide} \insertframenumber\ ~ \vskip2pt
+\end{beamercolorbox}
+}
+
+\mode
+<all>
+% ============================================================
