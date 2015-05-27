@@ -18,6 +18,7 @@
 \usepackage{tabularx}
 \usepackage{enumerate}
 
+
 % --------------------------- Helpers ----------------------------
 % to use these texts in two languages
 % changes the parameter within {#}
@@ -40,7 +41,7 @@
 \institute{
   \texttt{tbudweg@uni-koblenz.de} \\
   \vspace{0.2cm}
-  \2{Institut für Informatik\\
+  \2{AG Rechnernetze\\
   Universität Koblenz-Landau}{Institute for Computer Science\\
   University of Koblenz and Landau}
 }
@@ -84,7 +85,14 @@
 
 \section{Einleitung}
 
-\subsection{}
+
+%planarisierung tspanner etc erklären?
+%reaktiv und lokal erklären?
+
+\begin{frame}
+Thema:\\
+	Reaktive Konstruktion eines planaren t-Spanners mit konstantem Ausgangsgrad
+\end{frame}
 
 \begin{frame}
 Anwendungsbereiche drahtloser ad-hoc Netze:
@@ -94,8 +102,45 @@ Anwendungsbereiche drahtloser ad-hoc Netze:
 	\item Intelligentes Zuhause
 \end{itemize}
 \end{frame}
+%energieeffizient spanner nicht mit knotengradbeschränkung
+\subsection{}
+\begin{frame}
+	\begin{itemize}
+		\item $LDel^{(2)}(U) $
+		\item Modified Yao Step 
+	\end{itemize}
+\end{frame}
 
+\subsection{$LDel^{(2)}(U) $}
+\begin{frame}
+\begin{itemize}
+    \begin{columns}[T]
+	\begin{column}[T]{.5\linewidth}
+    \includegraphics[width=\linewidth]{Dreieck.eps}
+	\end{column}
+	\begin{column}[T]{.5\linewidth}
+	    \item alle Dreiecke, welche keine 2-Hop-Nachbarn in ihrem Umkreis beinhalten
+	    
+	\end{column}
+   \end{columns}
+\end{itemize}
+\end{frame}
 
+\subsection{Modified Yao Step}
+\begin{frame}
+  Input: $LDel^{(2)}(U) $
+	\begin{itemize}
+    \begin{columns}[T]
+	\begin{column}[T]{.5\linewidth}
+    \includegraphics[width=\linewidth]{finished_A.eps}
+	\end{column}
+	\begin{column}[T]{.5\linewidth}
+	    \item Bilde Kegel
+	    \item Wähle Kanten aus
+	\end{column}
+   \end{columns}
+	\end{itemize}
+\end{frame}
 
 \section{Ziele}
 \subsection{}
@@ -109,12 +154,13 @@ Folgende Eigenschaften müssen erfüllt sein:
 \end{itemize}
 \end{frame}
 
+
+\section{Bisherige Ergebnisse}
 \subsection{}
 \begin{frame}
-\begin{itemize}
-	\item Der Modified Yao Step
-\end{itemize}
+	\begin{itemize}
+		\item was ich bereits herausgefunden habe
+	\end{itemize}
 \end{frame}
-
 
 \end{document}
