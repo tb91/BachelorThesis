@@ -3,12 +3,14 @@
 \author{}
 \date{11.03.2015}
 
+\usepackage{amsthm}
 \usepackage{graphicx}
 \graphicspath{{figures/eps/}}
 
 
-\newtheorem{emptycircle}{Lemma}[section]
-\newtheorem{emptyregion}{Lemma}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{definition}{Definition}[section]
 \begin{document}
 \maketitle
 
@@ -29,18 +31,18 @@ The following part of this work will examine the possibility of this replacement
 At first, note that the style of this proof is adapted from \cite{kanj}.
 Let U be the Unit Disk Graph of the Euclidean Graph of a Node Set S.
 In a style similar to the definition of $LDel^{(2)}(U) $ from \cite{kanj}, we define the Partial Delaunay Triangulation as follows:
-\begin{emptycircle}
+\begin{definition}
 \label{emptycircle}
 An edge XY of U is contained in the PDT graph if and only if there exists a circle trough X and Y whose interior contains no point of U that is a 2-hop neighbor of X or Y.
-\end{emptycircle}
+\end{definition}
 This can be verified since the original PTD-Definition from \cite{pdt} is defined like above, except that the circle must not contain \emph{any} nodes of U. 
 If this region contains no nodes at all, it cannot contain nodes which are 2-hop-neighbors of X or Y either.  
 
 Additionally, the following Delaunay Graph property is being used:
-\begin{emptyregion}
+\begin{lemma}
 \label{emptyregion}
 If CA and CB are edges of the PDT Graph then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
-\end{emptyregion}
+\end{lemma}
 
 
 See Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
