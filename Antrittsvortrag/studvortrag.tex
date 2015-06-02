@@ -145,6 +145,7 @@ Folgende Eigenschaften müssen erfüllt sein:
 \begin{itemize}
   \item Ergebnisgraph ist ein euklidischer t-Spanner
   \item Ergebnisgraph ist planar
+  \item Der Knotenausgangsgrad ist konstant beschränkt
   \item reaktive Konstruktion des Graphen
   \item Der Algorithmus muss streng lokal arbeiten
 \end{itemize}
@@ -156,16 +157,30 @@ Folgende Eigenschaften müssen erfüllt sein:
 \subsection{}
 \begin{frame}
 	Beweis, dass PDT alle Eigenschaften erfüllt, die $LDel^{(2)}(U) $ erfüllt 
+\end{frame}
+
+\subsection{reactive Modified Yao Step}
+\begin{frame}
+Input: planarer, t-spanner (PDT)
+Output: zusätzlich konstanter Ausgangsgrad
 	\begin{enumerate}
-		\item 
+		\item bilde Kegel
+		\item finde kürzeste Kante \ldots
+		\item finde eine zusätzliche Kante für jeden leeren Kegel
+		\item Prüfe, ob beide Endpunkte einer Kante diese akzeptieren
 	\end{enumerate}
 \end{frame}
 
-\subsection{}%der plan des Algorithmus
+\subsection{finde kürzeste Kante}
 \begin{frame}
+\begin{itemize}
+	\item stelle Timer in Abhängigkeit zur Distanz eines Knotens
+	\item Beim Hören einer Nachricht:
 	\begin{itemize}
-		\item 
+		\item falls in selbem Kegel -> breche Timer ab
+		\item sonst -> nop
 	\end{itemize}
+\end{itemize}
 \end{frame}
 
 \end{document}
