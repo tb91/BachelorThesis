@@ -35,8 +35,8 @@
 
 
 % --------------------------------------------------------------------
-\title{Antrittsvortrag zur Bachelorarbeit}
-\subtitle{}
+\title{Reaktive Konstruktion eines planaren, euklidischen t-Spanners mit konstantem Ausgangsgrad}
+\subtitle{Antrittsvortrag zur Bachelorarbeit}
 \author[T. Budweg]{Tim Budweg}
 \institute{
   \texttt{tbudweg@uni-koblenz.de} \\
@@ -58,12 +58,12 @@
 %\logo{...} erst hier, damit es nicht mit auf die Titelseite kommt!
 \logo{\pgfuseimage{logo}}
 
-\part{Overview}
-\section{\2{Überblick}{Overview}}
-\frame{
-  \frametitle{\2{Überblick}{Overview}}
-  \tableofcontents[part=2,hideallsubsections]
-}
+%\part{Overview}
+%\section{\2{Überblick}{Overview}}
+%\frame{
+%  \frametitle{\2{Überblick}{Overview}}
+%  \tableofcontents[part=2,hideallsubsections]
+%}
 
 % ====================================================================
 % ====================================================================
@@ -85,30 +85,36 @@
 
 \section{Einleitung}
 
-\subsection{l}
+\subsection{}
 \begin{frame}
-Thema:\\
-	Reaktive Konstruktion eines planaren t-Spanners mit konstantem Knotenausgangsgrad
+\frametitle{Verwandte Arbeiten}
+\begin{itemize}
+	\item reaktive Algorithmen, welche planare, zusammenhängende Graphen erzeugen (\emph{rPDT}, GDBF, BFP)
+	%ohne t-Spanner->mögliche lange Umwege
+	\item lokale Algorithmen mit konstantem Ausgangsgrad und euklidischer Spanner Eigenschaft (Modified Yao Step, \ldots)
+\end{itemize}
 \end{frame}
 
-\subsection{Motivation}
+\subsection{}
 \begin{frame}
-\begin{itemize} % reaktive Algorithmen ohne constant node degree->nicht so energieeffizient wie mit
-	\item reaktive Algorithmen, welche einen t-Spanner erzeugen (PDT)
-	%ohne t-Spanner->mögliche lange Umwege
-	\item reaktive Algorithmen mit konstantem Ausgangsgrad () Beispiel
+\frametitle{Motivation}
+\begin{itemize}  %energieeffizientes broadcast, recovery routing 
+	\item energieeffiziente Konstruktion der Topologie
+	\item für energieeffizientes Recovery-, Broadcastrouting, \ldots
 \end{itemize}
 \end{frame}
 \subsection{}
 \begin{frame}
+\frametitle{Modified Yao Step}
 	\begin{itemize}
 		\item $LDel^{(2)}(U) $
 		\item Modified Yao Step 
 	\end{itemize}
 \end{frame}
 
-\subsection{$LDel^{(2)}(U) $}
+\subsection{}
 \begin{frame}
+\frametitle{$LDel^{(2)}(U) $}
 \begin{itemize}
     \begin{columns}[T]
 	\begin{column}[T]{.5\linewidth}
@@ -116,6 +122,7 @@ Thema:\\
 	\end{column}
 	\begin{column}[T]{.5\linewidth}
 	    \item alle Dreiecke, welche keine 2-Hop-Nachbarn in ihrem Umkreis beinhalten
+	    \item vereinigt mit allen Kanten des Gabriel Graphen
 	    
 	\end{column}
    \end{columns}
@@ -133,6 +140,8 @@ Thema:\\
 	\begin{column}[T]{.5\linewidth}
 	    \item Bilde Kegel
 	    \item Wähle Kanten aus
+	    \item Überprüfen der Kanten durch Kantenendpunkte
+	    \item zusammenhängender, planarer, euklidischer t-Spanner mit konstantem Ausgangsgrad
 	\end{column}
    \end{columns}
 	\end{itemize}
@@ -141,13 +150,17 @@ Thema:\\
 \section{Ziele}
 \subsection{}
 \begin{frame}
+\frametitle{reactive Modified Yao Step}
 Folgende Eigenschaften müssen erfüllt sein:
 \begin{itemize}
   \item Ergebnisgraph ist ein euklidischer t-Spanner
   \item Ergebnisgraph ist planar
   \item Der Knotenausgangsgrad ist konstant beschränkt
   \item reaktive Konstruktion des Graphen
-  \item Der Algorithmus muss streng lokal arbeiten
+  \begin{itemize}
+  	\item reaktiv: beaconloser Algorithmus, der lokal arbeitet
+  \end{itemize}
+  
 \end{itemize}
 \end{frame}
 
@@ -155,32 +168,66 @@ Folgende Eigenschaften müssen erfüllt sein:
 
 \section{Bisherige Ergebnisse}
 \subsection{}
-\begin{frame}
-	Beweis, dass PDT alle Eigenschaften erfüllt, die $LDel^{(2)}(U) $ erfüllt 
+\begin{frame} 
+\frametitle{Bisherige Ergebnisse}
+	\begin{itemize}
+    \begin{columns}[T]
+	\begin{column}[T]{.3\linewidth}
+    \includegraphics[width=\linewidth]{eigenschaft-beispiel.eps}
+	\end{column}
+	\begin{column}[T]{.7\linewidth}
+	\item Beweis, dass PDT alle modified Yao Step Eigenschaften erfüllt, die $LDel^{(2)}(U) $ erfüllt
+	\end{column}
+   \end{columns}
+	\end{itemize}
 \end{frame}
+% beispiel einfügen für eigenschaft
 
-\subsection{reactive Modified Yao Step}
+\subsection{}
 \begin{frame}
-Input: planarer, t-spanner (PDT)
+\frametitle{reactive Modified Yao Step}
+Input: planarer, t-spanner (PDT)\\
 Output: zusätzlich konstanter Ausgangsgrad
 	\begin{enumerate}
 		\item bilde Kegel
-		\item finde kürzeste Kante \ldots
+		\item finde kürzeste Kante
 		\item finde eine zusätzliche Kante für jeden leeren Kegel
 		\item Prüfe, ob beide Endpunkte einer Kante diese akzeptieren
 	\end{enumerate}
 \end{frame}
 
-\subsection{finde kürzeste Kante}
+
+\subsection{}
 \begin{frame}
+\frametitle{Existenz einer Kante bei beiden Endpunkte}
 \begin{itemize}
-	\item stelle Timer in Abhängigkeit zur Distanz eines Knotens
-	\item Beim Hören einer Nachricht:
-	\begin{itemize}
-		\item falls in selbem Kegel -> breche Timer ab
-		\item sonst -> nop
-	\end{itemize}
+	\item nicht sicher, ob nötig
+	\item evtl. Ersetzung dieses Schrittes
 \end{itemize}
 \end{frame}
 
+%hevorheben, dass der Beweis sehr wichtig ist!
+\begin{frame}
+\frametitle{Schritte}
+\begin{itemize}
+	\item beweisen, dass PDT geeignet ist $LDel^{(2)}(U) $ zu ersetzen
+	\item entwerfen einer effizienteren Variante um die Existenz einer Kante bei beiden Eckpunkten zu überprüfen 
+	\item Programmierung des Algorithmus in Sinalgo
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Zeitplan}
+\begin{table}[h]
+\resizebox{1.0\textwidth}{!}{%
+\begin{tabular}{ll}
+ Juni &   Beweis für PDT\\
+ Juli &  Beweis für PDT, Programmierung\\
+ August & Programmierung, effizientere Variante suchen \\
+ September &Programmierung der neuen Variante, Vorbereiten des \\& Abschlussvortrags, Abgabe einer Vorabversion\\
+ Oktober & Verbesserung und Abgabe der Finalversion,\\& Abschlussvortrag
+\end{tabular}
+}
+\end{table}
+\end{frame}
 \end{document}
