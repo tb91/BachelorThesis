@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside, onecolumn]{IEEEtran}
+\documentclass[a4paper,twoside, twocolumn]{IEEEtran}
 \title{Bachelor thesis by Tim Budweg} 
 \author{}
 \date{11.03.2015}
@@ -17,8 +17,22 @@
 \section{Introduction}
 Wireless ad-hoc sensor networks are very useful. 
 You can create warning systems for emergency purposes.
-For instance, deploying many sensor nodes into the sea or forest to check and caution for tsunamis or fire.
-Another use case is
+For instance, deploying many sensor nodes into the sea or forest to check and caution for tsunamis or fire, respectively.
+
+If a node detects something and sends a message, it is obvious that this message needs to \emph{arrive} at a certain station.
+The message should not get lost.
+To achieve this guaranteed message delivery in a multi-hop network a specific graph-property called planarity must be satisfied.
+
+Explaining planarity imagine a graph setup watched from above. 
+It creates a 2d-view of this graph.
+Planarity says that from this view no two edges are allowed to cross each other except in the endpoints.
+
+To planarize a graph some edges must be removed.
+If edges are arbitrarily removed from this graph it may result in a disconnected graph or at least randomly long paths.
+This needs to be prohibited and can be achieved if a so called \emph{euclidian t-spanner} property is satisfied.
+
+
+
 \section{Algorithm}
 \section{Reactive construction}
 \section{Proof}
@@ -35,8 +49,10 @@ In a style similar to the definition of $LDel^{(2)}(U) $ from \cite{kanj}, we de
 \label{emptycircle}
 An edge XY of U is contained in the PDT graph if and only if there exists a circle trough X and Y whose interior contains no point of U that is a 2-hop neighbor of X or Y.
 \end{definition}
+\begin{proof}
 This can be verified since the original PTD-Definition from \cite{pdt} is defined like above, except that the circle must not contain \emph{any} nodes of U. 
 If this region contains no nodes at all, it cannot contain nodes which are 2-hop-neighbors of X or Y either.  
+\end{proof}
 
 Additionally, the following Delaunay Graph property is being used:
 \begin{lemma}
@@ -49,16 +65,20 @@ See Figure \ref{fig:empty_region} for a graphical illustration of the above lemm
 This property also holds true for PDT.
 
 \begin{proof}
-Since $CA $ is a PDT edge there is a circle $c_1 $ with C and A on it's border which does not contain any node (or at least non two-hop-neighbour of C or A) of U.
-Suppose we take another third Point D, which is not in the Set U, to identify the circle $c_1 $.
-No matter where the third point D of this circle is, the region, in the following named $R_1 $, of $\bigcirc{ABC} $ delimited by chord $CA $ away from B is always contained completely in the circle $c_1 $ and, therefore, empty.
-By symmetry of circles it is sufficient to put D on a line  $l $ which is defined as the median line of $CA $. 
-There are two possibilities on which D can be located. %check located at?
-First, D is contained in the Gabriel Graph.
-If D moves away from B crossing $CA $ we get the same circles as D moves to B away from $M_{CA} $.
-If D crosses B, B is contained in the circle, hence $CA $ cannot be a PTD edge. This is a contradiction to the precondition.
-If D is barely in the triangle near $M_{CA} $, $R_1 $ is contained in $\bigcirc{ABC} $.
-If D is barely in the triangle near $B $, $R_1 $ is also contained in $\bigcirc{ABC} $.
+Since $CA $ is a PDT edge there is a circle $c_1 $ with C and A on it's border which does not contain any node (so non two-hop-neighbour of C or A, either) of U.
+Suppose we take another third Point d, which is not in the Set U, to identify the circle $c_1 $, which is the circle with $ACD $ on it's border.
+No matter where the third point d of this circle is, the region, in the following named $R_1 $, of $\bigcirc{ABC} $ delimited by chord $CA $ away from B is always contained completely in the circle $c_1 $ and, therefore, empty.
+The next part proofs this proposition.
+By symmetry of circles it is sufficient to put d on a line  $l $ which is defined as the median line of $CA $. %Florentin fragen ob median line oder perpendicular bisector
+Let $\alpha<\pi $ be the smaller angle in $\angle{ADC} $.
+If d moves on this line the angle $\alpha $ changes.  
+Let d start at degree $\alpha = \pi-\epsilon $ for $\epsilon $  arbitrarily small. 
+Let $\beta >0$ be the value of alpha, when $B $ is on the border of circle $\bigcirc{c_1} $.
+d is continuous in the interval $[\beta,\pi[ $
+
+
+If d moves away from B crossing $CA $ we get the same circles as d moves to B away from $M_{CA} $.
+If d crosses B, B is contained in the circle, hence $CA $ cannot be a PTD edge. This is a contradiction to the precondition.
 
 \end{proof} 
 
