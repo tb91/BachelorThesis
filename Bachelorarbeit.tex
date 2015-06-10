@@ -65,20 +65,22 @@ See Figure \ref{fig:empty_region} for a graphical illustration of the above lemm
 This property also holds true for PDT.
 
 \begin{proof}
-Since $CA $ is a PDT edge there is a circle $c_1 $ with C and A on it's border which does not contain any node (so non two-hop-neighbour of C or A, either) of U.
-Suppose we take another third Point d, which is not in the Set U, to identify the circle $c_1 $, which is the circle with $ACD $ on it's border.
-No matter where the third point d of this circle is, the region, in the following named $R_1 $, of $\bigcirc{ABC} $ delimited by chord $CA $ away from B is always contained completely in the circle $c_1 $ and, therefore, empty.
+Since $CA $ is a PDT edge there is a circle $\bigcirc{c_1} $ with C and A on it's border which does not contain any node (so non two-hop-neighbour of C or A, either) of U.
+Suppose we take another third Point d, which is not in the Set U, to identify $\bigcirc{c_1} $, which is the circle with $ACd $ on it's border.
+No matter where the third point d of this circle is, the region, in the following named $R_1 $, of $\bigcirc{ABC} $ delimited by chord $CA $ away from B is always contained completely in $\bigcirc{c_1} $ and, therefore, empty.
 The next part proofs this proposition.
 By symmetry of circles it is sufficient to put d on a line  $l $ which is defined as the median line of $CA $. %Florentin fragen ob median line oder perpendicular bisector
-Let $\alpha<\pi $ be the smaller angle in $\angle{ADC} $.
-If d moves on this line the angle $\alpha $ changes.  
-Let d start at degree $\alpha = \pi-\epsilon $ for $\epsilon $  arbitrarily small. 
+Let $\alpha<\pi $ be the smaller angle in $\angle{AdC} $.
+If d moves on the line $l $ the angle $\alpha $ changes.   
 Let $\beta >0$ be the value of alpha, when $B $ is on the border of circle $\bigcirc{c_1} $.
-d is continuous in the interval $[\beta,\pi[ $
-
-
-If d moves away from B crossing $CA $ we get the same circles as d moves to B away from $M_{CA} $.
-If d crosses B, B is contained in the circle, hence $CA $ cannot be a PTD edge. This is a contradiction to the precondition.
+Let d start at degree $\alpha = \pi-\epsilon $ for $\epsilon $  arbitrarily small.
+Since d is continuous in the interval $[\beta,\pi[ $, every possible circle is covered:
+\begin{itemize}
+\item If $\alpha $ is barely equal to $\pi $, d is located at the nearest position to edge $CA $ on $l $.
+\item If $\alpha=\beta $ is satisfied, $B $ is on the border of $\bigcirc{c_1} $.
+\item If $\alpha <\beta $ is satisfied, $B $ is contained in the circle and hence, this is not a valid circle.
+\end{itemize}
+Therefore, it does not matter which circle of them is the PDT-circle, since all circles cover the region $R_1 $.
 
 \end{proof} 
 
