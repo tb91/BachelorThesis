@@ -1,0 +1,82 @@
+\documentclass{agasthesis}
+
+\usepackage{geometry}
+\usepackage{pstricks}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+
+\graphicspath{{images/}}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{definition}{Definition}[section]
+\begin{document}
+\input{titlepage}
+\clearemptydoublepage
+\thispagestyle{empty}
+\ \vfill
+\input{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearemptydoublepage
+\selectlanguage{german}
+\subsection*{Erklärung}
+Ich versichere, dass ich die vorliegende Arbeit selbständig verfasst
+und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe
+und dass die Arbeit
+in gleicher oder ähnlicher Form noch keiner anderen Prüfungsbehörde
+vorgelegen hat und von dieser als Teil einer Prüfungsleistung
+angenommen wurde. Alle Ausführungen, die wörtlich oder sinngemäß
+übernommen wurden, sind als solche gekennzeichnet.
+
+Die Vereinbarung der Arbeitsgruppe für Studien- und Abschlussarbeiten
+habe ich gelesen und anerkannt, insbesondere die Regelung des Nutzungsrechts.
+\\[10mm]
+\begin{tabular}{p{0.8\linewidth}@{\hspace*{2ex}}r@{\hspace*{2ex}}r}
+Mit der Einstellung dieser Arbeit in die Bibliothek bin ich einverstanden.
+& ja $\boxtimes $ & nein $\square$ \\[2em] %% change $\square$ to $\boxtimes$ to make a selection
+Der Veröffentlichung dieser Arbeit im Internet stimme ich zu.
+& ja $\boxtimes $ & nein $\square$ \\
+\end{tabular}
+\\[20mm]
+
+Koblenz, den \today \\[10mm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% uncomment for english thesis
+\selectlanguage{english}
+
+%% TOC, LOT and LOF
+\tableofcontents
+\listoftables
+\listoffigures
+
+%% include your chapters here
+\include{Intro}
+\include{Algorithm}
+\include{reactive_Construction}
+\include{Proof}
+\include{Discussion}
+\include{Programming}
+
+\begin{appendix}
+%% include your appendices here
+%\include{appendix-A}
+\end{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alphadin}
+\bibliography{db-refs,local-refs}
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
+%%
+%% End
