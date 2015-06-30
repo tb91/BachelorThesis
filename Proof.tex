@@ -53,7 +53,11 @@ Therefore, it does not matter which circle of them is the PDT-circle $c_1 $, sin
 \end{proof} 
 
 
-With this lemma in hand Keil and Gutwin ref proved the existence of a path between the Points $A $ and $B $ in the region $R_1 $.
+
+We need to show that there is a path from $A $ to $B $ which has length at most of $(1+2\pi (k*\cos{\frac{\pi}{k}})^{-1})|CB| $ for integer $ k \geq 14 $. 
+Keil and Gutwin \cite{keil} proved the existence of a path between the Points $A $ and $B $ and showed that the length of this path is delimited by the length of the arc from $A $ to $B $ on the circle $\bigcirc{ABC} $.
+The only precondition is that lemma \ref{emptyregion} holds (which it does).
+This path is called the \emph{outward Path}.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\linewidth]{eps/noPointinRegion.eps}
@@ -61,9 +65,9 @@ With this lemma in hand Keil and Gutwin ref proved the existence of a path betwe
 \label{fig:empty_region}
 \end{figure}
 
-
-We need to show that the inward and outward path are still valid for PDT.
-To do so, we must proof the following proposition:
+This proof is divided into two cases: when $\triangle{ABC} $ contains nodes of G and when this triangle is devoid of any nodes of G.
+The outward path connects $A $ and $B $ when no other points of G are inside $\triangle{ABC} $
+We must proof the following proposition:
 
 \begin{prop}
 In every recursive step of the outward path construction described above, if $M_p $ is an intermediate point with respect to a pair of points $(M_i, M_j) $, then:

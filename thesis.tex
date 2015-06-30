@@ -10,6 +10,10 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 
+%ordentlich nummerierung
+\renewcommand*{\thesection}{\arabic{section}}
+%gefüllte quadrate bei proof environments 
+\renewcommand{\qedsymbol}{$\blacksquare$}
 
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{prop}{Proposition}[section]
@@ -72,7 +76,7 @@ Koblenz, den \today \\[10mm]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{alphadin}
+\bibliographystyle{unsrt}
 \bibliography{db-refs,local-refs}
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
