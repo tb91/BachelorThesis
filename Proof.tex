@@ -20,7 +20,7 @@ If this region contains no nodes at all, it cannot contain nodes which are 2-hop
 Additionally, the following Delaunay Graph property is being used:
 \begin{lemma}
 \label{emptyregion}
-If CA and CB are edges of the PDT Graph then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
+If CA and CB are edges of the PDT graph then the region of $(O)=\bigcirc{ABC} $ subtended by chord  CA and away from B and the region of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
 \end{lemma}
 
 
@@ -54,10 +54,9 @@ Therefore, it does not matter which circle of them is the PDT-circle $c_1 $, sin
 
 
 
-We need to show that there is a path from $A $ to $B $ which has length at most of $(1+2\pi (k*\cos{\frac{\pi}{k}})^{-1})|CB| $ for integer $ k \geq 14 $. 
-Keil and Gutwin \cite{keil} proved the existence of a path between the Points $A $ and $B $ and showed that the length of this path is delimited by the length of the arc from $A $ to $B $ on the circle $\bigcirc{ABC} $.
-The only precondition is that lemma \ref{emptyregion} holds (which it does).
-This path is called the \emph{outward Path}.
+We need to show that there is a path from $A $ to $B $.
+First, we divide the proof into two cases: when $\triangle{ABC} $ contains nodes of G and when this triangle is devoid of any nodes of G.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\linewidth]{eps/noPointinRegion.eps}
@@ -65,8 +64,35 @@ This path is called the \emph{outward Path}.
 \label{fig:empty_region}
 \end{figure}
 
-This proof is divided into two cases: when $\triangle{ABC} $ contains nodes of G and when this triangle is devoid of any nodes of G.
-The outward path connects $A $ and $B $ when no other points of G are inside $\triangle{ABC} $
+Keil and Gutwin \cite{keil} proved the existence of a path between the points $A $ and $B $ and showed that the length of this path is delimited by the length of the arc from $A $ to $B $ on the circle $\bigcirc{ABC} $.
+This path connects $A $ and $B $ when no other points of G are inside $\triangle{ABC} $.
+The only precondition is that lemma \ref{emptyregion} holds (which it does).
+This path is called the \emph{outward path}.
+%überleitung
+
+The recursive definition of this path taken from \cite{kanj} is as follows:
+\begin{enumerate}
+\item \textbf{Base case:} If $AB \in G $, the path consists of edge AB.
+\item \textbf{Recursive step:} Otherwise, a point must reside in the region of $(O) $ subtended by chord AB and away from C. 
+Let $T $ be such a point with the property that the region of $\bigcirc{ATB} $ subtended by chord $AB $ closer to $T $ is empty. 
+We call T an \emph{intermediate point} with respect to the pair of points $(A, B) $.
+Let $(O_1) $ be the circle passing through $A $ and $T $ whose center $O_1 $ lies on segment $AO $  and let $(O_2) $ be the circle passing through $B $ and $T $ whose center $O_2 $ lies on segment $BO $.
+Then both $(O_1) $ and $(O_2) $ lie inside $(O) $, and $\angle{AO_1T} $ and $\angle{TO_2B} $ are both less than $\angle{AOB} \leq \frac{4\pi}{k} $.
+Moreover, the region of $(O_1) $ subtended by chord $BT $ and containing $O_2 $ is empty. Therefore, we can recursively construct a path from $A $ to $T $ and a path from $T $ to $B $, and then concatenate them to obtain a path from A to B.  
+\end{enumerate}
+Figure \ref{fig:intermediate_point} contains an example for an intermediate point.
+Since $(O_1) $ is always contained completely in $O $, by precondition $\triangle{ABC} $ is empty and by lemma \ref{emptyregion} the region from $O_1 $ subtended by chord $CA $ away from B is empty, the circle $O_1 $ must be also empty. und AT ist frei wo o1 ist
+This holds true for $O_2 $, respectively.
+ 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{eps/IntermediatePoint.eps}
+\caption{The intermediate point $T $ with respect to pair $(A,B) $, and the circles $O_1 $ and $O_2 $ which are completely within $O $. }
+\label{fig:intermediate_point}
+\end{figure}
+
+
 We must proof the following proposition:
 
 \begin{prop}
