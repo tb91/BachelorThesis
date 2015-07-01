@@ -1,0 +1,249 @@
+%!PS-Adobe-2.0
+%%BoundingBox: 0 0 706 340
+%%Title: AGAS Logo, Vektorversion
+%%Creator: Detlev Droege
+%%CreationDate: Tue Jul  1 18:58:03 2005
+%%DocumentData: Clean7Bit
+%%LanguageLevel: 2
+%%EndComments
+
+%BeginProlog
+/swid 7 def
+/cwid 131 def
+/chig 211 def
+/xpos0 0 def
+/step 13 def
+
+/h1o cwid 2 div def
+/h1i cwid 2 div swid 2 sqrt mul sub def
+/h1oS h1o 2 sqrt div def
+/mhig chig h1oS sub 2.05 div h1oS  add def
+
+/xpos1 xpos0 cwid add step add def
+/xpos2 xpos1 cwid add step 7 add add def
+/xpos3 xpos2 cwid add step add def
+/xpos4 xpos3 cwid add cwid 0.52 mul add def
+/gypos chig 27.5 sub def
+/gxpos xpos1 cwid 0.62 mul add def
+/axpos xpos0 cwid 0.25 mul add def
+/syposu chig 40 sub def
+/syposl h1oS 40 add def
+
+/genColImg {
+	15 dict begin
+	  107 154 232		% light blue
+	  /bs exch def /gs exch def /rs exch def 
+	  21 61 208		% dark blue
+	  /be exch def /Ge exch def /re exch def	% ge is operator, use Ge
+	  /rd re rs sub def
+	  /gd Ge gs sub def
+	  /bd be bs sub def
+
+	  /steps exch def
+	  mark
+	  0 1 steps {
+		/f exch steps div def
+		% just put values on stack
+		rs rd f mul add round cvi
+		gs gd f mul add round cvi
+		bs bd f mul add round cvi
+	  } for
+
+	  /n steps 1 add 3 mul def
+	  /s n string def
+	  /i n 1 sub def
+	  counttomark {
+         s i 3 -1 roll put
+		/i i 1 sub def
+	  } repeat
+	  pop % remove mark
+	  s	% put string on stack
+	end
+} bind def
+
+% Viertelkreis mit Bezier-Kurve, r=1:
+% 0 0 moveto 0 A 1 A sub 1 1 1 curveto
+/A 8 2 sqrt div 4 sub 3 div def
+
+/halfcircR {	% halbkreis von links nach rechts /\
+  8 dict begin
+    /rv exch def	% radius vertikal
+    /rh exch def	% radius horizontal
+    currentpoint /y exch def /x exch def	% cp0 = start
+    /xm x rh add def /ym y rv add def		% pos middle
+    /xe x rh 2 mul add def /ye y def		% pos end
+    x                 y A rv mul add	% cp1
+    xm A rh mul sub   ym		% cp2
+    xm                ym		% cp3
+    curveto
+    % currenpoint now == (xm,ym)
+    xm A rh mul add   ym
+    xe                ye A rv mul add
+    xe                ye
+    curveto
+  end
+} bind def
+
+/backImg <
+6b9ae86a99e86998e86897e76896e76795e76694e76593e66493e66392e66291e66290e5618fe56
+08ee55f8de55e8ce45d8be45c8ae45c89e45b88e35a87e35986e35886e35785e25684e25683e255
+82e25481e25380e1527fe1517ee1507de14f7ce04f7be04e7ae04d79e04c79df4b78df4a77df497
+6df4975de4874de4773de4672de4571dd4470dd436fdd436edd426ddc416cdc406cdc3f6bdc3e6a
+dc3d69db3d68db3c67db3b66db3a65da3964da3863da3762da3761d93660d9355fd9345ed9335ed
+8325dd8315cd8315bd8305ad72f59d72e58d72d57d72c56d62b55d62b54d62a53d62952d62851d5
+2751d52650d5254fd5244ed4244dd4234cd4224bd4214ad32049d31f48d31e47d31e46d21d45d21
+c44d21b44d21a43d11942d11841d11840d1173fd0163ed0153dd0
+> def
+
+/putBack {
+ gsave
+  -65 0 translate
+  706 3.1 scale
+  0 0 moveto
+  1 101 8 [1 0 0 1 0  0] backImg false 3 colorimage
+ grestore
+} bind def
+%%EndProlog
+
+%%BeginSetup
+%/backImg 100 genColImg def
+%(%stdout)(w)file backImg writehexstring
+  <</PageSize [706 340] >> setpagedevice
+%%EndSetup
+
+% put original into back as template for comparison
+false {
+  gsave
+	37 0 translate
+	235 110 scale
+	2.95 dup  scale
+  /fd (/lab/bs/droege/Doc/Uni/AS/adm/Logo/Neu/logo-agas.raw) (r) file def
+  235 110 8 [235 0 0 -110 0 110] fd false 3 colorimage
+  fd closefile
+grestore
+} if
+
+68 40 translate
+
+false { 	% guide lines as help
+    gsave
+	1 0 0 setrgbcolor
+	0 chig h1oS add moveto 2000 0 rlineto stroke
+	0 chig moveto 2000 0 rlineto stroke
+	0 0 h1oS add moveto 2000 0 rlineto stroke
+	0 0 moveto 2000 0 rlineto stroke
+	0 mhig  moveto 2000 0 rlineto stroke
+	0 mhig swid sub moveto 2000 0 rlineto stroke
+	0 gypos moveto 2000 0 rlineto stroke
+	0 syposu moveto 2000 0 rlineto stroke
+	0 syposl moveto 2000 0 rlineto stroke
+	
+	axpos 0 moveto 0 500 rlineto stroke
+	xpos1 0 moveto 0 500 rlineto stroke
+	xpos1 swid add 0 moveto 0 500 rlineto stroke
+	gxpos 0 moveto 0 500 rlineto stroke
+	xpos2 0 moveto 0 500 rlineto stroke
+	xpos2 swid add 0 moveto 0 500 rlineto stroke
+	xpos3 0 moveto 0 500 rlineto stroke
+	xpos3 swid add 0 moveto 0 500 rlineto stroke
+	xpos4 0 moveto 0 500 rlineto stroke
+    grestore
+} if
+
+
+% =======================================
+% A (Agas)
+xpos0 0 moveto
+0 chig rlineto
+h1o h1oS halfcircR
+0 chig neg rlineto
+swid neg 0 rlineto
+0 chig rlineto
+h1o swid sub neg  h1oS swid sub halfcircR
+0 chig neg rlineto
+closepath
+% A Bar
+axpos mhig moveto
+xpos1 mhig lineto
+0 swid neg rlineto
+axpos mhig swid sub lineto
+closepath
+
+% =======================================
+% G (aGas)
+xpos1 cwid add gypos moveto
+swid neg 0 rlineto
+xpos1 cwid add swid sub chig lineto
+h1o swid sub neg  h1oS swid sub halfcircR
+xpos1 swid add h1oS lineto
+h1o swid sub  h1oS swid sub neg halfcircR
+xpos1 cwid add swid sub mhig lineto
+xpos1 cwid add          mhig lineto
+xpos1 cwid add h1oS lineto
+h1o neg h1oS neg halfcircR
+xpos1 chig lineto
+h1o h1oS halfcircR
+closepath
+% G bar
+gxpos mhig moveto
+xpos2 mhig lineto
+0 swid neg rlineto
+gxpos mhig swid sub lineto
+closepath
+
+% =======================================
+% A (agAs)
+xpos2 0 moveto
+0 chig rlineto
+h1o h1oS halfcircR
+0 chig neg rlineto
+swid neg 0 rlineto
+0 chig rlineto
+h1o swid sub neg  h1oS swid sub halfcircR
+0 chig neg rlineto
+closepath
+% A Bar
+xpos2 mhig moveto
+xpos3 mhig lineto
+0 swid neg rlineto
+xpos2 mhig swid sub lineto
+closepath
+
+% =======================================
+% S (agaS)
+xpos3 cwid add syposu moveto
+swid neg 0 rlineto
+xpos3 cwid add swid sub chig lineto
+h1o swid sub neg  h1oS swid sub halfcircR
+xpos3 swid add mhig lineto
+swid neg 0 rlineto
+xpos3 chig lineto
+h1o h1oS halfcircR
+closepath
+
+xpos3 syposl moveto
+swid 0 rlineto
+xpos3 swid add h1oS lineto
+h1o swid sub  h1oS swid sub neg halfcircR
+xpos3 cwid add swid sub mhig lineto
+xpos3 cwid add          mhig lineto
+xpos3 cwid add h1oS lineto
+h1o neg h1oS neg halfcircR
+closepath
+% G bar
+xpos3 mhig moveto
+xpos4 mhig lineto
+0 swid neg rlineto
+xpos3 mhig swid sub lineto
+closepath
+% =======================================
+
+gsave 
+  clip
+  putBack 
+grestore
+newpath
+
+showpage
+%%EOF
+
