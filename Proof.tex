@@ -1,12 +1,15 @@
 \section{Proof}
+Let U be the Unit Disk Graph of the Euclidean Graph of a Node Set S.
 The authors of \cite{kanj} use $LDel^{(2)}(U) $ as the underlying subgraph of the Modified Yao Step.
-$LDel^{(2)}(U) $ is defined as the union of the two  subgraph of U in which the circumcircle of every triangle does not contain a 2-hop-neighbor of the nodes which create the triangle, and the Gabriel-graph.
+$LDel^{(2)}(U) $ is defined as the union of the Gabriel-graph and the subgraph of U in which the circumcircle of every triangle does not contain a 2-hop-neighbor of the nodes which create the triangle.
 However, it is not known whether $LDel^{(2)}(U) $ can be constructed reactively.
 At this point I want to introduce the \emph{Partial Delaunay Triangulation (PDT)} \cite{pdt} which might be a valid replacement.
-The following part of this work will examine the possibility of this replacement.
+The following part of this work will examine the possibility of this replacement and, thus, proving the correctness of the following proposition:
+\begin{prop}
+For every integer $k \geq 14 $, there exists a sugraph $G' $ of $G $ such that $G' $ has maximum degree k and stretch factor $1+2\pi (k*\cos{\frac{\pi}{k}})^{-1} $.
+\end{prop}
 
 At first, note that the style of this proof is adapted from \cite{kanj}.\\
-Let U be the Unit Disk Graph of the Euclidean Graph of a Node Set S.
 In a style similar to the definition of $LDel^{(2)}(U) $ from \cite{kanj}, we define the Partial Delaunay Triangulation as follows:
 \begin{definition}
 \label{emptycircle}
