@@ -195,8 +195,35 @@ Let $k \geq 14$ be an integer, and let $CA $ and $CB $ be edges in $G $ such tha
 \end{lemma}
 
 \begin{proof}
+This proof is performed almost equal to \cite{kanj}, but covering more details.
 %and $\sin{\theta} = \frac{|AB|}{2|OA|}) $
-$|CA|+|\overarc{AB}| \leq |CB| + 2\theta \cdot |OA| =|CB| + (\frac{\theta}{\sin{\theta}})\cdot |AB| = |CB| + (\frac{\theta}{\cos{\frac{\theta}{2}}}) \cdot |CB| \leq (1+2\pi(k \cos{\frac{\pi}{k}})^{-1}) |CB| $ 
+\renewcommand{\theenumi}{(\roman{enumi})}%
+\begin{enumerate}
+\item 
+\begin{equation*}
+\begin{split}
+|CA|+|\overarc{AB}| &= |CB| + 2\theta \cdot |OA| \\
+&\stackrel{a)}{=}|CB| + (\frac{\theta}{\sin{\theta}})\cdot |AB| \\
+&\stackrel{b)}{=} |CB| + (\frac{\theta}{\cos{\frac{\theta}{2}}}) \cdot |CB|\\
+&\stackrel{c)}{\leq} (1+2\pi(k \cos{\frac{\pi}{k}})^{-1}) |CB|  
+\end{split}
+\end{equation*}
+Since $|CA| \leq |CB| $, $|CA|+|\overarc{AB}| $ is largest, when $CA $ and $CB $ are symmetrical to the diameter of $\bigcirc{ABC} $.
+So, we can assume $|CA|=|CB| $.
+$|\overarc{AB}| $ can be replaced with $2\theta \cdot |OA| $ (angle times radius).
+For every chord $s $ of a circle $(c) $ it is true, that $s=2r\sin{\frac{\alpha}{2}} $, with $r $ being the radius of $(c) $ and $\alpha $ being the angle between the endpoint of $s $ to middlepoint $c $ facing $s $.
+Note that $\alpha = 2\theta $. 
+These equations proof a).
+
+Next, substitute $|AB| $ with $|AB| = \sin{\frac{\theta}{2}} \cdot 2|CB| $ and replace $\sin{\theta} $ with the trigonometry identity $\sin{\theta}=2\sin{\frac{\theta}{2}} \cos{\frac{\theta}{2}} $.
+You receive equation b).
+
+At last, substitute $\theta $ using inequality $\theta \leq \frac{2\pi}{k} $ with $k > 2 $, obtaining c).
+
+\item  
+\item
+\item
+\end{enumerate}
 \end{proof}
 
  
