@@ -135,6 +135,7 @@ $\bigcirc{CM_p} $ cannot overlap $\bigcirc{CM_i} $ because of the following lemm
 \label{circles}
 If $A $ and $B $ are points in the plane and are located in different halfplanes of a line $CM_i $, and $A $ and $B $ are not allowed to reside inside a circle $\bigcirc{CM_i} $, there is no circle $\bigcirc{ABC} $ which does not contain $M_i $ and overlaps circle $\bigcirc{CM_i} $.
 \end{lemma}
+\begin{proof}
  Let, without loss of generality, $C $ and $M_i $ be on a line $CM_i $ which is parallel to the y-axis.
 $A $ and $B $ are then located to the left and right of this line.
 You can see this construction in figure \ref{fig:beweis_circles}.
@@ -148,6 +149,7 @@ And the last conclusion is that $C $ is a common point of $\bigcirc{CM_i} $ and 
 Hence, we have got three intersections of $\bigcirc{CM_i} $ and $c_1 $ at least.
 Since $A $ and $B $ lie outside of $\bigcirc{CM_i} $, these two circles are not equal.
 But two circles which intersect at least three times and are not equal, do not exist.
+\end{proof}
 The proof of case 3 works analogously.
 These conclusions proof part a) of proposition \ref{outward_path}.
 
@@ -220,9 +222,14 @@ You receive equation b).
 
 At last, substitute $\theta $ using inequality $\theta \leq \frac{2\pi}{k} $ with $k > 2 $, obtaining c).
 
-\item  
-\item
-\item
+\item  Suppose, $M_i $ and $M_j $ is an edge in $G $, then there exists a circle with these two points on it's border which does not contain any other node of $G $.
+So, $M_p $ must lie outside of this circle.
+By proposition \ref{outward_path} part a) there is a circle $\bigcirc{CM_p} $ trough $C $ and $M_p $ which is empty.
+These two last observations contradict each other, since $\bigcirc{M_iM_j} $ would always contain $M_p $.
+If $M_p $ does not reside in the circle $\bigcirc{M_iM_j} $, this circle and the circle $\bigcirc{CM_p} $ would cross at least three times (and are not equal), which cannot exist.
+
+\item 
+\item Since $M_1 $ is inside the area subtended by chord $AB $ from $\bigcirc{ABC} $ \emph{away} from $C $, it is true that $\angle{CAM_1} \geq \angle{CAB} $.
 \end{enumerate}
 \end{proof}
 
