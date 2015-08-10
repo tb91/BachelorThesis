@@ -228,7 +228,17 @@ By proposition \ref{outward_path} part a) there is a circle $\bigcirc{CM_p} $ tr
 These two last observations contradict each other, since $\bigcirc{M_iM_j} $ would always contain $M_p $.
 If $M_p $ does not reside in the circle $\bigcirc{M_iM_j} $, this circle and the circle $\bigcirc{CM_p} $ would cross at least three times (and are not equal), which cannot exist.
 
-\item 
+\item Since the angles $\alpha $ and $\beta $ between opposite points of a rectangle which corners lie on a circle are supplementary, this is a fact: $\angle{ACB}=\pi - \angle{ADB} $ (see figure ... for more details).
+Suppose the intermediate point $M_1 $ lies on the border of the circle $\bigcirc{ABC} $, then $\angle{ACB}=\angle{ADB} $ is satisfied.
+Moving $M_1 $ into the circle, causes the angle $\angle{ADB} $ to grow, since it moves closer to edge $AB $.
+This proofs following inequality:
+\begin{equation*}
+\begin{split}
+ \angle{M_{i-1}M_iM_{i+1}}&\geq \pi - \angle{M_{i-1}CM_{i+1}} \geq \pi - \angle{BCA} \geq \pi - \frac{2\pi}{k}\\
+\end{split}
+\end{equation*}
+
+ %http://www.regentsprep.org/regents/math/geometry/gp15/circleangles.htm
 \item Since $M_1 $ is inside the area subtended by chord $AB $ from $\bigcirc{ABC} $ \emph{away} from $C $, it is true that $\angle{CAM_1} \geq \angle{CAB} \geq \frac{\pi}{2} -\frac{\pi}{k} $.
 The last inequality is true because:
  \begin{equation*}
@@ -260,3 +270,7 @@ Since $CA \leq CB $, $\angle{CAB} $ can be at most the half of $\pi - \frac{2\pi
 \end{enumerate}
 
 
+
+
+\subsection{inward Path}
+Now, we perform the proof for the case when $\triangle{ABC} $ contains other nodes.
