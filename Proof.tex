@@ -183,7 +183,22 @@ Notice that the proof for $\bigcirc{CM_jM_p} $ works analogously substituting $M
 \caption{Example of the construction of lemma \ref{circles}.}
 \label{fig:beweis_circles}
 \end{figure}
+Another lemma we need in order to proof proposition \ref{mastertheorem} is the following:
+\begin{lemma}
+\label{outward_3}
+If four points $A $, $B $, $C $ and $M_1 $ are on one circle and $C $ and $M_1 $ are on different halfplanes of chord $AB $, then $\angle{AM_1B} + \angle{ACB} =\pi $ is true (see figure \ref{fig:winkel_fuer_outward_3} for an graphical illustration of this lemma).
+\end{lemma}
+\begin{proof}
+see Euklid, book 3, Proposition 22.  (Nochmal besprechen)
 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\linewidth]{eps/Winkel_fuer_outward_3.eps}
+\caption{Example for lemma \ref{outward_3} }
+\label{fig:winkel_fuer_outward_3}
+\end{figure}
+\end{proof}
 Now, we can proof the following lemma from \cite{kanj}, which shows, that for the case of the outward path, proposition \ref{mastertheorem} is satisfied:
 
 \begin{lemma}
@@ -192,7 +207,7 @@ Let $k \geq 14$ be an integer, and let $CA $ and $CB $ be edges in $G $ such tha
 \renewcommand{\labelenumi}{(\roman{enumi})}
 \item $|CA| + \sum_{i=0}^{r-1}|M_iM_{i+1}| \leq (1+2\pi(k \cos(\frac{\pi}{k}))^{-1})|CB|$
 \item There is no edge in $G $ between any pair $M_i $ and $M_j $ lying in the closed region delimited by $CA, CB $ and the edges of $p $, for any $i $ and $j $ satisfying $0 \leq i < j -1 \leq r $.
-\item $\angle{M_{i-1}M_iM_{i+1}} > (\frac{k-2}{k})*\pi $, for $i=1,\dotsc,r-1 $.
+\item $\angle{M_{i-1}M_iM_{i+1}} > \pi - \frac{2\pi}{k} $, for $i=1,\dotsc,r-1 $.
 \item $\angle{CAM_1} \geq \frac{\pi}{2} - \frac{pi}{k} $.
 \end{enumerate}	 
 \end{lemma}
@@ -200,7 +215,7 @@ Let $k \geq 14$ be an integer, and let $CA $ and $CB $ be edges in $G $ such tha
 \begin{proof}
 This proof is performed almost equal to \cite{kanj}, but covering more details.
 %and $\sin{\theta} = \frac{|AB|}{2|OA|}) $
-\renewcommand{\theenumi}{(\roman{enumi})}%
+\renewcommand{\labelenumi}{(\roman{enumi})}%
 \begin{enumerate}
 \item 
 \begin{equation*}
@@ -211,10 +226,9 @@ This proof is performed almost equal to \cite{kanj}, but covering more details.
 &\stackrel{c)}{\leq} (1+2\pi(k \cos{\frac{\pi}{k}})^{-1}) |CB|  
 \end{split}
 \end{equation*}
-Since $|CA| \leq |CB| $, $|CA|+|\overarc{AB}| $ is largest, when $CA $ and $CB $ are symmetrical to the diameter of $\bigcirc{ABC} $.
-So, we can assume $|CA|=|CB| $.
+Since $|CA| \leq |CB| $, $|CA|+|\overarc{AB}| $ is largest, when $CA $ and $CB $ are symmetrical to the diameter of $\bigcirc{ABC} $, we can assume $|CA|=|CB| $.
 $|\overarc{AB}| $ can be replaced with $2\theta \cdot |OA| $ (angle times radius).
-For every chord $s $ of a circle $(c) $ it is true, that $s=2r\sin{\frac{\alpha}{2}} $, with $r $ being the radius of $(c) $ and $\alpha $ being the angle between the endpoint of $s $ to middlepoint $c $ facing $s $.
+For every chord $s $ of a circle $(c) $ it is true, that $s=2r\sin{\frac{\alpha}{2}} $, with $r $ being the radius of $(c) $ and $\alpha $ being the angle between the endpoints of $s $ in middlepoint $c $ facing $s $.
 Note that $\alpha = 2\theta $. 
 These equations proof a).
 
@@ -229,8 +243,10 @@ By proposition \ref{outward_path} part a) there is a circle $\bigcirc{CM_p} $ tr
 These two last observations contradict each other, since $\bigcirc{M_iM_j} $ would always contain $M_p $.
 If $M_p $ does not reside in the circle $\bigcirc{M_iM_j} $, this circle and the circle $\bigcirc{CM_p} $ would cross at least three times (and are not equal), which cannot exist.
 
-\item Since the angles $\alpha $ and $\beta $ between opposite points of a chord in a rectangle which corners lie on a circle are supplementary, this is a fact: $\angle{ACB}=\pi - \angle{ADB} $ (see figure \ref{fig:winkel_fuer_outward_3} for more details).
-Note, by precondition we assume $\angle{BCA}\leq \frac{2\pi}{k} $.
+\item Since the angles $\alpha $ and $\beta $ between opposite points of a chord in a rectangle which corners lie on a circle are supplementary, this is a fact: $\angle{AM_1B}=\pi - \angle{ACB} $ (see lemma \ref{outward_3} for more details).
+The angle $\angle{M_{i-1}CM_{i+1}} $ is smallest, if $M_{i-1} $ and $M_{i+1} $ lie on the circle. 
+Since we are only looking for a lower bound for $\angle{M_{i-1}M_iM_{i+1}} $
+Note, by precondition we assume $\angle{BCA} \leq \frac{2\pi}{k} $.
 These facts proof following inequalities:
 \begin{equation*}
 \begin{split}
@@ -239,12 +255,7 @@ These facts proof following inequalities:
 \end{split}
 \end{equation*}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.4\linewidth]{eps/Winkel_fuer_outward_3.eps}
-\caption{If four points $A $, $B $, $C $ and $M_1 $ are on one circle and $C $ and $M_1 $ are on different halfplanes of chord $AB $, then $\alpha + \beta =\pi $ is true.}
-\label{fig:winkel_fuer_outward_3}
-\end{figure}
+
 
  %http://www.regentsprep.org/regents/math/geometry/gp15/circleangles.htm
 \item Since $M_1 $ is inside the area subtended by chord $AB $ from $\bigcirc{ABC} $ \emph{away} from $C $, it is true that $\angle{CAM_1} \geq \angle{CAB} \geq \frac{\pi}{2} -\frac{\pi}{k} $.
@@ -262,20 +273,20 @@ Since $CA \leq CB $, $\angle{CAB} $ can be at most the half of $\pi - \frac{2\pi
 \end{proof}
 
  
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.5\linewidth]{eps/IntermediatePoint_beweis.eps}
-\caption{The red regions must be empty by lemma \ref{emptyregion}, the green area is empty by precondition and the brown region must be empty by ... }
-\label{fig:intermediate_point_beweis}
-\end{figure}
-
-
-\begin{enumerate}
-\item $|CA| + \sum\nolimits_{i=0}^{r-1} |M_iM_{i+1}| \leq (1+2\pi (k*\cos{\frac{\pi}{k}})^{-1})|CB| $
-\item There is no edge in G between any pair $M_i $ and $M_j $ lying in the closed region delimited by CA, CB and the edges of p, for any i and j satisfying $0 \leq i < j-1 \leq r $ 
-\item $\angle{M_{i-1}M_iM_{i+1}} > \frac{k-2}{k}\pi $, for $i=1, ..., r-1 $ 
-\item $\angle{CAM_1} \geq \frac{\pi}{2}-\frac{\pi}{k} $
-\end{enumerate}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.5\linewidth]{eps/IntermediatePoint_beweis.eps}
+%\caption{The red regions must be empty by lemma \ref{emptyregion}, the green area is empty by precondition and the brown region must be empty by ... }
+%\label{fig:intermediate_point_beweis}
+%\end{figure}
+%
+%
+%\begin{enumerate}
+%\item $|CA| + \sum\nolimits_{i=0}^{r-1} |M_iM_{i+1}| \leq (1+2\pi (k*\cos{\frac{\pi}{k}})^{-1})|CB| $
+%\item There is no edge in G between any pair $M_i $ and $M_j $ lying in the closed region delimited by CA, CB and the edges of p, for any i and j satisfying $0 \leq i < j-1 \leq r $ 
+%\item $\angle{M_{i-1}M_iM_{i+1}} > \frac{k-2}{k}\pi $, for $i=1, ..., r-1 $ 
+%\item $\angle{CAM_1} \geq \frac{\pi}{2}-\frac{\pi}{k} $
+%\end{enumerate}
 
 
 
