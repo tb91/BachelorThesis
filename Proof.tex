@@ -36,6 +36,7 @@ This property also holds true for PDT.
 Since $CA $ is a PDT edge there is a circle $\bigcirc{c_1} $ with C and A on it's border which does not contain any node (so non two-hop-neighbour of C or A, either) of U.
 Suppose we take another third Point d, which is not in the Set U, to identify $\bigcirc{c_1} $.
 No matter where the third point d of this circle is placed, the region, in the following named $R_1 $, of $\bigcirc{ABC} $ delimited by chord $CA $ away from B is always contained completely in $\bigcirc{c_1} $ and, therefore, empty.
+
 The next part proofs this proposition.
 By symmetry of circles it is sufficient to put d on a line  $l $ which is defined as the perpendicular bisector of $CA $.
 Let $\alpha<\pi $ be the smaller angle in $\angle{AdC} $.
@@ -96,7 +97,7 @@ Figure \ref{fig:intermediate_point} contains an example for an intermediate poin
 \end{figure}
 
 
-In order to proof We must proof the following proposition (which is from \cite{kanj}).
+We must proof the following proposition (which is from \cite{kanj}).
 
 \begin{prop}
 \label{outward_path}
@@ -228,9 +229,9 @@ By proposition \ref{outward_path} part a) there is a circle $\bigcirc{CM_p} $ tr
 These two last observations contradict each other, since $\bigcirc{M_iM_j} $ would always contain $M_p $.
 If $M_p $ does not reside in the circle $\bigcirc{M_iM_j} $, this circle and the circle $\bigcirc{CM_p} $ would cross at least three times (and are not equal), which cannot exist.
 
-\item Since the angles $\alpha $ and $\beta $ between opposite points of a chord in a rectangle which corners lie on a circle are supplementary, this is a fact: $\angle{ACB}=\pi - \angle{ADB} $ (see figure ... for more details).
-Additionally, it is true 
-This proofs following inequality:
+\item Since the angles $\alpha $ and $\beta $ between opposite points of a chord in a rectangle which corners lie on a circle are supplementary, this is a fact: $\angle{ACB}=\pi - \angle{ADB} $ (see figure \ref{fig:winkel_fuer_outward_3} for more details).
+Note, by precondition we assume $\angle{BCA}\leq \frac{2\pi}{k} $.
+These facts proof following inequalities:
 \begin{equation*}
 \begin{split}
  \angle{M_{i-1}M_iM_{i+1}}&\geq \pi - \angle{M_{i-1}CM_{i+1}}\\
@@ -238,6 +239,12 @@ This proofs following inequality:
 \end{split}
 \end{equation*}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\linewidth]{eps/Winkel_fuer_outward_3.eps}
+\caption{If four points $A $, $B $, $C $ and $M_1 $ are on one circle and $C $ and $M_1 $ are on different halfplanes of chord $AB $, then $\alpha + \beta =\pi $ is true.}
+\label{fig:winkel_fuer_outward_3}
+\end{figure}
 
  %http://www.regentsprep.org/regents/math/geometry/gp15/circleangles.htm
 \item Since $M_1 $ is inside the area subtended by chord $AB $ from $\bigcirc{ABC} $ \emph{away} from $C $, it is true that $\angle{CAM_1} \geq \angle{CAB} \geq \frac{\pi}{2} -\frac{\pi}{k} $.
