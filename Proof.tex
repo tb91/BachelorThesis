@@ -245,7 +245,6 @@ If $M_p $ does not reside in the circle $\bigcirc{M_iM_j} $, this circle and the
 
 \item Since the angles $\alpha $ and $\beta $ between opposite points of a chord in a rectangle which corners lie on a circle are supplementary, this is a fact: $\angle{AM_1B}=\pi - \angle{ACB} $ (see lemma \ref{outward_3} for more details).
 The angle $\angle{M_{i-1}CM_{i+1}} $ is smallest, if $M_{i-1} $ and $M_{i+1} $ lie on the circle. 
-Since we are only looking for a lower bound for $\angle{M_{i-1}M_iM_{i+1}} $
 Note, by precondition we assume $\angle{BCA} \leq \frac{2\pi}{k} $.
 These facts proof following inequalities:
 \begin{equation*}
@@ -293,3 +292,25 @@ Since $CA \leq CB $, $\angle{CAB} $ can be at most the half of $\pi - \frac{2\pi
 
 \subsection{inward Path}
 Now, we perform the proof for the case when $\triangle{ABC} $ contains other nodes.
+
+Let $S $ be the set of points which contains points $A $ and $B $, and all the points interior to $\triangle{ABC} $ excluding $C $.
+Then $CH(S) $ are all the points which are on the convex hull of $S $.
+Let these points be called $N_0=A $ and $N_t=B $ and points $N_1 , \cdots ,N_{t-1} $ are the points on $CH(S) $ which lie inside $\triangle{ABC} $. 
+The following proposition is taken from \cite{kanj}:
+\begin{prop}
+\label{inward_pre}
+For every $i=1, \cdots, t-1: $
+\begin{enumerate}
+\renewcommand{\labelenumi}{\alph{enumi})}
+\item $CN_i \in G $,
+\item $|CN_i| \leq |CN_{i+1}| $, and
+\item  $\angle{N_{i-1}N_iN_{i+1}} \geq \pi $, where $\angle{N_{i-1}N_iN_{i+1}} $ is the angle facing point $C $.
+\end{enumerate} 
+\end{prop}
+\begin{proof}
+Since $CA $ is the shortest edge in the angular sector $\angle{BCA} $, $|CA| \leq CN_i , for i=1 ,\cdots, t-1 $  and since $N_1 , \cdots, N_t $ are on $CH(S) $, b) is true.
+
+Part c) follows from the convexity of $CH(S) $. All interior angles to $CH(S) $ measure at most $\pi $, so all the exterior angles fulfil $\angle{N_{i-1}N_iN_{i+1}}\geq \pi $ 
+\end{proof}
+
+Since $CN_i \leq CN_{i+1} $ and no other point of $G $ lies inside $\triangle{N_iCN_{i+1}} $, $CN_i $ is the shortest edge in the angular sector $\angle{N_iCN_{i+1}} $.
