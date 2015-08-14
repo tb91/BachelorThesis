@@ -34,18 +34,37 @@ If CA and CB are edges of the PDT graph then the region $R_1 $ of $(O)=\bigcirc{
 
 
 See Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
+Let $disk(A, C) $ be the circle with $C $ and $A $ on it`s border and the middlepoint on Line $CA $.
 This property also holds true for PDT.
 
 \begin{proof}
 Since $CA \in G $ either: 
 \begin{enumerate}
 \renewcommand{\labelenumi}{(\roman{enumi})}
-\item $CA \in GG $,
-\item or $CA \in PDT\backslash GG $ is satisfied.
+\item $CA \in GG $:
+
+Since $CA \in GG $, $B $ cannot lie inside $disk(A, C) $. 
+Therofore, $R_1 $ must be completely inside $disk(A, C) $.
+\item or $CA \in G\backslash GG $ is satisfied. 
+
+Since $CA \in G $ and $CA \notin GG $, $\exists W\in U : W$ maximizes the interior angle $\angle{CWA}  $, more specifically, $W $ is the closest node to $CA $.
+There are two cases, where $W $ can be located:
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\item $W $ lies in the halfplane subtended by line $CA $ away from $B $.
+
+$W $ cannot reside in $R_1 $, since the circumcircle $\bigcirc{ACW} $ would contain $B $, which is not allowed by precondition.
+
+If $\bigcirc{ACW} $ does 
+
+\item $W $ lies in the halfplane subtended by line $CA $ towards $B $.
+
 \end{enumerate} 
-Case (i): 
-Since $CA \in GG $, $B $ cannot lie inside $disk(C,A) $.
-Therofore, $R_1 $
+
+
+\end{enumerate}
+
+
 \end{proof} 
 
 
