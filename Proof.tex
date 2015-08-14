@@ -21,7 +21,7 @@ An edge $UV $ is in $G $ if either
 \begin{enumerate}
 \renewcommand{\labelenumi}{(\roman{enumi})}
  \item $UV \in U$ and $UV \in GG $
- \item or $\exists{W} \in U : $ maximizes $\angle{UWV} $ and $\bigcirc{UVW}  \backslash \{U, V, W\} = \emptyset $
+ \item or $\exists{W} \in U : $ maximizes $\angle{UWV} $, $\bigcirc{UVW}  \backslash \{U, V, W\} = \emptyset $ and $\sin{\angle{UWV}} \geq \frac{|CA|}{R} $, with $R>0 $ being the unit disk radius.
 \end{enumerate} 
 \end{definition}
 
@@ -54,10 +54,13 @@ There are two cases, where $W $ can be located:
 \item $W $ lies in the halfplane subtended by line $CA $ away from $B $.
 
 $W $ cannot reside in $R_1 $, since the circumcircle $\bigcirc{ACW} $ would contain $B $, which is not allowed by precondition.
-
-If $\bigcirc{ACW} $ does 
+Thus, $W \notin R_1 $ is true.
+Therefore, $\bigcirc{ACW} $ does certainly contain $R_1 $.
 
 \item $W $ lies in the halfplane subtended by line $CA $ towards $B $.
+
+
+
 
 \end{enumerate} 
 
