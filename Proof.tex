@@ -13,7 +13,7 @@ For every integer $k \geq 14 $, there exists a subgraph $G' $ of $G $ such that 
 \end{prop} 
 
 
-
+Furthermore, I assume that there are no four points in $U $ which are cocircular.
 With $GG $ being the Gabriel Graph, we define the Partial Delaunay Triangulation as follows:
 \begin{definition}
 \label{emptycircle}
@@ -34,10 +34,11 @@ If CA and CB are edges of the PDT graph then the region $R_1 $ of $(O)=\bigcirc{
 
 
 See Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
-Let $disk(A, C) $ be the circle with $C $ and $A $ on it`s border and the middlepoint on Line $CA $.
 This property also holds true for PDT.
 
+
 \begin{proof}
+Let $disk(A, C) $ be the circle with $C $ and $A $ on it`s border and the middlepoint on Line $CA $.
 Since $CA \in G $ either: 
 \begin{enumerate}
 \renewcommand{\labelenumi}{(\roman{enumi})}
@@ -59,7 +60,7 @@ Therefore, $\bigcirc{ACW} $ does certainly contain $R_1 $.
 
 \item $W $ lies in the halfplane subtended by line $CA $ towards $B $.
 
-Since $W $ is the angle maximizing node with respect to $CA $, the following is true: $\angle{CWA} > \angle{BCA} $.
+Since no four points are cocircular and $W $ is the angle maximizing node with respect to $CA $, the following is true: $\angle{CWA} > \angle{BCA} $.
 Therefore, $W \in \bigcirc{ABC} $ and since $\bigcirc{ACW} $ does not overlap $\bigcirc{ABC} $ on the side subtended by line $CA $ where $W $ is, it must overlap $\bigcirc{ABC} $ on the other side.
 Thus, it must contain $R_1 $ completely.
 
