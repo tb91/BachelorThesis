@@ -1,5 +1,10 @@
+\section{Notations and Definitions}
+In this part of this work we define some notations and declare definitions which we will make use of.
+
+Furthermore, we assume that there are no four points in any graph which are cocircular.
+
 \section{Proof}
-Let $U $ be the Unit Disk Graph of the Euclidean Graph of a Node Set $S $.
+Let $U $ be the Unit Disk Graph of the Euclidean Graph $E $ with a set of nodes $S $ in the plane as vertex-set and containing edge $AB $ if $|AB| \leq R $ with unit disk radius $R=1 $.
 The authors of \cite{kanj} use $LDel^{(2)}(U) $ as the underlying subgraph of the Modified Yao Step.
 $LDel^{(2)}(U) $ is defined as the union of the Gabriel-graph and the subgraph of U in which the circumcircle of every triangle does not contain a 2-hop-neighbor of the nodes which create the triangle.
 However, it is not known whether $LDel^{(2)}(U) $ can be constructed reactively.
@@ -8,25 +13,24 @@ The following part of this work will examine the possibility of this replacement
 
 \begin{prop}
 \label{mastertheorem}
-Let $G $ be the PDT-subgraph of $U $.
-For every integer $k \geq 14 $, there exists a subgraph $G' $ of $G $ such that $G' $ has maximum degree k and stretch factor $1+2\pi (k*\cos{\frac{\pi}{k}})^{-1} $.
+Let $G $ be the PDT-subgraph of $U $.\\
+For every integer $k \geq 14 $, there exists a subgraph $G' $ of $G $ such that $G' $ has maximum degree $k $ and stretch factor $1+2\pi (k*\cos{\frac{\pi}{k}})^{-1} $.
 \end{prop} 
 
 
-Furthermore, I assume that there are no four points in $U $ which are cocircular.
 With $GG $ being the Gabriel Graph, we define the Partial Delaunay Triangulation as follows:
 \begin{definition}
-\label{emptycircle}
-An edge $UV $ is in $G $ if either 
+\label{pdt-def}
+An edge $UV \in U $ is in $G $ if either 
 \begin{enumerate}
 \renewcommand{\labelenumi}{(\roman{enumi})}
- \item $UV \in U$ and $UV \in GG $
- \item or $\exists{W} \in U : $ maximizes $\angle{UWV} $, $\bigcirc{UVW}  \backslash \{U, V, W\} = \emptyset $ and $\sin{\angle{UWV}} \geq \frac{|CA|}{R} $, with $R>0 $ being the unit disk radius.
+ \item $UV \in GG $
+ \item or $\exists{W} \in U : $ maximizes $\angle{UWV} $, $\bigcirc{UVW}  \backslash \{U, V, W\} = \emptyset $ and $\sin{\angle{UWV}} \geq\frac{|CA|}{R} $, with $R>0 $ being the unit disk radius.
 \end{enumerate} 
 \end{definition}
 
 
-Additionally, the following Delaunay Graph property is being used:
+Additionally, the following Delaunay graph property is being used:
 \begin{lemma}
 \label{emptyregion}
 If CA and CB are edges of the PDT graph then the region $R_1 $ of $(O)=\bigcirc{ABC} $ subtended by chord CA and away from B and the region $R_2 $ of $(O) $ subtended by chord CB and away from A contain no points that are two hop neighbours of A, B and C.
@@ -60,10 +64,11 @@ Therefore, $\bigcirc{ACW} $ does certainly contain $R_1 $.
 
 \item $W $ lies in the halfplane subtended by line $CA $ towards $B $.
 
-Since no four points are cocircular and $W $ is the angle maximizing node with respect to $CA $, the following is true: $\angle{CWA} > \angle{BCA} $.
+Since $W $ is the angle maximizing node with respect to $CA $, the following is true: $\angle{CWA} \geq \angle{BCA} $.
 Therefore, $W \in \bigcirc{ABC} $ and since $\bigcirc{ACW} $ does not overlap $\bigcirc{ABC} $ on the side subtended by line $CA $ where $W $ is, it must overlap $\bigcirc{ABC} $ on the other side.
 Thus, it must contain $R_1 $ completely.
-
+These deductions work for $R_2 $ analogously.
+Therefore, $R_1 $ and $R_2 $ cannot contain one or two hop neighbours of $A $, $B $ and $C $. 
 
 
 \end{enumerate} 
@@ -78,7 +83,7 @@ Thus, it must contain $R_1 $ completely.
 
 We need to show that there is a path from $A $ to $B $.
 First, we divide the proof into two cases: when $\triangle{ABC} $ contains nodes of G and when this triangle is devoid of any nodes of G.
-
+%Preliminaries
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\linewidth]{eps/noPointinRegion.eps}
@@ -90,12 +95,11 @@ Keil and Gutwin \cite{keil} proved the existence of a path between the points $A
 This path connects $A $ and $B $ when no other points of G are inside $\triangle{ABC} $.
 The only precondition is that lemma \ref{emptyregion} holds (which it does).
 This path is called the \emph{outward path}.
-%überleitung
-
-The recursive definition of this path taken from \cite{kanj} is as follows:
+ 
+First, notice the recursive definition of this path taken from \cite{kanj}:
 \begin{enumerate}
 \item \textbf{Base case:} If $AB \in G $, the path consists of edge AB.
-\item \textbf{Recursive step:} Otherwise, a point must reside in the region of $(O) $ subtended by chord AB and away from C. 
+\item \textbf{Recursive step:} Otherwise, a point must reside in the region $R_3 $ of $(O) $ subtended by chord AB and away from C. 
 Let $T $ be such a point with the property that the region of $\bigcirc{ATB} $ subtended by chord $AB $ closer to $T $ is empty. 
 We call T an \emph{intermediate point} with respect to the pair of points $(A, B) $.
 Let $(O_1) $ be the circle passing through $A $ and $T $ whose center $O_1 $ lies on segment $AO $  and let $(O_2) $ be the circle passing through $B $ and $T $ whose center $O_2 $ lies on segment $BO $.
@@ -103,6 +107,32 @@ Then both $(O_1) $ and $(O_2) $ lie inside $(O) $, and $\angle{AO_1T} $ and $\an
 Moreover, the region of $(O_1) $ subtended by chord $BT $ and containing $O_2 $ is empty. Therefore, we can recursively construct a path from $A $ to $T $ and a path from $T $ to $B $, and then concatenate them to obtain a path from A to B.  
 \end{enumerate}
 Figure \ref{fig:intermediate_point} contains an example for an intermediate point.
+
+The recursive steps assumes $AB \notin G $ and concludes that there must be a point in $R_3 $.
+For $G=PDT $ the following lemma proofs the correctness of this assumption:
+\begin{lemma}
+\label{recursive_step}
+For three points $A, B, C \in G $ and $\gamma=\angle{ACB}\leq \frac{2\pi}{k} $ with $k\geq 14 $, $|AB|\leq R $ is satisfied.
+\end{lemma} 
+\begin{proof}
+
+\begin{equation*}
+\begin{split}
+  |AB|² &=|BC|²+|AC|² - 2|BC||AC|\cos{\gamma} \\
+  &\leq R²+R²   - 2R²\cos{\gamma} \\
+  &\leq 2R² - 2R²\cos{\frac{2\pi}{k}}\\
+  &\stackrel{a)}{\leq} 2R² - 2R²\cos{\frac{\pi}{7}}\\
+  &\stackrel{b)}{\leq} 2R² - 2R²\cdot 0.9 = 0.2R²=\\
+  |AB| &\leq \sqrt{0.2} R \leq R
+\end{split}
+\end{equation*}
+In order to minimize $2R²\cos{\frac{2\pi}{k}} $, $\frac{2\pi}{k} $ must be maximized and hence, it is $\frac{2\pi}{k} $ obtaining a).
+Then adjust $\frac{\pi}{7} $ downward to $0.9 $ and receive b).
+ 
+\end{proof}
+
+Lemma \ref{emptyregion} and lemma \ref{recursive_step} proof that there must be a node in $R_3 $, if $AB \notin G $.
+
 
 
 \begin{figure}[h!]
