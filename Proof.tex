@@ -1,7 +1,15 @@
 \section{Notations and Definitions}
 In this part of this work we define some notations and declare definitions which we will make use of.
-
+$\bigcirc{ABC} $ is a circle with $A, B, C $ on its border.
+The circle with center $O $ is denoted with $(O) $.
+$\triangle{ABC} $ is the triangle with corners $A,B $ and $C $.
 Furthermore, we assume that there are no four points in any graph which are cocircular.
+
+\subsection{Gabriel Graph}
+The Gabriel Graph, denoted as $GG $, is the graph which contains all nodes of a supergraph $U $ and it contains an edge $UV \in U $ if the Gabriel circle of $UV $ contains no other node.
+The Gabriel circle of an edge $UV $ is denoted as $disk(U, V) $.
+It is the circle with $U $ and $V $ on its border and with its center on line $UV $. 
+In this work $U $ is the unit disk graph with unit disk radius $R = 1 $.
 
 \section{Proof}
 Let $U $ be the Unit Disk Graph of the Euclidean Graph $E $ with a set of nodes $S $ in the plane as vertex-set and containing edge $AB $ if $|AB| \leq R $ with unit disk radius $R=1 $.
@@ -126,7 +134,7 @@ For three points $A, B, C \in G $ and $\gamma=\angle{ACB}\leq \frac{2\pi}{k} $ w
   |AB| &\leq \sqrt{0.2} R \leq R
 \end{split}
 \end{equation*}
-In order to minimize $2R²\cos{\frac{2\pi}{k}} $, $\frac{2\pi}{k} $ must be maximized and hence, it is $\frac{2\pi}{k} $ obtaining a).
+In order to minimize $2R²\cos{\frac{2\pi}{k}} $, $\gamma $ must be maximized and hence, it is $\frac{2\pi}{k} $ obtaining a).
 Then adjust $\frac{\pi}{7} $ downward to $0.9 $ and receive b).
  
 \end{proof}
@@ -149,6 +157,7 @@ We must proof the following proposition (which is from \cite{kanj}).
 \label{outward_path}
 In every recursive step of the outward path construction described above, if $M_p $ is an intermediate point with respect to a pair of points $(M_i, M_j) $, then:
 \begin{enumerate}
+\renewcommand{\labelenumi}{\alph{enumi})}
 \item there is a circle passing through C and $M_p $ that contains no point of G, and
 \item circles $\bigcirc{CM_iM_p} $ and $\bigcirc{CM_jM_p} $ contain no points of G, except, possibly, in the region subtended by chords $M_iM_p $ and $M_pM_j $, respectively, away from C.
 \end{enumerate}
@@ -161,66 +170,79 @@ In every recursive step of the outward path construction described above, if $M_
 \label{fig:outward_path_beweis}
 \end{figure}
 
+Note that every point $p=1, \cdots, r-1 $, is an intermediate point with respect to a pair $(M_i, M_j) $, where $0\leq i < p <j \leq r  $.
+Furthermore, Keil and Gutwin \cite{keil} showed that the length of the path $A =M_0, M_1, \cdots, M_r=B $ is bounded by the length of arc $\overarc{AB} $.
+For completeness I copy the proof for proposition \ref{outward_path} from \cite{kanj} with adapted notation.
 \begin{proof}
 
+We assume, by induction, that there are circles $\bigcirc{M_i} $ and $\bigcirc{M_j} $ passing through $C $ and $M_i $, and $C $ and $M_j $, respectively, containing no points of $G $, and that the circle $\bigcirc{CM_iM_j} $ contains no point of $G $ in the interior of the region $R' $ subtended by chord $M_iM_j $ closer to $C $.
+(This is certainly true in the base case because $CA, CB \in G $, by lemma \ref{emptyregion} and by our initial assumptions).
 
-Let $G $ be the set of nodes which is created by PDT. 
-Since $CA $ and $CB $ are edges in $G $ there are circles $\bigcirc{CM_i} $ and $\bigcirc{CM_j} $ which have $C $ and $M_i $, and $C $ and $M_j $, respectively, on it's border and do not contain any other nodes of $G $. 
-At this point I assume, without loss of generality, that $M_i $ and $M_j $ lie on the y-axis of the coordinate system and $C $ lies to the left of these points.
-First, notice that $\triangle{CM_iM_j} $ is empty by precondition and the area $R_{\bigcirc{M_iM_pM_j}} $ of $\bigcirc{M_iM_pM_j} $ subtended by chord $M_iM_j $ away from $C $ contains no other points either.
-This proof is divided into three cases.
-\begin{enumerate}
-\item $\bigcirc{CM_p} $ is tangential to $\bigcirc{CM_iM_j} $ at C.
-\item $\bigcirc{CM_p} $ overlaps $\bigcirc{CM_iM_j} $ in the upper halfplane subtended by chord $CM_i $ (away from $M_j $).
-\item $\bigcirc{CM_p} $ overlaps $\bigcirc{CM_iM_j} $ in the lower halfplane subtended by chord $CM_j $ (away from $M_i $).
-\end{enumerate}
-Since the two circles $\bigcirc{CM_p} $ and $\bigcirc{CM_iM_j} $ share the point $C $, $\bigcirc{CM_p} $ cannot overlap $\bigcirc{CM_iM_j} $ on both sides of the edge $CM_p $.
-For case 1 $\bigcirc{CM_p} $ is completely inside $\bigcirc{CM_iM_j} $ and therefore devoid of any points.
-For case 2 $\bigcirc{CM_p} $ is completely inside the area $R_{\bigcirc{M_iM_pM_j}} \cup \bigcirc{CM_iM_j} \bigcirc{CM_i} $ and, therefore, empty.
-$\bigcirc{CM_p} $ cannot overlap $\bigcirc{CM_i} $ because of the following lemma.
-\begin{lemma}
-\label{circles}
-If $A $ and $B $ are points in the plane and are located in different halfplanes of a line $CM_i $, and $A $ and $B $ are not allowed to reside inside a circle $\bigcirc{CM_i} $, there is no circle $\bigcirc{ABC} $ which does not contain $M_i $ and overlaps circle $\bigcirc{CM_i} $.
-\end{lemma}
-\begin{proof}
- Let, without loss of generality, $C $ and $M_i $ be on a line $CM_i $ which is parallel to the y-axis.
-$A $ and $B $ are then located to the left and right of this line.
-You can see this construction in figure \ref{fig:beweis_circles}.
+Since $M_iM_j $ is not an edge in $G $, the point $M_p $ chosen in the construction is the point with the property that the region $R $ of $\bigcirc{M_iM_pM_j} $ subtended by chord $M_iM_j $ away from $C $, contains no point of $G $. 
+Then the circle passing through $C $ and $M_p $ and tangent to $\bigcirc{M_iM_pM_j} $ at $M_p $ is completely inside $\bigcirc{M_i} \cup \bigcirc{M_j} \cup R \cup R' $, and therefore devoid of points of $G $.
+This proves part a).
 
-This proof uses a contradiction. % widerspruchsbeweis  -> Florentin fragen
-$A $ cannot reside inside $\bigcirc{CM_i} $, since $CM_i $ is a PDT-edge.
-The circle $c_1 $ must not contain $M_i $ and, therefore, must cross the circle $\bigcirc{CM_i} $ in front of $M_i $.
-Notice that the next part of the circle $c_1 $ must be inside of circle $\bigcirc{CM_i} $, since we started outside.
-Because $c_1 $ must cross $B $ and $B $ lies outside of $\bigcirc{CM_i} $, $c_1 $ crosses a second time $\bigcirc{CM_i} $.
-And the last conclusion is that $C $ is a common point of $\bigcirc{CM_i} $ and $c_1 $.
-Hence, we have got three intersections of $\bigcirc{CM_i} $ and $c_1 $ at least.
-Since $A $ and $B $ lie outside of $\bigcirc{CM_i} $, these two circles are not equal.
-But two circles which intersect at least three times and are not equal, do not exist.
-\end{proof}
-The proof of case 3 works analogously.
-These conclusions proof part a) of proposition \ref{outward_path}.
+The region of $\bigcirc{CM_iM_p} $ subtended by chord $M_iM_p $ and containing $C $ is inside $ \bigcirc{M_i} \cup R \cup R' $, and therefore contains no point of $G $ in its interior.
+The same is true for the region of $\bigcirc{CM_jM_p} $ subtended by chord $M_jM_p $ and containing $C $, and part b) holds as well.
 
-The following part of this work proofs part b) of the same proposition.
-The main argument of this proof is that $\bigcirc{CM_iM_p} $ is contained completely in the area $\bigcirc{CM_i} \cup  R_{\bigcirc{M_iM_pM_j}} \cup R2_{\bigcirc{CM_iM_j}} $ with $R2_{\bigcirc{CM_iM_j}} $ being the area of $\bigcirc{CM_iM_j} $ subtended by chord $M_iM_j $ closer to $C $.
-I show that every possible position of $\bigcirc{CM_i} $ includes the area $R3_{\bigcirc{CM_iM_p}} $ of $\bigcirc{CM_iM_p} $ subtended by chord $CM_i $ away from $M_j $.
-The proof is divided into three cases of how $\bigcirc{CM_i} $ can be located:
-\begin{enumerate}
-\item $\bigcirc{CM_i} $ is equal to $\bigcirc{CM_iM_p} $.
-\item $\bigcirc{CM_i} $ overlaps $\bigcirc{CM_iM_p} $ in the halfplane subtended from line $CM_i $ away from $M_j $.
-\item $\bigcirc{CM_i} $ overlaps $\bigcirc{CM_iM_p} $ in the halfplane subtended from line $CM_i $ closer to $M_j $.
-\end{enumerate}
-First, assume, without loss of generality, that $C $ and $M_i $ lie on a horizontal line and $M_j $ is located below this line.
-$\bigcirc{CM_iM_p} $ can only overlap $\bigcirc{CM_i} $ on one side of line $CM_i $, since they share these two points.
 
-For case 1, since $\bigcirc{CM_i} $ is empty, $\bigcirc{CM_iM_p} $ must be empty, too.
-
-For case 2, $\bigcirc{CM_i} $ moves up, away from $M_j $, expanding the area in the same direction of which $R3_{\bigcirc{CM_iM_p}} $ is located.
-So, $R3_{\bigcirc{CM_iM_p}} $ cannot overlap $\bigcirc{CM_i} $ in this case.
-
-Case 3, the only case where $R3_{\bigcirc{CM_iM_p}} $ would overlap $\bigcirc{CM_i} $, cannot occur, since $M_p \in G $ and $M_p $ is, obviously, located on $\bigcirc{CM_iM_p} $.
-So, if $\bigcirc{CM_i} $ moves down, towards $M_j $, it would contain $M_p $, which cannot happen, since $\bigcirc{CM_i} $ is a PDT-circle. 
-
-Notice that the proof for $\bigcirc{CM_jM_p} $ works analogously substituting $M_i $ with $M_j $ and vice versa.
+%Let $G $ be the set of nodes which is created by PDT. 
+%Since $CA $ and $CB $ are edges in $G $ there are circles $\bigcirc{CM_i} $ and $\bigcirc{CM_j} $ which have $C $ and $M_i $, and $C $ and $M_j $, respectively, on it's border and do not contain any other nodes of $G $. 
+%At this point I assume, without loss of generality, that $M_i $ and $M_j $ lie on the y-axis of the coordinate system and $C $ lies to the left of these points.
+%First, notice that $\triangle{CM_iM_j} $ is empty by precondition and the area $R_{\bigcirc{M_iM_pM_j}} $ of $\bigcirc{M_iM_pM_j} $ subtended by chord $M_iM_j $ away from $C $ contains no other points either.
+%This proof is divided into three cases.
+%\begin{enumerate}
+%\item $\bigcirc{CM_p} $ is tangential to $\bigcirc{CM_iM_j} $ at C.
+%\item $\bigcirc{CM_p} $ overlaps $\bigcirc{CM_iM_j} $ in the upper halfplane subtended by chord $CM_i $ (away from $M_j $).
+%\item $\bigcirc{CM_p} $ overlaps $\bigcirc{CM_iM_j} $ in the lower halfplane subtended by chord $CM_j $ (away from $M_i $).
+%\end{enumerate}
+%Since the two circles $\bigcirc{CM_p} $ and $\bigcirc{CM_iM_j} $ share the point $C $, $\bigcirc{CM_p} $ cannot overlap $\bigcirc{CM_iM_j} $ on both sides of the edge $CM_p $.
+%For case 1 $\bigcirc{CM_p} $ is completely inside $\bigcirc{CM_iM_j} $ and therefore devoid of any points.
+%For case 2 $\bigcirc{CM_p} $ is completely inside the area $R_{\bigcirc{M_iM_pM_j}} \cup \bigcirc{CM_iM_j} \bigcirc{CM_i} $ and, therefore, empty.
+%$\bigcirc{CM_p} $ cannot overlap $\bigcirc{CM_i} $ because of the following lemma.
+%\begin{lemma}
+%\label{circles}
+%If $A $ and $B $ are points in the plane and are located in different halfplanes of a line $CM_i $, and $A $ and $B $ are not allowed to reside inside a circle $\bigcirc{CM_i} $, there is no circle $\bigcirc{ABC} $ which does not contain $M_i $ and overlaps circle $\bigcirc{CM_i} $.
+%\end{lemma}
+%\begin{proof}
+% Let, without loss of generality, $C $ and $M_i $ be on a line $CM_i $ which is parallel to the y-axis.
+%$A $ and $B $ are then located to the left and right of this line.
+%You can see this construction in figure \ref{fig:beweis_circles}.
+%
+%This proof uses a contradiction. % widerspruchsbeweis  -> Florentin fragen
+%$A $ cannot reside inside $\bigcirc{CM_i} $, since $CM_i $ is a PDT-edge.
+%The circle $c_1 $ must not contain $M_i $ and, therefore, must cross the circle $\bigcirc{CM_i} $ in front of $M_i $.
+%Notice that the next part of the circle $c_1 $ must be inside of circle $\bigcirc{CM_i} $, since we started outside.
+%Because $c_1 $ must cross $B $ and $B $ lies outside of $\bigcirc{CM_i} $, $c_1 $ crosses a second time $\bigcirc{CM_i} $.
+%And the last conclusion is that $C $ is a common point of $\bigcirc{CM_i} $ and $c_1 $.
+%Hence, we have got three intersections of $\bigcirc{CM_i} $ and $c_1 $ at least.
+%Since $A $ and $B $ lie outside of $\bigcirc{CM_i} $, these two circles are not equal.
+%But two circles which intersect at least three times and are not equal, do not exist.
+%\end{proof}
+%The proof of case 3 works analogously.
+%These conclusions proof part a) of proposition \ref{outward_path}.
+%
+%The following part of this work proofs part b) of the same proposition.
+%The main argument of this proof is that $\bigcirc{CM_iM_p} $ is contained completely in the area $\bigcirc{CM_i} \cup  R_{\bigcirc{M_iM_pM_j}} \cup R2_{\bigcirc{CM_iM_j}} $ with $R2_{\bigcirc{CM_iM_j}} $ being the area of $\bigcirc{CM_iM_j} $ subtended by chord $M_iM_j $ closer to $C $.
+%I show that every possible position of $\bigcirc{CM_i} $ includes the area $R3_{\bigcirc{CM_iM_p}} $ of $\bigcirc{CM_iM_p} $ subtended by chord $CM_i $ away from $M_j $.
+%The proof is divided into three cases of how $\bigcirc{CM_i} $ can be located:
+%\begin{enumerate}
+%\item $\bigcirc{CM_i} $ is equal to $\bigcirc{CM_iM_p} $.
+%\item $\bigcirc{CM_i} $ overlaps $\bigcirc{CM_iM_p} $ in the halfplane subtended from line $CM_i $ away from $M_j $.
+%\item $\bigcirc{CM_i} $ overlaps $\bigcirc{CM_iM_p} $ in the halfplane subtended from line $CM_i $ closer to $M_j $.
+%\end{enumerate}
+%First, assume, without loss of generality, that $C $ and $M_i $ lie on a horizontal line and $M_j $ is located below this line.
+%$\bigcirc{CM_iM_p} $ can only overlap $\bigcirc{CM_i} $ on one side of line $CM_i $, since they share these two points.
+%
+%For case 1, since $\bigcirc{CM_i} $ is empty, $\bigcirc{CM_iM_p} $ must be empty, too.
+%
+%For case 2, $\bigcirc{CM_i} $ moves up, away from $M_j $, expanding the area in the same direction of which $R3_{\bigcirc{CM_iM_p}} $ is located.
+%So, $R3_{\bigcirc{CM_iM_p}} $ cannot overlap $\bigcirc{CM_i} $ in this case.
+%
+%Case 3, the only case where $R3_{\bigcirc{CM_iM_p}} $ would overlap $\bigcirc{CM_i} $, cannot occur, since $M_p \in G $ and $M_p $ is, obviously, located on $\bigcirc{CM_iM_p} $.
+%So, if $\bigcirc{CM_i} $ moves down, towards $M_j $, it would contain $M_p $, which cannot happen, since $\bigcirc{CM_i} $ is a PDT-circle. 
+%
+%Notice that the proof for $\bigcirc{CM_jM_p} $ works analogously substituting $M_i $ with $M_j $ and vice versa.
  
 \end{proof}
 \begin{figure}[h!]
@@ -229,14 +251,11 @@ Notice that the proof for $\bigcirc{CM_jM_p} $ works analogously substituting $M
 \caption{Example of the construction of lemma \ref{circles}.}
 \label{fig:beweis_circles}
 \end{figure}
-Another lemma we need in order to proof proposition \ref{mastertheorem} is the following:
-\begin{lemma}
+Another fact we need in order to proof proposition \ref{mastertheorem} is the following:
+\begin{fact}
 \label{outward_3}
 If four points $A $, $B $, $C $ and $M_1 $ are on one circle and $C $ and $M_1 $ are on different halfplanes of chord $AB $, then $\angle{AM_1B} + \angle{ACB} =\pi $ is true (see figure \ref{fig:winkel_fuer_outward_3} for an graphical illustration of this lemma).
-\end{lemma}
-\begin{proof}
-see Euklid, book 3, Proposition 22.  (Nochmal besprechen)
-
+\end{fact}
 
 \begin{figure}[h!]
 \centering
@@ -244,7 +263,7 @@ see Euklid, book 3, Proposition 22.  (Nochmal besprechen)
 \caption{Example for lemma \ref{outward_3} }
 \label{fig:winkel_fuer_outward_3}
 \end{figure}
-\end{proof}
+
 Now, we can proof the following lemma from \cite{kanj}, which shows, that for the case of the outward path, proposition \ref{mastertheorem} is satisfied:
 
 \begin{lemma}
