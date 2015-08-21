@@ -7,5 +7,12 @@ Since this algorithm is local, every node $n\in G $ performs the following steps
 \begin{enumerate}
 \item create $k $ equally sized cones around $n $,
 \item select for each non empty cone the shortest edge,
-\item for every maximal sequence of 
+\item for every maximal sequence $s $ of empty cones:
+\begin{enumerate}
+	\item if $|s|=1 $, then let $nx $ and $ny $ be the incident edges on m clockwise and counterclockwise, respectively, from the empty cone.
+	If either $nx $ or $ny $ has already been selected, select the other edge;
+	otherwise, select the shorter edge.
+\item if $|s| > 1 $, then select the first $\lfloor \frac{s}{2} \rfloor $ unselected edges incident on $n $ clockwise from the sequence of empty cones and the first $\lceil \frac{s}{2} \rceil $ unselected edges incident on $n $ counterclockwise from the sequence of empty cones.
+\end{enumerate}
+\item $ G' $ is the subgraph of $G $ consisting of all nodes which are in $G $ and all edges which fulfil that both endpoints of this edge have selected it.  
 \end{enumerate}
