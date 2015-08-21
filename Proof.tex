@@ -45,7 +45,7 @@ If CA and CB are edges of the PDT graph then the region $R_1 $ of $(O)=\bigcirc{
 \end{lemma}
 
 
-See Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
+Refer to Figure \ref{fig:empty_region} for a graphical illustration of the above lemma.
 This property also holds true for PDT.
 
 
@@ -57,7 +57,7 @@ Since $CA \in G $ either:
 \item $CA \in GG $:
 
 $B $ cannot lie inside $disk(A, C) $. 
-Therefore, $R_1 $ must be completely inside $disk(A, C) $.
+Since $disk(A, C) $ can overlap circle $\bigcirc{ABC} $ on one side of $AC $ only (where $B $ is), $R_1 $ must be completely inside $disk(A, C) $.
 \item or $CA \in G\backslash GG $ is satisfied. 
 
 Since $CA \in G $ and $CA \notin GG $, $\exists W\in U : W$ maximizes the interior angle $\angle{CWA}  $, more specifically, $W $ is the closest node to $CA $.
@@ -75,14 +75,13 @@ Therefore, $\bigcirc{ACW} $ does certainly contain $R_1 $.
 Since $W $ is the angle maximizing node with respect to $CA $, the following is true: $\angle{CWA} \geq \angle{BCA} $.
 Therefore, $W \in \bigcirc{ABC} $ and since $\bigcirc{ACW} $ does not overlap $\bigcirc{ABC} $ on the side subtended by line $CA $ where $W $ is, it must overlap $\bigcirc{ABC} $ on the other side.
 Thus, it must contain $R_1 $ completely.
-These deductions work for $R_2 $ analogously.
-Therefore, $R_1 $ and $R_2 $ cannot contain one or two hop neighbours of $A $, $B $ and $C $. 
-
 
 \end{enumerate} 
 
 
 \end{enumerate}
+These deductions work for $R_2 $ analogously.
+Therefore, $R_1 $ and $R_2 $ cannot contain one or two hop neighbours of $A $, $B $ and $C $. 
 
 
 \end{proof} 
@@ -151,7 +150,7 @@ Lemma \ref{emptyregion} and lemma \ref{recursive_step} proof that there must be 
 \end{figure}
 
 
-We must proof the following proposition (which is from \cite{kanj}).
+In order to proof proposition \ref{mastertheorem} we need the following proposition (which is from \cite{kanj}):
 
 \begin{prop}
 \label{outward_path}
@@ -175,7 +174,7 @@ Furthermore, Keil and Gutwin \cite{keil} showed that the length of the path $A =
 For completeness I copy the proof for proposition \ref{outward_path} from \cite{kanj} with adapted notation.
 \begin{proof}
 
-We assume, by induction, that there are circles $\bigcirc{M_i} $ and $\bigcirc{M_j} $ passing through $C $ and $M_i $, and $C $ and $M_j $, respectively, containing no points of $G $, and that the circle $\bigcirc{CM_iM_j} $ contains no point of $G $ in the interior of the region $R' $ subtended by chord $M_iM_j $ closer to $C $.
+We assume, by induction, that there are circles $\bigcirc{CM_i} $ and $\bigcirc{CM_j} $ passing through $C $ and $M_i $, and $C $ and $M_j $, respectively, containing no points of $G $, and that the circle $\bigcirc{CM_iM_j} $ contains no point of $G $ in the interior of the region $R' $ subtended by chord $M_iM_j $ closer to $C $.
 (This is certainly true in the base case because $CA, CB \in G $, by lemma \ref{emptyregion} and by our initial assumptions).
 
 Since $M_iM_j $ is not an edge in $G $, the point $M_p $ chosen in the construction is the point with the property that the region $R $ of $\bigcirc{M_iM_pM_j} $ subtended by chord $M_iM_j $ away from $C $, contains no point of $G $. 
@@ -254,7 +253,7 @@ The same is true for the region of $\bigcirc{CM_jM_p} $ subtended by chord $M_jM
 Another fact we need in order to proof proposition \ref{mastertheorem} is the following:
 \begin{fact}
 \label{outward_3}
-If four points $A $, $B $, $C $ and $M_1 $ are on one circle and $C $ and $M_1 $ are on different halfplanes of chord $AB $, then $\angle{AM_1B} + \angle{ACB} =\pi $ is true (see figure \ref{fig:winkel_fuer_outward_3} for an graphical illustration of this lemma).
+If four points $A $, $B $, $C $ and $M_1 $ are on one circle and $C $ and $M_1 $ are on different halfplanes of chord $AB $, then $\angle{AM_1B} + \angle{ACB} =\pi $ is true (please refer to figure \ref{fig:winkel_fuer_outward_3} for an graphical illustration of this lemma).\footnote{see Euklid, book 3, proposition 22, for proof}
 \end{fact}
 
 \begin{figure}[h!]
@@ -291,6 +290,7 @@ This proof is performed almost equal to \cite{kanj}, but covering more details.
 &\stackrel{c)}{\leq} (1+2\pi(k \cos{\frac{\pi}{k}})^{-1}) |CB|  
 \end{split}
 \end{equation*}
+In \cite{keil} Keil and Gutwin proved that the length of the path between $A $ and $B $ is bounded by $|\overarc{AB}|$ and thus, it suffices to show that $|CA| + |\overarc{AB}|\leq (1+2\pi(k \cos{\frac{\pi}{k}})^{-1})$.
 Since $|CA| \leq |CB| $, $|CA|+|\overarc{AB}| $ is largest, when $CA $ and $CB $ are symmetrical to the diameter of $\bigcirc{ABC} $, we can assume $|CA|=|CB| $.
 $|\overarc{AB}| $ can be replaced with $2\theta \cdot |OA| $ (angle times radius).
 For every chord $s $ of a circle $(c) $ it is true, that $s=2r\sin{\frac{\alpha}{2}} $, with $r $ being the radius of $(c) $ and $\alpha $ being the angle between the endpoints of $s $ in middlepoint $c $ facing $s $.
@@ -364,18 +364,17 @@ Let these points be called $N_0=A $ and $N_t=B $ and points $N_1 , \cdots ,N_{t-
 The following proposition is taken from \cite{kanj}:
 \begin{prop}
 \label{inward_pre}
-For every $i=1, \cdots, t-1: $
 \begin{enumerate}
 \renewcommand{\labelenumi}{\alph{enumi})}
-\item $CN_i \in G $,
-\item $|CN_i| \leq |CN_{i+1}| $, and
-\item  $\angle{N_{i-1}N_iN_{i+1}} \geq \pi $, where $\angle{N_{i-1}N_iN_{i+1}} $ is the angle facing point $C $.
+The following are true:
+\item for every $i =0,\cdots,s-1: $ $|CN_i| \leq |CN_{i+1}| $, and
+\item for every $i=0, \cdots, s-2: $  $\angle{N_{i}N_{i+1}N_{i+2}} \geq \pi $, where $\angle{N_{i}N_{i+1}N_{i+2}} $ is the angle facing point $C $.
 \end{enumerate} 
 \end{prop}
 \begin{proof}
-Since $CA $ is the shortest edge in the angular sector $\angle{BCA} $, $|CA| \leq CN_i , for i=1 ,\cdots, t-1 $  and since $N_1 , \cdots, N_t $ are on $CH(S) $, b) is true.
+Since $CA $ is the shortest edge in the angular sector $\angle{BCA} $, $|CA| \leq CN_i $, for $i=1 ,\cdots, t-1 $  and since $N_1 , \cdots, N_t $ are on $CH(S) $, a) is true.
 
-Part c) follows from the convexity of $CH(S) $. All interior angles to $CH(S) $ measure at most $\pi $, so all the exterior angles fulfil $\angle{N_{i-1}N_iN_{i+1}}\geq \pi $ 
+Part b) follows from the convexity of $CH(S) $. All interior angles to $CH(S) $ measure at most $\pi $, so all the exterior angles fulfil $\angle{N_{i-1}N_iN_{i+1}}\geq \pi $ 
 \end{proof}
 
 Since $CN_i \leq CN_{i+1} $ and no other point of $G $ lies inside $\triangle{N_iCN_{i+1}} $, $CN_i $ is the shortest edge in the angular sector $\angle{N_iCN_{i+1}} $.
