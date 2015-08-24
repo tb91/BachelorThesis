@@ -185,73 +185,8 @@ This proves part a).
 
 The region of $\bigcirc{CM_iM_p} $ subtended by chord $M_iM_p $ and containing $C $ is inside $ \bigcirc{M_i} \cup R \cup R' $, and therefore contains no point of $G $ in its interior.
 The same is true for the region of $\bigcirc{CM_jM_p} $ subtended by chord $M_jM_p $ and containing $C $, and part b) holds as well.
-
-
-%Let $G $ be the set of nodes which is created by PDT. 
-%Since $CA $ and $CB $ are edges in $G $ there are circles $\bigcirc{CM_i} $ and $\bigcirc{CM_j} $ which have $C $ and $M_i $, and $C $ and $M_j $, respectively, on it's border and do not contain any other nodes of $G $. 
-%At this point I assume, without loss of generality, that $M_i $ and $M_j $ lie on the y-axis of the coordinate system and $C $ lies to the left of these points.
-%First, notice that $\triangle{CM_iM_j} $ is empty by precondition and the area $R_{\bigcirc{M_iM_pM_j}} $ of $\bigcirc{M_iM_pM_j} $ subtended by chord $M_iM_j $ away from $C $ contains no other points either.
-%This proof is divided into three cases.
-%\begin{enumerate}
-%\item $\bigcirc{CM_p} $ is tangential to $\bigcirc{CM_iM_j} $ at C.
-%\item $\bigcirc{CM_p} $ overlaps $\bigcirc{CM_iM_j} $ in the upper halfplane subtended by chord $CM_i $ (away from $M_j $).
-%\item $\bigcirc{CM_p} $ overlaps $\bigcirc{CM_iM_j} $ in the lower halfplane subtended by chord $CM_j $ (away from $M_i $).
-%\end{enumerate}
-%Since the two circles $\bigcirc{CM_p} $ and $\bigcirc{CM_iM_j} $ share the point $C $, $\bigcirc{CM_p} $ cannot overlap $\bigcirc{CM_iM_j} $ on both sides of the edge $CM_p $.
-%For case 1 $\bigcirc{CM_p} $ is completely inside $\bigcirc{CM_iM_j} $ and therefore devoid of any points.
-%For case 2 $\bigcirc{CM_p} $ is completely inside the area $R_{\bigcirc{M_iM_pM_j}} \cup \bigcirc{CM_iM_j} \bigcirc{CM_i} $ and, therefore, empty.
-%$\bigcirc{CM_p} $ cannot overlap $\bigcirc{CM_i} $ because of the following lemma.
-%\begin{lemma}
-%\label{circles}
-%If $A $ and $B $ are points in the plane and are located in different halfplanes of a line $CM_i $, and $A $ and $B $ are not allowed to reside inside a circle $\bigcirc{CM_i} $, there is no circle $\bigcirc{ABC} $ which does not contain $M_i $ and overlaps circle $\bigcirc{CM_i} $.
-%\end{lemma}
-%\begin{proof}
-% Let, without loss of generality, $C $ and $M_i $ be on a line $CM_i $ which is parallel to the y-axis.
-%$A $ and $B $ are then located to the left and right of this line.
-%You can see this construction in figure \ref{fig:beweis_circles}.
-%
-%This proof uses a contradiction. % widerspruchsbeweis  -> Florentin fragen
-%$A $ cannot reside inside $\bigcirc{CM_i} $, since $CM_i $ is a PDT-edge.
-%The circle $c_1 $ must not contain $M_i $ and, therefore, must cross the circle $\bigcirc{CM_i} $ in front of $M_i $.
-%Notice that the next part of the circle $c_1 $ must be inside of circle $\bigcirc{CM_i} $, since we started outside.
-%Because $c_1 $ must cross $B $ and $B $ lies outside of $\bigcirc{CM_i} $, $c_1 $ crosses a second time $\bigcirc{CM_i} $.
-%And the last conclusion is that $C $ is a common point of $\bigcirc{CM_i} $ and $c_1 $.
-%Hence, we have got three intersections of $\bigcirc{CM_i} $ and $c_1 $ at least.
-%Since $A $ and $B $ lie outside of $\bigcirc{CM_i} $, these two circles are not equal.
-%But two circles which intersect at least three times and are not equal, do not exist.
-%\end{proof}
-%The proof of case 3 works analogously.
-%These conclusions proof part a) of proposition \ref{outward_path}.
-%
-%The following part of this work proofs part b) of the same proposition.
-%The main argument of this proof is that $\bigcirc{CM_iM_p} $ is contained completely in the area $\bigcirc{CM_i} \cup  R_{\bigcirc{M_iM_pM_j}} \cup R2_{\bigcirc{CM_iM_j}} $ with $R2_{\bigcirc{CM_iM_j}} $ being the area of $\bigcirc{CM_iM_j} $ subtended by chord $M_iM_j $ closer to $C $.
-%I show that every possible position of $\bigcirc{CM_i} $ includes the area $R3_{\bigcirc{CM_iM_p}} $ of $\bigcirc{CM_iM_p} $ subtended by chord $CM_i $ away from $M_j $.
-%The proof is divided into three cases of how $\bigcirc{CM_i} $ can be located:
-%\begin{enumerate}
-%\item $\bigcirc{CM_i} $ is equal to $\bigcirc{CM_iM_p} $.
-%\item $\bigcirc{CM_i} $ overlaps $\bigcirc{CM_iM_p} $ in the halfplane subtended from line $CM_i $ away from $M_j $.
-%\item $\bigcirc{CM_i} $ overlaps $\bigcirc{CM_iM_p} $ in the halfplane subtended from line $CM_i $ closer to $M_j $.
-%\end{enumerate}
-%First, assume, without loss of generality, that $C $ and $M_i $ lie on a horizontal line and $M_j $ is located below this line.
-%$\bigcirc{CM_iM_p} $ can only overlap $\bigcirc{CM_i} $ on one side of line $CM_i $, since they share these two points.
-%
-%For case 1, since $\bigcirc{CM_i} $ is empty, $\bigcirc{CM_iM_p} $ must be empty, too.
-%
-%For case 2, $\bigcirc{CM_i} $ moves up, away from $M_j $, expanding the area in the same direction of which $R3_{\bigcirc{CM_iM_p}} $ is located.
-%So, $R3_{\bigcirc{CM_iM_p}} $ cannot overlap $\bigcirc{CM_i} $ in this case.
-%
-%Case 3, the only case where $R3_{\bigcirc{CM_iM_p}} $ would overlap $\bigcirc{CM_i} $, cannot occur, since $M_p \in G $ and $M_p $ is, obviously, located on $\bigcirc{CM_iM_p} $.
-%So, if $\bigcirc{CM_i} $ moves down, towards $M_j $, it would contain $M_p $, which cannot happen, since $\bigcirc{CM_i} $ is a PDT-circle. 
-%
-%Notice that the proof for $\bigcirc{CM_jM_p} $ works analogously substituting $M_i $ with $M_j $ and vice versa.
- 
 \end{proof}
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.5\linewidth]{eps/beweis_circles.eps}
-\caption{Example of lemma \ref{circles}. }
-\label{fig:beweis_circles}
-\end{figure}
+
 Another fact we need in order to proof proposition \ref{mastertheorem} is the following:
 \begin{fact}
 \label{outward_3}
@@ -265,25 +200,6 @@ If four points $A $, $B $, $C $ and $M_1 $ are on one circle and $C $ and $M_1 $
 \label{fig:winkel_fuer_outward_3}
 \end{figure}
 
-\begin{lemma}
-\label{circles}
-If $A $ and $B $ are points in the plane and are located in different halfplanes of a line $CM_i $, and $A $ and $B $ are not allowed to reside inside a circle $\bigcirc{CM_i} $, there is no circle $\bigcirc{ABC} $ which does not contain $M_i $ and overlaps circle $\bigcirc{CM_i} $.
-\end{lemma}
-\begin{proof}
- Let, without loss of generality, $C $ and $M_i $ be on a line $CM_i $ which is parallel to the y-axis.
-$A $ and $B $ are then located to the left and right of this line.
-You can see this construction in figure \ref{fig:beweis_circles}.
-
-This proof uses a contradiction. % widerspruchsbeweis  -> Florentin fragen
-$A $ cannot reside inside $\bigcirc{CM_i} $, since $CM_i $ is a PDT-edge.
-The circle $c_1 $ must not contain $M_i $ and, therefore, must cross the circle $\bigcirc{CM_i} $ in front of $M_i $.
-Notice that the next part of the circle $c_1 $ must be inside of circle $\bigcirc{CM_i} $, since we started outside.
-Because $c_1 $ must cross $B $ and $B $ lies outside of $\bigcirc{CM_i} $, $c_1 $ crosses a second time $\bigcirc{CM_i} $.
-And the last conclusion is that $C $ is a common point of $\bigcirc{CM_i} $ and $c_1 $.
-Hence, we have got three intersections of $\bigcirc{CM_i} $ and $c_1 $ at least.
-Since $A $ and $B $ lie outside of $\bigcirc{CM_i} $, these two circles are not equal.
-But two circles which intersect at least three times and are not equal, do not exist.
-\end{proof}
 
 Now, we can proof the following lemma from \cite{kanj}, which shows, that for the case of the outward path, proposition \ref{mastertheorem} is satisfied:
 
@@ -328,7 +244,6 @@ At last, substitute $\theta $ using inequality $\theta \leq \frac{2\pi}{k} $ wit
 So, $M_p $ must lie outside of this circle.
 By proposition \ref{outward_path} part a) there is a circle $\bigcirc{CM_p} $ through $C $ and $M_p $ which is empty.
 These two last observations contradict each other, since $\bigcirc{CM_p} $ would always contain $M_i $ or $M_j $.
-If $M_i $ or $M_j $ do not reside in the circle $\bigcirc{CM_p} $, this circle and the circle $\bigcirc{M_iM_j} $ would cross at least three times (and are not equal), which cannot exist (refer to lemma \ref{circles} for an example construction).
 
 \item Since the angles $\alpha $ and $\beta $ between opposite points of a chord in a rectangle which corners lie on a circle are supplementary, this is a fact: $\angle{AM_1B}=\pi - \angle{ACB} $ (see lemma \ref{outward_3} for more details).
 The angle $\angle{M_{i-1}CM_{i+1}} $ is smallest, if $M_{i-1} $ and $M_{i+1} $ lie on the circle. 
