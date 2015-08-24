@@ -298,7 +298,7 @@ Now, we perform the proof for the case when $\triangle{ABC} $ contains other nod
 Let $S $ be the set of points which contains points $A $ and $B $, and all the points interior to $\triangle{ABC} $ excluding $C $.
 Then $CH(S) $ are all the points which are on the convex hull of $S $.
 Let these points be called $N_0=A $ and $N_t=B $ and points $N_1 , \cdots ,N_{t-1} $ are the points on $CH(S) $ which lie inside $\triangle{ABC} $. 
-The following proposition is taken from \cite{kanj}:
+The following two propositions are taken from \cite{kanj}:
 \begin{prop}
 \label{inward_pre}
 \begin{enumerate}
@@ -314,4 +314,19 @@ Since $CA $ is the shortest edge in the angular sector $\angle{BCA} $, $|CA| \le
 Part b) follows from the convexity of $CH(S) $. All interior angles to $CH(S) $ measure at most $\pi $, so all the exterior angles fulfil $\angle{N_{i-1}N_iN_{i+1}}\geq \pi $ 
 \end{proof}
 
-Since $CN_i \leq CN_{i+1} $ and no other point of $G $ lies inside $\triangle{N_iCN_{i+1}} $, $CN_i $ is the shortest edge in the angular sector $\angle{N_iCN_{i+1}} $.
+%Since $CN_i \leq CN_{i+1} $ and no other point of $G $ lies inside $\triangle{N_iCN_{i+1}} $, $CN_i $ is the shortest edge in the angular sector $\angle{N_iCN_{i+1}} $.
+
+\begin{prop}
+\begin{enumerate}
+\renewcommand{\labelenumi}{\alph{enumi})}
+The following are true:
+\item for every $i =0, \cdots , s-1 $, the interior of $\triangle{CN_iN_{i+1}} $ is devoid of points of $G $,
+\item for every $i =0, \cdots , s $, there exists a circle passing trough $CN_i $ whose interior is devoid of points of $G $.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Since $N_0, \cdots, N_s $ are on $CH(S) $ and, hence, no other point can reside closer to $C $, part a) is true.
+
+ 
+\end{proof}
