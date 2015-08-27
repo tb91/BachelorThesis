@@ -56,7 +56,7 @@ A node $X $ can be removed from the set of memorized nodes if $W' \in Reg(F,X) $
 If the timer of a node expires and there are still nodes which are memorized, the node sends a protest message.
 The forwarder node $F $ removes violating edges when it receives protests.
 
-This algorithm performed on each node of a graph $G $ produces a planar subgraph $G' $, which can be used for routing algorithms (refer to \cite{Ruhrup2010}).
+This algorithm performed on each node of a graph $G $ produces a planar subgraph $G' $.
 However, $G' $ is not a t-spanner of $G $ and has no constant node degree despite the underlying region ($GG, RNG, CNG $) (refer to ... for an example of these three regions).
 
 $GDBF $ is a scheme to forward messages in a network.
@@ -72,7 +72,8 @@ Now, all neighbours instantiate a timer corresponding to the distance to the mes
 If a neighbour $N $ overhears another nodes $N' $ message, it cancels its timer if $N' \in disk(M, N) $.
 For more detailed information, refer to \cite{Chawla2006}.
 
-GDBF can be extended to reactively produce a planar subgraph 
+GDBF can be extended to reactively produce a planar subgraph of a given input graph. 
+Since this graph is equal to the Gabriel graph, this is not a t-spanner of the input graph and also has no constant node degree.
 
 
 
