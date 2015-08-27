@@ -14,13 +14,13 @@
 %danach related work 
 \section{Related work}
 
-In the past years several topology controls were invented and were further developed.
+In the past years several topology controls were invented and further developed.
 I am interested in local algorithms only, and hence, centralized algorithms are ignored in this related work.
 There are a lot of different approaches with different results.
 The following is an extract of these approaches and can be divided into two main groups:
 \begin{enumerate}
 \item reactive algorithms
-\item planar t-spanner with constant node degree
+\item algorithms which produce a planar t-spanner with constant node degree
 \end{enumerate}
 
 Reactive algorithms generally need less messages as only localized algorithms to discover the nodes neighbourhoods due to the lack of beaconing.
@@ -32,20 +32,29 @@ Currently, there are three reactive algorithms:
 \item reactive Partial Delaunay Triangulation
 \end{enumerate}
 
+First, I will describe an algorithm briefly and in the following there is a short section about properties of the produced graph.
 The BFP-algorithm is divided into two phases.
 First, in the Selection Phase the executing node $F $ starts the algorithm by sending an RTS. 
 In the following every node, which receives this message, starts a timer corresponding to a specific delay function.
 The closer a node resides to the executing node, the earlier it answers with a CTS. 
-If a node $W $ overhears a CTS of a node $W' $ it checks whether or not $W $ is contained in a certain area corresponding to node $W' $ and $F $.
-This area is defined by geometric regions.
-The minimum area is the Gabriel circle $disk(F, W') $ and the maximum area is the Relative Neighbourhood Graph lune over $(F,W') $.
+If a node $W $ overhears a CTS of a node $W' $ it checks whether or not it is contained in a certain area corresponding to node $W' $ and $F $.
+This area is defined by geometric regions, in the following denoted as $Reg(A, B) $, with $A $ and $B $ being two nodes.
+The minimum region $Reg(F, W') $ is the Gabriel circle $disk(F, W') $ and the maximum region $Reg(F, W') $ is the Relative Neighbourhood Graph lune over $F $ and $W' $.
 The latter describes the area of the intersection of two circles around two neighbouring nodes $UV $ with radii equal to $|UV| $ and with middlepoints $U $ and $V $, respectively.
-If $C $ is contained in such an area it cancels its timer and is, henceforth, called a \emph{hidden node}.
+Different regions cause the algorithm to use different amounts of messages.
+This will be discussed later.
+
+Suppose $W $ is contained in such an area it cancels its timer and is, henceforth, called a \emph{hidden node}.
 Hidden nodes further participate in the algorithm.
 If a hidden node $H $ receives a message from another node $T $, it memorizes this node if $H $ lies in the former defined region. 
 
 The Protest Phase lets hidden nodes protest against violating edges.
-If these nodes have nodes they memorize they restart the above timer.
-As soon as a message from another hidden node $W' $ arrives at hidden node $W $, the latter checks its memorized nodes.
-A node $X $ 
+An edge $UV $ is called a violating edge if there is a node in $Reg(U, V) $.
+If hidden nodes have nodes they memorize they restart the above timer.
+As soon as a message from another hidden node $W' $ arrives at hidden node $W $, the latter checks its memorized nodes:
+A node $X $ can be removed from the set of memorized nodes if $W' \in Reg(F,X) $, where $Reg(F, X) $ being the former defined region.
+If the timer of a node expires and there are still nodes which are memorized, the node sends a protest message.
+The forwarder node $F $ removes violating edges when it receives protests.
+
+
 
