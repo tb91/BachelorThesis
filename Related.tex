@@ -25,20 +25,20 @@ The following is an extract of these approaches and can be divided into two main
 
 Reactive algorithms generally need less messages as only localized algorithms to discover the nodes neighbourhoods due to the lack of beaconing.
 They do not need the whole $k $-neighbourhood of every node to function, but only a fractional amount of their direct neighbours.
-Currently, there are three reactive algorithms:
+As time of writing there are three reactive algorithms:
 \begin{enumerate}
 \item Beaconless Forwarder Planarization (BFP)
-\item with restrictions GDBF
+\item Guaranteed delivery beaconless forwarding (GDBF) with extension
 \item reactive Partial Delaunay Triangulation
 \end{enumerate}
 
 First, I will describe an algorithm briefly and in the following there is a short section about properties of the produced graph.
-The BFP-algorithm is divided into two phases.
+The BFP-algorithm (\cite{Ruhrup2010}) is divided into two phases.
 First, in the Selection Phase the executing node $F $ starts the algorithm by sending an RTS. 
 In the following every node, which receives this message, starts a timer corresponding to a specific delay function.
 The closer a node resides to the executing node, the earlier it answers with a CTS. 
 If a node $W $ overhears a CTS of a node $W' $ it checks whether or not it is contained in a certain area corresponding to node $W' $ and $F $.
-This area is defined by geometric regions, in the following denoted as $Reg(A, B) $, with $A $ and $B $ being two nodes.
+This area is defined by geometric regions, in the following denoted as $Reg(A, B) $, with $A $ and $B $ being two nodes specifying this region.
 The minimum region $Reg(F, W') $ is the Gabriel circle $disk(F, W') $ and the maximum region $Reg(F, W') $ is the Relative Neighbourhood Graph lune over $F $ and $W' $.
 The latter describes the area of the intersection of two circles around two neighbouring nodes $UV $ with radii equal to $|UV| $ and with middlepoints $U $ and $V $, respectively.
 Different regions cause the algorithm to use different amounts of messages.
@@ -52,9 +52,28 @@ The Protest Phase lets hidden nodes protest against violating edges.
 An edge $UV $ is called a violating edge if there is a node in $Reg(U, V) $.
 If hidden nodes have nodes they memorize they restart the above timer.
 As soon as a message from another hidden node $W' $ arrives at hidden node $W $, the latter checks its memorized nodes:
-A node $X $ can be removed from the set of memorized nodes if $W' \in Reg(F,X) $, where $Reg(F, X) $ being the former defined region.
+A node $X $ can be removed from the set of memorized nodes if $W' \in Reg(F,X) $.
 If the timer of a node expires and there are still nodes which are memorized, the node sends a protest message.
 The forwarder node $F $ removes violating edges when it receives protests.
+
+This algorithm performed on each node of a graph $G $ produces a planar subgraph $G' $, which can be used for routing algorithms (refer to \cite{Ruhrup2010}).
+However, $G' $ is not a t-spanner of $G $ and has no constant node degree despite the underlying region ($GG, RNG, CNG $) (refer to ... for an example of these three regions).
+
+$GDBF $ is a scheme to forward messages in a network.
+All messages will be greedy forwarded to the node which lies closest to the destination until a node which has no neighbours closer to the destination, called a local minimum, is reached.
+From that point a recovery mode is used until the local minimum is exited and the algorithm can switch back to greedy mode.
+In greedy mode the message holder broadcasts a RTS-message to all neighbours.
+Every neighbour instantiates a timer with length depending on how far the neighbour is away from the destination. 
+Nodes closer to the destination answer earlier.
+A CTS-message is sent as soon as the timer expires and the message holder forwards the message to its sender. 
+Every other nodes cancels its timer and remain silent.
+In recovery mode a RTS message from the message holder is as well sent.
+Now, all neighbours instantiate a timer corresponding to the distance to the message holder $M $ (closer nodes respond first).
+If a neighbour $N $ overhears another nodes $N' $ message, it cancels its timer if $N' \in disk(M, N) $.
+For more detailed information, refer to \cite{Chawla2006}.
+
+GDBF can be extended to reactively produce a planar subgraph 
+
 
 
 
