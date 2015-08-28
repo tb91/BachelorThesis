@@ -23,7 +23,7 @@ The following is an extract of these approaches and can be divided into two main
 \item algorithms which produce a planar t-spanner with constant node degree
 \end{enumerate}
 
-Reactive algorithms generally need less messages as only localized algorithms to discover the nodes neighbourhoods due to the lack of beaconing.
+Reactive algorithms generally need less messages as only localized algorithms due to the lack of beaconing.
 They do not need the whole $k $-neighbourhood of every node to function, but only a fractional amount of their direct neighbours.
 As time of writing there are three reactive algorithms:
 \begin{enumerate}
@@ -34,7 +34,7 @@ As time of writing there are three reactive algorithms:
 
 First, I will describe an algorithm briefly and in the following there is a short section about properties of the produced graph.
 The BFP-algorithm (\cite{Ruhrup2010}) is divided into two phases.
-First, in the Selection Phase the executing node $F $ starts the algorithm by sending an RTS. 
+First, in the Selection Phase the executing node $F $ starts the algorithm by sending a RTS message. 
 In the following every node, which receives this message, starts a timer corresponding to a specific delay function.
 The closer a node resides to the executing node, the earlier it answers with a CTS. 
 If a node $W $ overhears a CTS of a node $W' $ it checks whether or not it is contained in a certain area corresponding to node $W' $ and $F $.
@@ -53,7 +53,7 @@ An edge $UV $ is called a violating edge if there is a node in $Reg(U, V) $.
 If hidden nodes have nodes they memorize they restart the above timer.
 As soon as a message from another hidden node $W' $ arrives at hidden node $W $, the latter checks its memorized nodes:
 A node $X $ can be removed from the set of memorized nodes if $W' \in Reg(F,X) $.
-If the timer of a node expires and there are still nodes which are memorized, the node sends a protest message.
+If the timer of a node expires and there are still nodes which are memorized, the node sends a protest message consisting of the violating node.
 The forwarder node $F $ removes violating edges when it receives protests.
 
 This algorithm performed on each node of a graph $G $ produces a planar subgraph $G' $.
@@ -66,14 +66,20 @@ In greedy mode the message holder broadcasts a RTS-message to all neighbours.
 Every neighbour instantiates a timer with length depending on how far the neighbour is away from the destination. 
 Nodes closer to the destination answer earlier.
 A CTS-message is sent as soon as the timer expires and the message holder forwards the message to its sender. 
-Every other nodes cancels its timer and remain silent.
-In recovery mode a RTS message from the message holder is as well sent.
+Every other node cancels its timer and remains silent.
+In recovery mode a RTS message from the message holder is sent as well.
 Now, all neighbours instantiate a timer corresponding to the distance to the message holder $M $ (closer nodes respond first).
 If a neighbour $N $ overhears another nodes $N' $ message, it cancels its timer if $N' \in disk(M, N) $.
 For more detailed information, refer to \cite{Chawla2006}.
 
 GDBF can be extended to reactively produce a planar subgraph of a given input graph. 
 Since this graph is equal to the Gabriel graph, this is not a t-spanner of the input graph and also has no constant node degree.
+
+The understanding of the Partial Delaunay Triangulation is crucial to follow this work and, thus, it is already explained in the preamble.
+PDT has a constant spanning ratio of at most $\frac{1+\sqrt{5}}{4}\pi ² \approx 7.98 $.
+In addition, the output is a planar graph, but it has no constant bounded degree.
+
+
 
 
 
