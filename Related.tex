@@ -15,7 +15,7 @@
 \section{Related work}
 
 In the past years several topology controls were invented and further developed.
-I am interested in local algorithms only, and hence, centralized algorithms are ignored in this related work.
+We are interested in local algorithms only, and hence, centralized algorithms are ignored in this related work.
 There are a lot of different approaches with different results.
 The following is an extract of these approaches and can be divided into two main groups:
 \begin{enumerate}
@@ -32,7 +32,7 @@ As time of writing there are three reactive algorithms:
 \item reactive Partial Delaunay Triangulation
 \end{enumerate}
 
-First, I will describe an algorithm briefly and in the following there is a short section about properties of the produced graph.
+First, we describe an algorithm briefly and in the following there is a short section about properties of the produced graph.
 The BFP-algorithm (\cite{Ruhrup2010}) is divided into two phases.
 First, in the Selection Phase the executing node $F $ starts the algorithm by sending a RTS message. 
 In the following every node, which receives this message, starts a timer corresponding to a specific delay function.
@@ -80,7 +80,20 @@ PDT has a constant spanning ratio of at most $\frac{1+\sqrt{5}}{4}\pi ² \approx
 In addition, the output is a planar graph, but it has no constant bounded degree.
 
 
-These were all 
+The second group consists of the following algorithms:
+\begin{enumerate}
+\item $H_{PLOS} $
+\item $\Updelta _{11-Spanner} $
+\item $PuDel $
+\end{enumerate}
+
+$H_{PLOS} $ (Planar Localized Optimum Spanner)\cite{Damian2010} produces a planar Euclidean spanner with stretch-factor $1+ \epsilon $ with $\epsilon >0 $ arbitrarily small and constant node degree.
+However, it needs a node to be aware of its complete 2-hop-neighbourhood.
+
+$\Updelta _{11-Spanner} $ \cite{Kanj2012} constructs a spanner with an upper bound of $7 $ and a constant node degree of at most $11 $.
+The obtained graph is not planar and the algorithm needs a node to know its 4-hop-neighbourhood.
+
+$PuDel $ \cite{Xu2011} produces a subgraph which is equal to the subgraph produced by $PDT $ \cite{Neumann2012} and hence, it has an Euclidean stretch-factor of $\approx 7.98 $, is planar, but has no constant node degree. 
 
 
 
