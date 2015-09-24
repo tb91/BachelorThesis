@@ -1,8 +1,5 @@
 \section{Algorithm}
 
-I want to explain how the modified Yao step (\cite{kanj}) works and following this how the reactive modified Yao steps works.
-The modified Yao step takes as input a planar Euclidean spanner $G $, preserves this properties and outputs a graph $G' $ in which every node has a constant degree $k $.
-Since this algorithm is local, every node $n\in G $ performs the following steps:
 
 \begin{enumerate}
 \item create $k $ equally sized cones around $n $,
@@ -16,3 +13,26 @@ Since this algorithm is local, every node $n\in G $ performs the following steps
 \end{enumerate}
 \item $ G' $ is the subgraph of $G $ consisting of all nodes which are in $G $ and all edges which fulfil that both endpoints of this edge have selected it.  
 \end{enumerate}
+
+
+\subsection{Proof of correctness}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+	MYS(PDT) &\leftrightarrow RMYS\\
+	MYS(PDT(v)) &\stackrel{a)}{\leftrightarrow} rMYS(rPDT(v)) \\
+    MYS(PDT(v)) &\stackrel{b)}{\leftrightarrow} rMYS(PDT(v))\\
+    MYS(PDT(v)) &\stackrel{c)}{\leftrightarrow} MYS(PDT(v)) 
+\end{split}
+\end{equation*}
+We need to proof that the proposed reactive version of this algorithm is equal to a simple concatenation of first, the Partial Delaunay Triangulation and secondly, the Modified Yao Step on any node $v \in G$.
+a) is the fragmentation of the proposition applied to a node $v $.
+It is well known that $rPDT $ produces the same graph as the simple local approach, so b) holds true.
+$rMYS $ does the same calculation as $MYS $ until the broadcast in the end.
+Therefore, we need only to look at this broadcast.
+The executing node $v $ sends a broadcast which must be overheard by all $PDT $ -Neighbors of $v $.
+Because of the assumptions that every message arrives and arrives instantaneously, the message cannot get lost.
+Every informed node sends an answer back which must arrive.
+Hence, $v $ can check whether or not each node in it's neighborhood accepts this edge.
+This leads to the same behavior MYS does and therefore, c) is true completing this proof.
+\end{proof}
