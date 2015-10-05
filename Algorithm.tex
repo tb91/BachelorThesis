@@ -1,18 +1,40 @@
 \section{Algorithm}
+This chapter introduces the $reactive Modified Yao Step $ and explains it's functionality.
+First, there is the basic version of this algorithm, followed by an improved version which needs less messages to construct a node's neighborhood.
+ 
+\algrenewcommand\algorithmicprocedure{\textbf{}}
+\begin{algorithm}\small
+\caption{Modified Yao Step}\label{MYS}
+\begin{algorithmic}[0]
+
+\Statex \textbf{Input:} planar, t-spanner $G $; integer $k\geq 14 $
+\Statex \textbf{Output:} planar, t-spanner $G' $ with constant node degree
+
+\Statex
+
+\For{each node $p\in G $}
+	\State Define $k $ disjoint cones of size $2\pi/k $ around $p $.
+	\State Select for each non empty cone the shortest edge.
+	\For{each maximal sequence $s $ of empty cones}
+		\If{$|s|==1 $}
+			\State Let $nx $ and $ny $ be the incident edges on $p $ clockwise and \State counterclockwise, respectively, from the emtpy cone.
+			\If{either $nx $ or $ny $ has already been selected}
+				\State select the other edge
+				\Else
+				\State Select the shorter edge
+			\EndIf 
+		\Else
+			\State select the first $\lfloor \frac{|s|}{2} \rfloor $ unselected edges incident on $n $ clockwise from $s $
+			\State select the first $\lceil \frac{|s|}{2} \rceil $ unselected edges incident on $n $ counterclockwise from $s $
+		\EndIf
+	\EndFor
+\EndFor
+\State $ G' $ is the subgraph of $G $ consisting of all nodes which are in $G $ and all edges which fulfil that both endpoints of this edge have selected it. 
+\end{algorithmic}
+\end{algorithm}
 
 
-\begin{enumerate}
-\item create $k $ equally sized cones around $n $,
-\item select for each non empty cone the shortest edge,
-\item for every maximal sequence $s $ of empty cones:
-\begin{enumerate}
-	\item if $|s|=1 $, then let $nx $ and $ny $ be the incident edges on m clockwise and counterclockwise, respectively, from the empty cone.
-	If either $nx $ or $ny $ has already been selected, select the other edge;
-	otherwise, select the shorter edge.
-\item if $|s| > 1 $, then select the first $\lfloor \frac{s}{2} \rfloor $ unselected edges incident on $n $ clockwise from the sequence of empty cones and the first $\lceil \frac{s}{2} \rceil $ unselected edges incident on $n $ counterclockwise from the sequence of empty cones.
-\end{enumerate}
-\item $ G' $ is the subgraph of $G $ consisting of all nodes which are in $G $ and all edges which fulfil that both endpoints of this edge have selected it.  
-\end{enumerate}
+
 
 
 \subsection{Proof of correctness}
