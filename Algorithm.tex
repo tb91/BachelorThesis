@@ -36,3 +36,21 @@ Every informed node sends an answer back which must arrive.
 Hence, $v $ can check whether or not each node in it's neighborhood accepts this edge.
 This leads to the same behavior MYS does and therefore, c) is true completing this proof.
 \end{proof}
+
+\subsection{Message Complexity}
+Let $N_{PDT}(u) $ be the message complexity of $PDT $ creating the neighborhood of Node $u \in G$.
+First, $rPDT $ needs at most $n $ messages to create the $PDT $-neighborhood.
+Next, the executing node sends at most $k $ messages to its neighbors to ask whether they accept their connection.
+$k $ answers come back and therefore $k * 2 $.
+Every one of this $k $ neighbors needs to calculate it's $PDT $-neighborhood and hence, $k*N_{PDT}(u) $.
+The following equation put these reflections into one formula.
+\begin{equation*}
+\begin{split}
+N_{RMYS}(u) &= \underbrace{N_{PDT}(u)}_{\theta (n)} +k *\underbrace{2}_{\theta (1)} + k*\underbrace{N_{PDT}(v)}_{\theta (n)} \\
+\theta (N_{RMYS}(u)) &= \theta (n) 
+\end{split}
+\end{equation*}
+Since $k $ is a constant it can be omitted in $O $-Notation.
+The sum of the same complexity remains in the same complexity and hence, the complexity of this algorithm is $\theta (n) $.
+
+\subsection{•}
