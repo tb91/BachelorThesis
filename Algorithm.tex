@@ -49,11 +49,11 @@ First, there is the basic version of this algorithm, followed by an improved ver
 We need to proof that the proposed reactive version of this algorithm is equal to a simple concatenation of first, the Partial Delaunay Triangulation and secondly, the Modified Yao Step on any node $v \in G$.
 a) is the fragmentation of the proposition applied to a node $v $.
 It is well known that $rPDT $ produces the same graph as the simple local approach, so b) holds true.
-$rMYS $ does the same calculation as $MYS $ until the broadcast in the end.
+$rMYS $ does the same calculation as MYS until the broadcast in the end.
 Therefore, we need only to look at this broadcast.
 The executing node $v $ sends a broadcast which must be overheard by all $PDT $ -Neighbors of $v $.
 Because of the assumptions that every message arrives and arrives instantaneously, the message cannot get lost.
-Every informed node sends an answer back which must arrive.
+Every informed node sends an answer back, which must arrive.
 Hence, $v $ can check whether or not each node in it's neighborhood accepts this edge.
 This leads to the same behavior MYS does and therefore, c) is true completing this proof.
 \end{proof}
@@ -72,6 +72,10 @@ N_{RMYS}(u) &= \underbrace{N_{PDT}(u)}_{\theta (n)} +k *\underbrace{2}_{\theta (
 \end{split}
 \end{equation*}
 Since $k $ is a constant it can be omitted in $O $-Notation.
-The sum of the same complexity remains in the same complexity and hence, the complexity of this algorithm is $\theta (n) $.
+The sum of the same complexity remains in the same complexity and hence, the message complexity of this algorithm is $\theta (n) $.
 
+\subsection{Message Size}
+If the assumption that every node has a unique position holds this position can be used to identify each node uniquely.
+Hence, two floats can be used to save this position resulting in a constant number of bits.
+%Other information needed to send are only these node ids or a constant amount of it
 
