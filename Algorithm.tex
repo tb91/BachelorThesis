@@ -1,13 +1,46 @@
+%\algrenewcommand\algorithmicprocedure{\textbf{}}
+%\begin{algorithm}\small
+%\caption{Modified Yao Step}\label{MYS}
+%\begin{algorithmic}[0]
+%\Statex \textbf{Input:} planar, t-spanner $G $; integer $k\geq 14 $
+%\Statex \textbf{Output:} planar, t-spanner $G' $ with constant node degree
+%
+%\Statex
+%
+%\For{each node $p\in G $}
+%	\State Define $k $ disjoint cones of size $2\pi/k $ around $p $.
+%	\State Select for each non empty cone the shortest edge.
+%	\For{each maximal sequence $s $ of empty cones}
+%		\If{$|s|==1 $}
+%			\State Let $nx $ and $ny $ be the incident edges on $p $ clockwise and \State counterclockwise, respectively, from the emtpy cone.
+%			\If{either $nx $ or $ny $ has already been selected}
+%				\State select the other edge
+%				\Else
+%				\State Select the shorter edge
+%			\EndIf 
+%		\Else
+%			\State select the first $\lfloor \frac{|s|}{2} \rfloor $ unselected edges incident on $n $ clockwise from $s $
+%			\State select the first $\lceil \frac{|s|}{2} \rceil $ unselected edges incident on $n $ counterclockwise from $s $
+%		\EndIf
+%	\EndFor
+%\EndFor
+%\State $ G' $ is the subgraph of $G $ consisting of all nodes which are in $G $ and all edges which fulfil that both endpoints of this edge have selected it. 
+%\end{algorithmic}
+%\end{algorithm}
 \section{Algorithm}
-This chapter introduces the $reactive Modified Yao Step $ and explains it's functionality.
-First, there is the basic version of this algorithm, followed by an improved version which needs less messages to construct a node's neighborhood.
- 
+This chapter introduces the \emph{reactive Modified Yao Step (RMYS)} and explains it's functionality.
+For the sake of completeness follows a scheme of the Modified Yao Step taken from \cite{kanj}.
+In addition, there is an explanation of how RMYS operates.
+Then there is a proof of correctness, followed by an brief analysis of the message complexity and message size of RMYS.
+At last, we see which properties the graph produced by RMYS obtains.
+
+
 \algrenewcommand\algorithmicprocedure{\textbf{}}
 \begin{algorithm}\small
 \caption{Modified Yao Step}\label{MYS}
 \begin{algorithmic}[0]
 \Statex \textbf{Input:} planar, t-spanner $G $; integer $k\geq 14 $
-\Statex \textbf{Output:} planar, t-spanner $G' $ with constant node degree
+\Statex \textbf{Output:} planar, t-spanner $G' $ with constant node degree of at most $k $
 
 \Statex
 
@@ -32,8 +65,28 @@ First, there is the basic version of this algorithm, followed by an improved ver
 \end{algorithmic}
 \end{algorithm}
 
+ 
+ 
+ 
+%\textbf{\algrenewcommand\algorithmicprocedure{\textbf{}}
+\begin{algorithm}\small
+\caption{Reactive Modified Yao Step}\label{RMYS}
+\begin{algorithmic}[0]
+\Statex \textbf{Input:} any connected graph $G $; integer $k\geq 14 $
+\Statex \textbf{Output:} planar, t-spanner $G'' $ with constant node degree of at most $k $
 
+\Statex
 
+\For{each node $p \in G $}
+	\State create the PDT-Neighborhood of $p $ using rPDT
+	\State apply rMYS to $p $ using PDT-graph
+\EndFor 
+\end{algorithmic}
+\end{algorithm}
+
+%For clarity, notice that the algorithm RMYS consists of the two steps rPDT which is a acronym for the reactive algorithm of the Partial Delaunay Triangulation and rMYS which is, despite it has almost the same acronym, the reactive version of the Modified Yao Step described above.
+
+For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modified Yao Step \grqq, but former is the algorithm which consists of rPDT, the reactive version of PDT, and rMYS, the reactive way of applying the Modified Yao Step to a planar and connected graph described above.
 
 
 \subsection{Proof of correctness}
@@ -78,4 +131,14 @@ The sum of the same complexity remains in the same complexity and hence, the mes
 If the assumption that every node has a unique position holds this position can be used to identify each node uniquely.
 Hence, two floats can be used to save this position resulting in a constant number of bits.
 %Other information needed to send are only these node ids or a constant amount of it
+
+\subsection{Properties of the RMYS-graph}
+This section is devoted to the graph-properties the RMYS algorithms inherits.
+First, it is important to know whether RMYS produces from any connected Unit Disk Graph a connected subgraph.
+The first part of RMYS, the Partial Delaunay Triangulation, creates from a connected graph a connected subgraph.
+
+First, there is planarity.
+The reactive approach of the Partial Delaunay Triangulation produces a planar Graph and since the rMYS step of the RMYS-algorithm does not add any edges, the planarity property cannot be violated.
+Hence, RMYS produces a planar graph.
+
 
