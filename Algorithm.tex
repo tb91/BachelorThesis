@@ -39,8 +39,8 @@ At last, there is an improved version of RMYS which needs less messages.
 \begin{algorithm}\small
 \caption{Modified Yao Step}\label{MYS}
 \begin{algorithmic}[1]
-\Statex \textbf{Input:} planar, t-spanner $G $; integer $k\geq 14 $
-\Statex \textbf{Output:} planar, t-spanner $G' $ with constant node degree of at most $k $
+\Statex \textbf{Input:} planar, connected graph $G $; integer $k\geq 14 $
+\Statex \textbf{Output:} planar, connected graph $G' $ with constant node degree of at most $k $
 
 \Statex
 
@@ -67,7 +67,7 @@ At last, there is an improved version of RMYS which needs less messages.
  
 This scheme does not tell, in particular, how this can be computed on a node.
 However, my reactive approach, called rMYS, is the following: Since every node knows it's PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute everything from line 1 to 14 without further knowledge about it's neighborhood and hence, does not need to send any messages at all.
-The basic approach of RMYS needs to send one message to each possible neighbor which all send a message back whether or not they did select this edge, either.
+The basic approach of RMYS needs to send one message to each possible neighbor which all send a message back whether or not they did select this edge.
 This ensures that only bidirectional edges are used.
 
 The following algorithm is the definition of RMYS.
@@ -78,7 +78,7 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
 \caption{Reactive Modified Yao Step}\label{RMYS}
 \begin{algorithmic}[0]
 \Statex \textbf{Input:} any connected graph $G $; integer $k\geq 14 $
-\Statex \textbf{Output:} planar, t-spanner $G' $ with constant node degree of at most $k $
+\Statex \textbf{Output:} planar, connected graph $G' $ with constant node degree of at most $k $
 
 \Statex
 
@@ -147,5 +147,8 @@ Hence, the graph cannot become disconnected.
 Following this, there is planarity.
 The reactive approach of the Partial Delaunay Triangulation produces a planar Graph and since the rMYS step of the RMYS-algorithm does not add any edges, the planarity property cannot be violated.
 Hence, RMYS produces a planar graph.
+
+Every node has a constant node degree of at most $k $.
+Since for each cone one edge
 
 
