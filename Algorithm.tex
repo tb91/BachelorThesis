@@ -141,14 +141,10 @@ First, it is important to know whether RMYS produces from any connected Unit Dis
 The first part of RMYS, the Partial Delaunay Triangulation, creates from a connected graph a connected subgraph.
 Since rMYS removes edges it may be possible that the graph will be disconnected.
 To analyze this we need to recognize that rMYS finds at least one edge per non empty cone.
-Since these cones around a node $p $ cover the whole area around $p $.
-That means if there is just one node in a specific cone $t $ this edge will be found (refer to line 3 in algorithm \ref{MYS}).
+Since these cones around a node $p $ cover the whole area around $p $ and if there is a node in it, there will be an edge for that cone.
+Hence, the graph cannot become disconnected. 
 
-
-One may argue that node $u $ finds this edge and another node $v $ finds the exact same edge both nodes may be disconnected from the remaining nodes.
-
-
-First, there is planarity.
+Following this, there is planarity.
 The reactive approach of the Partial Delaunay Triangulation produces a planar Graph and since the rMYS step of the RMYS-algorithm does not add any edges, the planarity property cannot be violated.
 Hence, RMYS produces a planar graph.
 
