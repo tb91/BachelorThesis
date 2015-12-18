@@ -85,6 +85,7 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
 \For{each node $p \in G $}
 	\State create the PDT-Neighborhood of $p $ using rPDT
 	\State apply rMYS to $p $ using PDT-graph
+	\State to ensure bi-directional edges let each neighbor of $p $ create its RMYS-neighbors and \indent send a protest message if $p $ is not among them causing $p $ to remove this edge
 \EndFor 
 \end{algorithmic}
 \end{algorithm}
@@ -104,13 +105,14 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
 We need to proof that the proposed reactive version of this algorithm is equal to a simple concatenation of first, the Partial Delaunay Triangulation and secondly, the Modified Yao Step on any node $v \in G$.
 a) is the fragmentation of the proposition applied to a node $v $.
 It is well known that $rPDT $ produces the same graph as the simple local approach, so b) holds true.
-$rMYS $ does the same calculation as MYS until the broadcast in the end.
+$rMYS $ does the same calculation as MYS right before the broadcast in the end.
 Therefore, we need only to look at this broadcast.
 The executing node $v $ sends a broadcast which must be overheard by all $PDT $ -Neighbors of $v $.
 Because of the assumptions that every message arrives and arrives instantaneously, the message cannot get lost.
-Every informed node sends an answer back, which must arrive.
+Every informed node checks whether or not it selects $v $ to be in its RMYS-Neighborhood.
+If yes, it remains silent and otherwise it sends a protest message causing $v $ to remove this edge.
 Hence, $v $ can check whether or not each node in it's neighborhood accepts this edge.
-This leads to the same behavior MYS does and therefore, c) is true completing this proof.
+This leads to the same behavior MYS does and therefore, c) is true and completing this proof.
 \end{proof}
 
 \subsection{Message Complexity}
@@ -118,7 +120,7 @@ This leads to the same behavior MYS does and therefore, c) is true completing th
 Let $N_{PDT}(u) $ be the message complexity of $PDT $ creating the neighborhood of Node $u \in G$.
 First, $rPDT $ needs at most $n $ messages to create the $PDT $-neighborhood.
 Next, the executing node sends at most $k $ messages to its neighbors to ask whether they accept their connection.
-$k $ answers come back and therefore $k * 2 $.
+At most $k $ answers come back and therefore $k * 2 $.
 Every one of this $k $ neighbors needs to calculate it's $PDT $-neighborhood and hence, $k*N_{PDT}(u) $.
 The following equation put these reflections into one formula.
 \begin{equation*}
@@ -131,7 +133,7 @@ Since $k $ is a constant it can be omitted in $O $-Notation.
 The sum of the same complexity remains in the same complexity and hence, the message complexity of this algorithm is $\theta (n) $.
 
 \subsection{Message Size}
-If the assumption that every node has a unique position holds this position can be used to identify each node uniquely.
+If the assumption that every node has a unique position holds, this position can be used to identify each node uniquely.
 Hence, two floats can be used to save this position resulting in a constant number of bits.
 %Other information needed to send are only these node ids or a constant amount of it
 
@@ -141,14 +143,18 @@ First, it is important to know whether RMYS produces from any connected Unit Dis
 The first part of RMYS, the Partial Delaunay Triangulation, creates from a connected graph a connected subgraph.
 Since rMYS removes edges it may be possible that the graph will be disconnected.
 To analyze this we need to recognize that rMYS finds at least one edge per non empty cone.
-Since these cones around a node $p $ cover the whole area around $p $ and if there is a node in it, there will be an edge for that cone.
+Since these cones around a node $p $ cover the whole area around $p $ and if there is a node in it, there will be an edge for that cone. %PROOF !! vielleicht einfach
 Hence, the graph cannot become disconnected. 
 
 Following this, there is planarity.
-The reactive approach of the Partial Delaunay Triangulation produces a planar Graph and since the rMYS step of the RMYS-algorithm does not add any edges, the planarity property cannot be violated.
+The reactive approach of the Partial Delaunay Triangulation produces a planar graph and since the rMYS step of the RMYS-algorithm does not add any edges, the planarity property cannot be violated.
 Hence, RMYS produces a planar graph.
 
 Every node has a constant node degree of at most $k $.
-Since for each cone one edge
+First, for each cone the shortest edge is selected.
+Resulting in $k $ edges if all cones are not empty.
+For all other cases let $l $ be the total number of empty cones.
+Then the first step selects $k-l $ edges in all non empty cones and at most $l $ edges are added in the second step.
+This leads to a node degree of at most $k $.
 
 

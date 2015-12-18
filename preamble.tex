@@ -13,12 +13,15 @@ This leads to unnecessary case differentiation.
 The Unit Disk Graph of a node set $s $ is denoted as $U(s) $.
 This graph contains all nodes of node set $s $ and connects two nodes if and only if their distance between each other is at most $1 $.
 In addition, we will make use of the so called \emph{Gabriel Graph}, denoted as $GG $. 
-It is the graph which contains all nodes of a supergraph $U $ and it contains an edge $UV \in U $ if the Gabriel circle of $UV $ contains no other node.
-The Gabriel circle of an edge $UV $ is denoted as $disk(U, V) $.
-It is the circle with $U $ and $V $ on its border and with its center on line $UV $. 
-In this work $U $ is the unit disk graph with unit disk radius $R = 1 $.
+It is the graph which contains all nodes of a supergraph $U $ and it contains an edge $uv \in U $ if the Gabriel circle of $uv $ contains no other node.
+The Gabriel circle of an edge $uv $ is denoted as $disk(u, v) $.
+It is the circle with $u $ and $v $ on its border and with its center on line $uv $. 
+In this work $U $ denotes the unit disk graph with unit disk radius $R = 1 $.
 
 Another important graph in order to follow this work is the Partial Delaunay Triangulation (PDT)  \cite{pdt}. It is a planar, t-spanner of the Unit Disk Graph.
+
+The following abbreviations are used throughout this work and introduced here.
+\emph{Ready To Send (RTS)} and \emph{Clear To Send (CTS)} describe the process of a node pair to interchange messages while starting the 
 
 \subsection{Partial Delaunay Triangulation}
 The Partial Delaunay Triangulation produces a connected, planar, t-spanner of any connected graph.
