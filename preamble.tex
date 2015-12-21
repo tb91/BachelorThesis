@@ -7,7 +7,7 @@ Let $\bigcirc{abc} $ be a circle with $a, b, c $ on its border.
 The circle with center $o $ is denoted with $(o) $.
 $\triangle{abc} $ is the triangle with corners $a,b $ and $c $.
 
-Furthermore, we assume that there are no four points in any graph which are cocircular since the Delaunay Triangulation is then not unique anymore.
+Furthermore, we assume that there are no four points in any graph which are cocircular since the Delaunay Triangulation is in this case not unique anymore.
 This leads to unnecessary case differentiation.
 
 The Unit Disk Graph of a node set $s $ is denoted as $U(s) $.
@@ -18,12 +18,15 @@ The Gabriel circle of an edge $uv $ is denoted as $disk(u, v) $.
 It is the circle with $u $ and $v $ on its border and with its center on line $uv $. 
 In this work $U $ denotes the unit disk graph with unit disk radius $R = 1 $.
 
-Another important graph in order to follow this work is the Partial Delaunay Triangulation (PDT)  \cite{pdt}. It is a planar, t-spanner of the Unit Disk Graph.
+Another important graph in order to follow this work is the Partial Delaunay Triangulation (PDT)  \cite{pdt}. It is a planar, t-spanner of the Unit Disk Graph (refer to \ref{PDT}).
 
 The following abbreviations are used throughout this work and introduced here.
-\emph{Ready To Send (RTS)} and \emph{Clear To Send (CTS)} describe the process of a node pair to interchange messages while starting the 
+\emph{Ready To Send (RTS)} and \emph{Clear To Send (CTS)} describe the process of a node pair to interchange messages while starting the desired topology control, namely PDT and RMYS.
 
 \subsection{Partial Delaunay Triangulation}
-The Partial Delaunay Triangulation produces a connected, planar, t-spanner of any connected graph.
+\label{PDT}
+The Partial Delaunay Triangulation produces a connected, planar, t-spanner of any connected graph in a reactive approach.
+No node needs to know its neighborhood or any other graph relevant data.
+Additionally, PDT is message
 In this part we will see an example of the reactive construction of $PDT $.
 
