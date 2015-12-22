@@ -26,7 +26,44 @@ The following abbreviations are used throughout this work and introduced here.
 \subsection{Partial Delaunay Triangulation}
 \label{PDT}
 The Partial Delaunay Triangulation produces a connected, planar, t-spanner of any connected graph in a reactive approach.
-No node needs to know its neighborhood or any other graph relevant data.
-Additionally, PDT is message
+No node needs to know its neighborhood.
 In this part we will see an example of the reactive construction of $PDT $.
+First, we define the Partial Delaunay Triangulation as follows:
+\begin{definition}
+\label{pdt-def}
+An edge $uv \in U $ is in $PDT(U) $ if either 
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+ \item $uv \in GG $
+ \item or $\exists{w} \in U : $ maximizes $\angle{uwv} $, $\bigcirc{uwv}  \backslash \{u, v, w\} = \emptyset $ and $\sin{\angle{uwv}} \geq\frac{|uv|}{R} $, with $R>0 $ being the unit disk radius.
+\end{enumerate} 
+\end{definition}
+
+The $rPDT $ algorithm taken from chapter 3 of \cite{Xiang-Yang2004} is presented in the following:
+\algrenewcommand\algorithmicprocedure{\textbf{}}
+\begin{algorithm}\small
+\caption{Modified Yao Step}\label{MYS}
+\begin{algorithmic}[1]
+\Statex \textbf{Input:} any connected graph $G $
+\Statex \textbf{Output:} planar, connected graph $G' $
+
+\Statex
+
+\For{each node $p\in G $}
+	\State 
+\EndFor
+\Statex $ G' $ is the subgraph of $G $ consisting of all nodes which are in $G $ and all edges which fulfil that both endpoints of this edge have selected it. 
+\end{algorithmic}
+\end{algorithm}
+
+
+For this purpose consider the graph in figure \ref{fig:PDT_1}.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{eps/PDT_1.eps}
+\caption{An example graph with unit disk radius $R $ with all edges drawn which are incident on $a $.}
+\label{fig:PDT_1}
+\end{figure}
 

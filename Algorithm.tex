@@ -66,12 +66,13 @@ At last, there is an improved version of RMYS which needs less messages.
 \end{algorithm}
  
 This scheme does not tell, in particular, how this can be computed on a node.
-However, my reactive approach, called rMYS, is the following: Since every node knows it's PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute everything from line 1 to 14 without further knowledge about it's neighborhood and hence, does not need to send any messages at all.
-The basic approach of RMYS needs to send one message to each possible neighbor which all send a message back whether or not they did select this edge.
+However, my reactive approach, called rMYS, is the following: Since every node knows its PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute algorithm \ref{MYS} from line 1 to 14 without further knowledge about it's neighborhood and hence, does not need to send any messages at all.
+My approach of RMYS needs to send a RTS-message to each possible neighbor which send a message back if they did not select this edge.
 This ensures that only bidirectional edges are used.
+Since in most cases the edges are bidirectional a node sends only a so called protestmessage if it did not select an edge and thus, protests against the selection of this edge.
 
 The following algorithm is the definition of RMYS.
-For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modified Yao Step \grqq, but former is the algorithm which consists of rPDT, the reactive version of PDT, and rMYS, the reactive way of applying the Modified Yao Step to a planar and connected graph described above.
+For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modified Yao Step\grqq, but former is the algorithm which consists of rPDT, the reactive version of PDT, and rMYS, the reactive way of applying the Modified Yao Step to a planar and connected graph described above.
  
 %\textbf{\algrenewcommand\algorithmicprocedure{\textbf{}}
 \begin{algorithm}\small
@@ -85,10 +86,11 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
 \For{each node $p \in G $}
 	\State create the PDT-Neighborhood of $p $ using rPDT
 	\State apply rMYS to $p $ using PDT-graph
-	\State to ensure bi-directional edges let each neighbor of $p $ create its RMYS-neighbors and \indent send a protest message if $p $ is not among them causing $p $ to remove this edge
+	\State let each neighbor of $p $ create its RMYS-neighbors and send a protest message if $p $ \indent is not among them causing $p $ to remove this edge
 \EndFor 
 \end{algorithmic}
 \end{algorithm}
+
 
 
 
@@ -102,7 +104,7 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
     MYS(PDT(v)) &\stackrel{c)}{\leftrightarrow} MYS(PDT(v)) 
 \end{split}
 \end{equation*}
-We need to proof that the proposed reactive version of this algorithm is equal to a simple concatenation of first, the Partial Delaunay Triangulation and secondly, the Modified Yao Step on any node $v \in G$.
+We need to proof that the proposed reactive version of this algorithm is equal to a simple concatenation of first, the Partial Delaunay Triangulation and second, the Modified Yao Step on any node $v \in G$.
 a) is the fragmentation of the proposition applied to a node $v $.
 It is well known that $rPDT $ produces the same graph as the simple local approach, so b) holds true.
 $rMYS $ does the same calculation as MYS right before the broadcast in the end.
