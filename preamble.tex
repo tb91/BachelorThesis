@@ -10,7 +10,7 @@ $\triangle{abc} $ is the triangle with corners $a,b $ and $c $.
 Furthermore, we assume that there are no four points in any graph which are cocircular since the Delaunay Triangulation is in this case not unique anymore.
 This leads to unnecessary case differentiation.
 
-The Unit Disk Graph of a node set $s $ is denoted as $U(s) $.
+The Unit Disk Graph of a node set $s $ is denoted as $U_s $ or as $U $ if any node set can be used.
 This graph contains all nodes of node set $s $ and connects two nodes if and only if their distance between each other is at most $1 $.
 In addition, we will make use of the so called \emph{Gabriel Graph}, denoted as $GG $. 
 It is the graph which contains all nodes of a supergraph $U $ and it contains an edge $uv \in U $ if the Gabriel circle of $uv $ contains no other node.
@@ -31,7 +31,7 @@ In this part we will see an example of the reactive construction of $PDT $.
 First, we define the Partial Delaunay Triangulation as follows:
 \begin{definition}
 \label{pdt-def}
-An edge $uv \in U $ is in $PDT(U) $ if either 
+An edge $uv \in U $ is in $PDT(U_s) $ if either 
 \begin{enumerate}
 \renewcommand{\labelenumi}{(\roman{enumi})}
  \item $uv \in GG $
@@ -42,7 +42,7 @@ An edge $uv \in U $ is in $PDT(U) $ if either
 The $rPDT $ algorithm taken from chapter 3 of \cite{Benter2013} is presented briefly in the following (note that the original PDT definition is from \cite{pdt}):
 \algrenewcommand\algorithmicprocedure{\textbf{}}
 \begin{algorithm}\small
-\caption{Modified Yao Step}\label{MYS}
+\caption{Partial Delaunay Triangulation}\label{pdt_alg}
 \begin{algorithmic}[1]
 \Statex \textbf{Input:} any node $u $ of a connected graph $G $
 \Statex \textbf{Output:} planar, connected view on neighbors of $u $

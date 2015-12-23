@@ -65,8 +65,8 @@ At last, there is an improved version of RMYS which needs less messages.
 \end{algorithmic}
 \end{algorithm}
  
-This scheme does not tell, in particular, how this can be computed on a node.
-However, my reactive approach, called rMYS, is the following: Since every node knows its PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute algorithm \ref{MYS} from line 1 to 14 without further knowledge about it's neighborhood and hence, does not need to send any messages at all.
+Algorithm \ref{MYS} does not tell, in particular, how this can be computed on a node.
+However, my reactive approach, called rMYS, is the following: Since every node knows its PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute this algorithm from line 1 to 14 without further knowledge about it's neighborhood and hence, does not need to send any messages at all.
 My approach of RMYS needs to send a RTS-message to each possible neighbor which send a message back if they did not select this edge.
 This ensures that only bidirectional edges are used.
 Since in most cases the edges are bidirectional a node sends only a so called protestmessage if it did not select an edge and thus, protests against the selection of this edge.
@@ -76,7 +76,7 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
  
 %\textbf{\algrenewcommand\algorithmicprocedure{\textbf{}}
 \begin{algorithm}\small
-\caption{Reactive Modified Yao Step}\label{RMYS}
+\caption{Reactive Modified Yao Step (RMYS)}\label{RMYS}
 \begin{algorithmic}[0]
 \Statex \textbf{Input:} any connected graph $G $; integer $k\geq 14 $
 \Statex \textbf{Output:} planar, connected graph $G' $ with constant node degree of at most $k $
@@ -91,6 +91,28 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
 \end{algorithmic}
 \end{algorithm}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\linewidth]{eps/RMYS_1.eps}
+\caption{An example graph and all edges drawn which are incident on $a $. The red circle shows the unit disk of $a $.}
+\label{fig:RMYS_1}
+\end{figure}
+
+In the following RMYS is presented on the example given by figure \ref{fig:RMYS_1}.
+Note that this example is only performed on node $a $.
+If one may want to create a complete graph, this algorithm must be executed for every node.
+
+First, place $k $ equally sized cones around $a $.
+It does not matter where these cones start as long as they start at the same place for all nodes.
+For the purpose of this example assume $k=14 $.
+In this example the first cone starts at a horizontal line and goes counterclockwise.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\linewidth]{eps/RMYS_2.eps}
+\caption{An example graph with equally sized cones around $a $ and all edges drawn which are incident on $a $.}
+\label{fig:RMYS_2}
+\end{figure}
 
 
 
