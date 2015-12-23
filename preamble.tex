@@ -39,26 +39,33 @@ An edge $uv \in U $ is in $PDT(U) $ if either
 \end{enumerate} 
 \end{definition}
 
-The $rPDT $ algorithm taken from chapter 3 of \cite{Xiang-Yang2004} is presented in the following:
+The $rPDT $ algorithm taken from chapter 3 of \cite{Benter2013} is presented briefly in the following (note that the original PDT definition is from \cite{pdt}):
 \algrenewcommand\algorithmicprocedure{\textbf{}}
 \begin{algorithm}\small
 \caption{Modified Yao Step}\label{MYS}
 \begin{algorithmic}[1]
-\Statex \textbf{Input:} any connected graph $G $
-\Statex \textbf{Output:} planar, connected graph $G' $
+\Statex \textbf{Input:} any node $u $ of a connected graph $G $
+\Statex \textbf{Output:} planar, connected view on neighbors of $u $
 
 \Statex
+\State $u $ broadcasts a RTS including its position.
+\State All nodes which overhear that message set a timer relative to the Euclidean distance to $u $ such that the closest node has the shortest timer.
+\State As soon as a timer expires this node sends a CTS including its position.
+\State If a node $v $ overhears a CTS from node $t $ it checks whether or not $uv $ violates certain geometric conditions which correspond to the conditions in definition \ref{pdt-def}.
+If it does, $v $ cancels its timer and remains silent.
 
-\For{each node $p\in G $}
-	\State 
-\EndFor
-\Statex $ G' $ is the subgraph of $G $ consisting of all nodes which are in $G $ and all edges which fulfil that both endpoints of this edge have selected it. 
+
 \end{algorithmic}
 \end{algorithm}
 
-
-For this purpose consider the graph in figure \ref{fig:PDT_1}.
-
+%The former mentioned GPDT (generalized Partial Delaunay Triangulation) criteria is defined in \cite{Benter2013} as the following:
+%\begin{definition}
+%Let edge $uv \in U$.
+%$uv \in GPDT $ if and only if the following is true for all nodes $w \in disk(u,v) $:
+%\begin{enumerate}
+%\item there is no node $x \in \bigcirc{u,v,w}$ $\cap $
+%\end{enumerate}
+%\end{definition}
 
 \begin{figure}[h!]
 \centering
@@ -66,4 +73,30 @@ For this purpose consider the graph in figure \ref{fig:PDT_1}.
 \caption{An example graph with unit disk radius $R $ with all edges drawn which are incident on $a $.}
 \label{fig:PDT_1}
 \end{figure}
-
+Consider the graph in figure \ref{fig:PDT_1}.
+We will use it as an example for the application of rPDT.
+First, node $a $ sends a RTS and all other nodes set a timer relative to the Euclidean distance to $a $.
+Since node $e $ is the closest to $a $ and therefore, there cannot be another node in $disk(a,e) $, its timer fires first and sends a CTS.
+$f $ overhears that CTS and checks whether or not $e \in disk(a,f) $.
+Since $e \in disk(a,f) $ is indeed true, $af \notin GG $.
+However, $af $ is still a PDT edge.
+The current angle maximizing node $e $ for edge $af $ ($\angle{aef} $) satisfies the conditions that first, $\bigcirc{aef} $ is empty and second, that $\sin{\angle{aef}} \geq\frac{|af|}{R} $ which means that $\bigcirc{aef} $ does not overlap the unit disk of $a $ and hence, $a $ can decide with only one-hop neighborhood information available that $af \in PDT(U)$.
+These steps are visualized in figure \ref{fig:PDT_2}.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{eps/PDT_2.eps}
+\caption{The dashed Gabriel Circle of edge $ae $ and $\bigcirc{aef} $ proof that both edges $ae $ and $af $ are PDT-edges.}
+\label{fig:PDT_2}
+\end{figure}
+The subsequent steps are that $b $ and then $c $ sends a CTS, since both edges are Gabriel edges (refer to figure \ref{fig:PDT_3}).
+First, $d $ overhears $b $' CTS, calculates that $b \in disk(a,d) $ and finally that $\bigcirc{abd} $ is empty.
+From that point $d $ did not stop its timer yet.
+When the CTS from node $c $ arrives at $d $, $\bigcirc{abd} $ is not empty anymore and there cannot be another circle which is empty.
+$d $ cancels its timer since it is no PDT neighbor.
+Figure \ref{fig:PDT_3} shows also the final edge selection of node $a $ after execution of rPDT.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{eps/PDT_3.eps}
+\caption{All endpoints of orange edges are PDT neighbors of $a $. Dotted circles are Gabriel circles and the red circle proofs that $af $ is a PDT edge.}
+\label{fig:PDT_3}
+\end{figure}
