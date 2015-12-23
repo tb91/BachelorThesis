@@ -33,7 +33,6 @@ For the sake of completeness follows a scheme of the Modified Yao Step taken fro
 In addition, there is an explanation of how RMYS operates.
 Then there is a proof of correctness, followed by an brief analysis of the message complexity and message size of RMYS.
 Afterwards, we see which properties the graph produced by RMYS obtains and which not.
-At last, there is an improved version of RMYS which needs less messages.
 
 \algrenewcommand\algorithmicprocedure{\textbf{}}
 \begin{algorithm}\small
@@ -99,20 +98,50 @@ For clarity, notice that both acronyms RMYS and rMYS mean \grqq reactive Modifie
 \end{figure}
 
 In the following RMYS is presented on the example given by figure \ref{fig:RMYS_1}.
-Note that this example is only performed on node $a $.
+Note that this example calculation is only performed on node $a $.
 If one may want to create a complete graph, this algorithm must be executed for every node.
 
-First, place $k $ equally sized cones around $a $.
+First, create the PDT neighborhood of $a $ using rPTD as explained in chapter \ref{PDT_section}.
+Since nodes $p, q, r $ and $s $ are no PDT neighbors of $a $ and, hence they are not needed anymore, they are omitted in the following figures.
+Now, the Modified Yao Step starts.
+Place $k $ equally sized cones around $a $.
 It does not matter where these cones start as long as they start at the same place for all nodes.
-For the purpose of this example assume $k=14 $.
-In this example the first cone starts at a horizontal line and goes counterclockwise.
-
+For the purpose of this example assume $k=14 $ and that the first cone starts at a horizontal line and runs counterclockwise.
+The next step is that $a $ selects for each cone the shortest edge.
+In figure \ref{fig:RMYS_2} these steps has been executed.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\linewidth]{eps/RMYS_2.eps}
-\caption{An example graph with equally sized cones around $a $ and all edges drawn which are incident on $a $.}
+\caption{An example graph with equally sized cones around $a $ and all edges drawn which are incident on $a $. All orange edges has been selected by reason of being the shortest edge in their cone.}
 \label{fig:RMYS_2}
 \end{figure}
+Then, consider all maximal sequences of empty cones.
+Let cones $3 $ to $5 $ be the first sequence to be considered.
+Select the first $\lfloor \frac{|s|}{2} \rfloor = 1 $ unselected edges clockwise from $s $, with $s $ being the length of the sequence.
+Hence, edge $ai $ is selected now.
+Counterclockwise the next $\lceil \frac{|s|}{2} \rceil = 2$ unselected edges are selected.
+For this reason edges $af $ and $ae $ are additionally selected.
+The next empty sequence to analyze is cone 7.
+In this case the next edge incident on $a $ clockwise and counterclockwise, respectively, from this cone has to be tested.
+Since both edges $ae $ and $af $ are selected yet, no edge will be additionally added.
+Moving on, the next empty sequence which is cone 10 must be inspected.
+In this example $ao $ is already selected. 
+However, $ab $ is not selected yet.
+In order to fulfill the algorithm \ref{MYS} it selects $ab $ at this point in time.
+The last sequence to analyze is cone 12.
+For the same reason as in the sequence before $an $ gets selected.
+The last step of the RMYS algorithm is that all of these selected neighbors test whether or not $a $ is also their neighbor.
+If this is not the case for one node $z $, this edge is being deleted.
+In this example every neighbor accepts $a $ as its neighbor.
+Figure \ref{fig:RMYS_3} contains the final graph.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\linewidth]{eps/RMYS_3.eps}
+\caption{This is the final graph with all edges drawn in orange which are incident on $a $ after the execution of RMYS.}
+\label{fig:RMYS_3}
+\end{figure}
+
 
 
 
