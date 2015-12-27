@@ -28,7 +28,7 @@
 %\end{algorithmic}
 %\end{algorithm}
 \section{Algorithm}
-This chapter introduces the \emph{reactive Modified Yao Step (RMYS)} and explains it's functionality.
+This chapter introduces the \emph{reactive Modified Yao Step (RMYS)} and explains its functionality.
 For the sake of completeness follows a scheme of the Modified Yao Step taken from \cite{kanj} and how this can be changed to a reactive approach.
 In addition, there is an explanation of how RMYS operates.
 Then there is a proof of correctness, followed by an brief analysis of the message complexity and message size of RMYS.
@@ -65,7 +65,7 @@ Afterwards, we see which properties the graph produced by RMYS obtains and which
 \end{algorithm}
  
 Algorithm \ref{MYS} does not tell, in particular, how this can be computed on a node.
-However, my reactive approach, called rMYS, is the following: Since every node knows its PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute this algorithm from line 1 to 14 without further knowledge about it's neighborhood and hence, does not need to send any messages at all.
+However, my reactive approach, called rMYS, is the following: Since every node knows its PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute this algorithm from line 1 to 14 without further knowledge about its neighborhood and hence, does not need to send any messages at all.
 My approach of RMYS needs to send a RTS-message to each possible neighbor which send a message back if they did not select this edge.
 This ensures that only bidirectional edges are used.
 Since in most cases the edges are bidirectional a node sends only a so called protestmessage if it did not select an edge and thus, protests against the selection of this edge.
