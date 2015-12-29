@@ -4,7 +4,7 @@ Sinalgo is a simulation framework which can test and validate network algorithms
 
 There are two different simulation runs.
 The first one calculated the Euclidean and hop spanning ratio of PDT and RMYS and the second one counted the messages which were needed to construct PDT, RMYS and the amount of messages needed by two hop beaconing.
-Both simulations had 1000 random connected graphs for each node density, which went from 5 to 20.
+1000 random connected graphs for each node density from 5 to 20 were used.
 The numbers of nodes $n $ used for each density were calculated with the following formula:
 \begin{equation*}
 n =round( \frac{D_x \cdot D_y}{\pi \cdot R^2} \cdot density)
@@ -31,12 +31,12 @@ It is noticeable that both lines seem to be the same line.
 For density $5 $ the ratio is approximately $1.30 $ and density 20 has approximately a spanning ratio of $1.38 $.
 In between 5 and 20 the curve is increasing slightly and has no outliers.
 
-Since both lines are almost identical it is possibly true that RMYS has also a constant spanning ratio which is a fractional amount greater than the proven spanning ratio of PDT (refer to \cite{Neumann2012} for proof), which is smaller or equal to $\frac{1+\sqrt(5)}{4} \pi^2 $. 
+Since both lines are almost identical it is possibly true that RMYS has also a constant spanning ratio which is a fractional amount greater than the proven spanning ratio of PDT (refer to \cite{Neumann2012} for proof).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\linewidth]{eps/RMYS_PDT_SpanningRatio.eps}
-\caption{Euclidean spanning ratio of Reactive Modified Yao Step (RMYS) and Partial Delaunay Triangulation (PDT) with respect to the Unit Disk Graph in context to the node density. 1000 Simulations per density.}
+\caption{Measured Euclidean spanning ratio of Reactive Modified Yao Step (RMYS) and Partial Delaunay Triangulation (PDT) with respect to the unit disk graph in context to the node density. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_SpanningRatio}
 \end{figure}
 
@@ -47,7 +47,7 @@ The measured values increase from $3 $ hops at density $5 $ to approximately $4.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\linewidth]{eps/RMYS_PDT_HopSpanningRatio.eps}
-\caption{Hop spanning ratio of Reactive Modified Yao Step (RMYS) and Partial Delaunay Triangulation (PDT) with respect to the Unit Disk Graph in context to the node density. 1000 Simulations per density.}
+\caption{Measured hop spanning ratio of Reactive Modified Yao Step (RMYS) and Partial Delaunay Triangulation (PDT) with respect to the unit disk graph in context to the node density. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_HopSpanningRatio}
 \end{figure}
 
@@ -65,7 +65,7 @@ Notice that PDT is message optimal (refer to \cite{Benter2013} for proof).
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\linewidth]{eps/RMYS_PDT_Beaconing_Neighbors.eps}
-\caption{}
+\caption{This plot shows the needed messages to construct the RMYS-neighborhood on a given node with respect to the node density in a 2-hop beaconing approach (Beaconing) and in a reactive way (RMYS). Additionally, the messages rPDT uses to construct the PDT-neighborhood of a node (PDT) and its neighbors (PDT on Neighbors) are shown. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_Beaconing_Neighbors.eps}
 \end{figure}
 
@@ -76,30 +76,37 @@ For reference, the message consumption for PDT on one node is shown as well.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\linewidth]{eps/RMYS_PDT_Neighbors.eps}
-\caption{}
+\caption{The messages needed to construct the PDT-neighborhood of a node (PDT) and its neighbors (PDT on Neighbors) are shown. Additionally, the message usage of the RMYS neighborhood creation is visualized. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_Neighbors}
 \end{figure}
 
 
+Refer to figure \ref{fig:RMYS_PDT_avrNeighbors} to see the average and maximal neighbors of the RMYS and the PDT graph.
+Density $5 $ leads to approximately $3.6 $ neighbors and almost $6 $ neighbors at density $20 $.
+The maximal neighbors differ for both graphs from $6.89 $ at density $5 $ to approximately $10.35 $ for RMYS and $10.44 $ for PDT at density $20 $.
+The differences of the maximal neighbors for RMYS and PDT at high densities is explained in REF.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\linewidth]{eps/RMYS_PDT_avrNeighbors.eps}
-\caption{hallo dies ist ein test}
+\caption{Average and maximal Neighbors of Reactive Modified Yao Step (RMYS) and Partial Delaunay Triangulation (PDT) with respect to node density. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_avrNeighbors}
 \end{figure}
+
+
+
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\linewidth]{eps/RMYS_PDT_UDGNeighborsRatio.eps}
-\caption{hallo dies ist ein test}
+\caption{The average neighbors for Reactive Modified Yao Step (RMYS) and Partial Delaunay Triangulation (PDT) divided by the average neighbors in the unit disk model are shown. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_UDGNeighborsRatio}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.0\linewidth]{eps/RMYS_PDT_MessagesPerNeighbors.eps}
-\caption{hallo dies ist ein test}
+\caption{The messages needed to construct the RMYS neighborhood (RMYS), the PDT neighborhood of a node (PDT) and its neighbors (PDT on Neighbors) divided by the actual neighbors in this subgraph are visualized. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_MessagesPerNeighbors}
 \end{figure}
 
