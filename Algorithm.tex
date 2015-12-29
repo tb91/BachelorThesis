@@ -123,15 +123,15 @@ Counterclockwise the next $\lceil \frac{|s|}{2} \rceil = 2$ unselected edges are
 For this reason edges $af $ and $ae $ are additionally selected.
 The next empty sequence to analyze is cone 7.
 In this case the next edge incident on $a $ clockwise and counterclockwise, respectively, from this cone has to be tested.
-Since both edges $ae $ and $af $ are selected yet, no edge will be additionally added.
+Since both edges $ae $ and $af $ are selected yet, none of these edge will be selected again.
 Moving on, the next empty sequence which is cone 10 must be inspected.
 In this example $ao $ is already selected. 
 However, $ab $ is not selected yet.
-In order to fulfill the algorithm \ref{MYS} it selects $ab $ at this point in time.
+In order to fulfill algorithm \ref{MYS} it selects $ab $ at this point in time.
 The last sequence to analyze is cone 12.
 For the same reason as in the sequence before $an $ gets selected.
 The last step of the RMYS algorithm is that all of these selected neighbors test whether or not $a $ is also their neighbor.
-If this is not the case for one node $z $, this edge is being deleted.
+If this is not the case for one node, this edge is being unselected.
 In this example every neighbor accepts $a $ as its neighbor.
 Figure \ref{fig:RMYS_3} contains the final graph.
 
