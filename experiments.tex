@@ -54,11 +54,13 @@ The measured values increase from $3 $ hops at density $5 $ to approximately $4.
 
 
 In figure \ref{fig:RMYS_PDT_Beaconing_Neighbors.eps} is the message consumption with respect to node density shown.
-In this simulation PDT creates the neighborhood of one random node within the graph borders and at least unit disk radius $R=100 $ away from the borders to ensure the correct node density. .... hinzufügen dass rmys und pdt auf knoten plus nachbarn ausgefuehrt werden.
-In this example the amount of messages RMYS and PDT uses are almost equal.
+"PDT on neighbors" shows the amount of messages PDT uses to create the 2 hop PDT neighborhood of one random node within the graph borders and at least unit disk radius $R=100 $ away from the borders to ensure the correct node density.
+In this example the amount of messages RMYS and "PDT on neighbors" uses are almost equal.
 The messages used in 2 hop beaconing are much more.
 Additionally, the increase from one density to another is greater than the increase in PDT and RMYS.
 At density $5 $ beaconing uses almost twice as much messages as PDT and at density $20 $ it uses almost tenth times as much messages as PDT.
+For reference, the amount of messages which PDT uses to create the 1 hop PDT neighborhood of the same node as above is shown.
+Notice that PDT is message optimal (refer to \cite{Benter2013} for proof).
 
 \begin{figure}[h!]
 \centering
@@ -67,8 +69,9 @@ At density $5 $ beaconing uses almost twice as much messages as PDT and at densi
 \label{fig:RMYS_PDT_Beaconing_Neighbors.eps}
 \end{figure}
 
-Figure \ref{fig:RMYS_PDT_Neighbors} shows the message consumption with respect to node density between RMYS and PDT in order to notice the small differences.
+Figure \ref{fig:RMYS_PDT_Neighbors} shows the message consumption with respect to node density between RMYS and PDT on neighbors in order to notice the small differences.
 In fact RMYS uses always one message more than PDT.
+For reference, the message consumption for PDT on one node is shown as well.
 
 \begin{figure}[h!]
 \centering
