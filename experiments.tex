@@ -25,7 +25,6 @@ Every message which was sent, arrives for sure in the round after it was sent.
 \item All graphs are connected.
 \end{itemize}
 
-
 Figure \ref{fig:RMYS_PDT_SpanningRatio} shows the measured spanning ratio of RMYS and PDT to the unit disk graph with respect to node density.
 It is noticeable that both lines seem to be the same line.
 For density $5 $ the ratio is approximately $1.30 $ and density 20 has approximately a spanning ratio of $1.38 $.
@@ -94,7 +93,10 @@ The differences of the maximal neighbors for RMYS and PDT at high densities is e
 \end{figure}
 
 
-
+Figure \ref{fig:RMYS_PDT_UDGNeighborsRatio} shows the amount of neighbors in the subgraphs RMYS and PDT of a random node divided by the amount of neighbors in the unit disk model of the same node.
+A value of $1 $ corresponds to all unit disk neighbors are neighbors in the subgraph.
+At density $5 $ approximately $0.8 $ percent of all unit disk neighbors are PDT and RMYS neighbors.
+At density $20 $ this percentage dropped to $0.33 $.
 
 \begin{figure}[h!]
 \centering
@@ -109,5 +111,14 @@ The differences of the maximal neighbors for RMYS and PDT at high densities is e
 \caption{The messages needed to construct the RMYS neighborhood (RMYS), the PDT neighborhood of a node (PDT) and its neighbors (PDT on Neighbors) divided by the actual neighbors in this subgraph are visualized. 1000 Simulations per density.}
 \label{fig:RMYS_PDT_MessagesPerNeighbors}
 \end{figure}
+
+In Figure \ref{fig:RMYS_PDT_MessagesPerNeighbors} is the number of used messages by a topology control divided by the obtained neighbors in the specific subgraph visualized.
+Here, $1 $ corresponds to for each neighbor in the subgraph $1 $ message was sent.
+PDT uses not much more than this.
+At density $5 $ PDT sents approximately $1.33$ and at density $20 $ approximately $1.18 $ messages per neighbor.
+PDT on neighbors and RMYS send $6.2 $ and $6.5 $, respectively, messages per neighbor at density $5 $.
+At density $20 $ PDT on neighbors uses $8.4 $ and RMYS $8.6 $ messages per neighbor.
+
+
 
 
