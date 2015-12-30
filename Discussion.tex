@@ -3,4 +3,14 @@
 \section{Conclusio}
 RMYS is due to its reactivity a robust algorithm to construct a bounded degree, planar graph which is most likely an Euclidean spanner.
 As for now, it is not appropriate to use it to create a local view on just one node in consequence of the message overhead it creates.
-However, it is well suited to create a complete graph in a reactive way while providing a constant node degree.
+However, it is well suited to create a complete graph in a reactive way while providing a constant node degree on top of planarity and a constant spanning ratio.
+RMYS is the first algorithm which inherits all these graph properties and is created in a reactive way.
+
+For the past years reactivity in ad hoc sensor networks reduced permanently the message overhead to create planar graphs which later turned out to be spanners.
+In addition, it is now possible to append the property of a constant node degree for each node in the graph to reactive approaches.
+This saves additional messages if a routing protocol uses the underlying RMYS graph.
+
+In order to minimize the constant node degree bound of $14 $ further research should focus on formally proving the spanning ratio of RMYS and check whether it is possible to lower the degree bound without increasing the spanning ratio significantly.
+Another interesting point for future research is to reduce the message overhead for RMYS when it is executed on one node.
+For instance, under the condition that all possibilities where RMYS creates a uni directional edge are known one can possibly omit the last broadcast completely.
+Instead, one must find a pattern for each of these possibilities to detect uni directional edges without sending additional messages (REF GEBIET).

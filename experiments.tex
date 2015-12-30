@@ -1,4 +1,7 @@
 \section{Simulation results}
+This section is about the simulation results which were achieved.
+First, these results are presented.
+......
 The simulation was performed in Sinalgo\footnote{http://www.disco.ethz.ch/projects/sinalgo/}.
 Sinalgo is a simulation framework which can test and validate network algorithms and at the same time it offers a graphical view on the programmed processes as well as a fast batch mode.
 
@@ -119,6 +122,27 @@ At density $5 $ PDT sents approximately $1.33$ and at density $20 $ approximatel
 PDT on neighbors and RMYS send $6.2 $ and $6.5 $, respectively, messages per neighbor at density $5 $.
 At density $20 $ PDT on neighbors uses $8.4 $ and RMYS $8.6 $ messages per neighbor.
 
+
+In order to understand the small deviation of maximal neighbors at high densities between RMYS and PDT in figure \ref{fig:RMYS_PDT_avrNeighbors} see figure \ref{fig:RMYS_ErrorBiderectionalEdges}.
+This figure contains two nodes $u $ and $v $ with one of their RMYS cones drawn.
+The blue circles and the dotted line marked with $R $ symbolize the unit disk radius of both nodes.
+The green circle proofs that $uv $ is a PDT edge.
+Suppose that the red area contains a node $n $ and that any other cone of $v $ (not visualized) contains also one node.
+If RMYS is executed on that example, $u $ selects $v $ in any case since it is the only node in that cone.
+However, $v $ selects $n $ since it is closer to $v $ than $u $.
+All other cones contain nodes as well and therefore no more edges are selected.
+As a result of this behavior the edge $uv $ was selected from only one, namely $u $, of its endpoints and therefore, $v $ sends a protest message.
+
+
+The maximal neighbors in above mentioned figure were calculated above all nodes in a graph and on some rare occasions this case
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.0\linewidth]{eps/Zwei_Punkte_mit_RMYS_KEGEL.eps}
+\caption{Node $u $ and $v $ are drawn with a specific cone and blue unit disk circles with radius $R $. The green circle is the PDT circle for edge $uv $ and if the red area contains a point, $uv $ is no bidirectional RMYS edge.}
+\label{fig:RMYS_ErrorBiderectionalEdges}
+\end{figure}
 
 
 
