@@ -127,7 +127,7 @@ In the following the simulation results are interpreted and explained.
 Additionally, 
 There are two cases where RMYS does not select all neighbors of a node, even if the count of these neighbors is below the limit of $k=14 $.
 Both cases are presented briefly in the following.
-First, notice figure \ref{fig:RMYS_ErrorBiderectionalEdges}.
+First, notice figure \ref{fig:RMYS_case_error_bidirectional}.
 This figure contains two nodes $u $ and $v $ with one of their RMYS cones drawn.
 The blue circles and the dotted line marked with $R $ symbolize the unit disk radius of both nodes.
 The green circle proofs that $uv $ is a PDT edge.
@@ -139,9 +139,17 @@ As a result of this behavior the edge $uv $ was selected from only one, namely $
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1.0\linewidth]{eps/Zwei_Punkte_mit_RMYS_KEGEL.eps}
+\includegraphics[width=1.0\linewidth]{eps/RMYS_case_error_bidirectional.eps}
 \caption{Node $u $ and $v $ are drawn with a specific cone and blue unit disk circles with radius $R $. The green circle is the PDT circle for edge $uv $ and if the red area contains a point, $uv $ is no bidirectional RMYS edge.}
-\label{fig:RMYS_ErrorBiderectionalEdges}
+\label{fig:RMYS_case_error_bidirectional}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\linewidth]{eps/RMYS_case_one_cone_empty.eps}
+\caption{An example graph with specific edges drawn which are incident on $v $. The blue circle symbolize the unit disk. The dotted circles are Gabriel circles and the green one proofs the existence of $uv $ and $pv $ in the PDT graph.}
+\label{fig:RMYS_case_one_cone_empty}
 \end{figure}
 
 An example for the second case can be viewed in figure \ref{fig:RMYS_case_one_cone_empty}.
@@ -163,10 +171,4 @@ The small difference of less than $1 \% $ between both subgraphs and the fact th
 However, both cases might be relevant for theoretical proofs concerning the spanning ratio or lowering the bound of $k = 14 $.
 
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.8\linewidth]{eps/RMYS_case_one_cone_empty.eps}
-\caption{An example graph with specific edges drawn which are incident on $v $. The blue circle symbolize the unit disk. The dotted circles are Gabriel circles and the green one proofs the existence of $uv $ and $pv $ in the PDT graph.}
-\label{fig:RMYS_case_one_cone_empty}
-\end{figure}
 
