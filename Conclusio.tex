@@ -12,5 +12,5 @@ This saves additional messages if a routing protocol uses the underlying RMYS gr
 
 In order to minimize the constant node degree bound of $14 $ further research should focus on formally proving the spanning ratio of RMYS and check whether it is possible to lower the degree bound without increasing the spanning ratio significantly.
 Another interesting point for future research is to reduce the message overhead for RMYS when it is executed on one node.
-For instance, under the condition that all possibilities where RMYS creates a uni directional edge are known one can possibly omit the last broadcast completely.
-Instead, one must find a pattern for each of these possibilities to detect uni directional edges without sending additional messages (REF GEBIET).
+For instance, under the condition that all possibilities where RMYS creates a uni directional edge are known (refer to figures \ref{fig:RMYS_case_one_cone_empty} and \ref{fig:RMYS_case_error_bidirectional} for help in this matter) one can possibly omit the last broadcast completely.
+Instead, one must find a pattern for each of these possibilities to detect uni directional edges without sending additional messages.
