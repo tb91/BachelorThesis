@@ -131,7 +131,7 @@ First, notice figure \ref{fig:RMYS_ErrorBiderectionalEdges}.
 This figure contains two nodes $u $ and $v $ with one of their RMYS cones drawn.
 The blue circles and the dotted line marked with $R $ symbolize the unit disk radius of both nodes.
 The green circle proofs that $uv $ is a PDT edge.
-Suppose that the red area contains a node $n $ and that any other cone of $v $ (not visualized) contains also one node.
+Suppose that the red area contains a node $n $ and that any other cone of $v $ (not visualized) also contains one node.
 If RMYS is executed on that example, $u $ selects $v $ in any case since it is the only node in that cone.
 However, $v $ selects $n $ since it is closer to $v $ than $u $.
 All other cones contain nodes as well and therefore no more edges are selected.
@@ -144,19 +144,29 @@ As a result of this behavior the edge $uv $ was selected from only one, namely $
 \label{fig:RMYS_ErrorBiderectionalEdges}
 \end{figure}
 
-An example for the second case can be viewed in figure \ref{fig:RMYS_case_one_cone_empty.}.
-It shows a view on an example graph with all edges incident on $v $ drawn.
-In addition, the Gabriel circles of some nodes is visualized in a dotted way.
+An example for the second case can be viewed in figure \ref{fig:RMYS_case_one_cone_empty}.
+It shows a view on an example graph with all edges drawn which are incident on $v $.
+In addition, the Gabriel circles of some nodes are visualized in a dotted way.
+The green circle through $u $, $v $ and $p $ proofs that $vp $ is a PDT edge.
+Note that nodes $a,b,c,d $ and $e $ are also PDT neighbors of $v $, even though their Gabriel circles and edges to $v $ are not drawn for simplicity of this figure.
+RMYS executed on node $v $ leads to the selection of all edges incident on $v $ except $pv $.
+First, all shortest edges per cone are selected which leads to the selection of $uv $ for the cone containing $u $ and $p $.
+Since there is no sequence of empty cones which is longer than 1 only edges which are closest to the empty cones are considered and therefore, $pv $ is not being selected.
+For this case to happen it is mandatory that there is no sequence of length longer than 1 or the edge is, possibly, being selected.
+However, it is not needed that between nodes $a,b,c,d $ and $e $ is always one empty cone.
+There can also be none.
+This is a minimal example in terms of node usage.
 
-
-The maximal neighbors in above mentioned figure were calculated above all nodes in a graph and on some rare occasions these cases happened.
-In order to understand the small deviation of maximal neighbors at high densities between RMYS and PDT in figure \ref{fig:RMYS_PDT_avrNeighbors} see 
+In order to understand the small deviation of maximal neighbors at high densities between RMYS and PDT both above explained cases must be taken into account.
+In addition, the maximal neighbors in figure \ref{fig:RMYS_PDT_avrNeighbors} were calculated over all nodes in a graph and the actual neighbors for the specific subgraphs were instead calculated for one random node per graph.
+The small difference of less than $1 \% $ between both subgraphs and the fact that no node in the complete simulation has sent a protest message leads to the conclusion that with the parameter $k = 14 $ both above cases can be neglected.
+However, both cases might be relevant for theoretical proofs concerning the spanning ratio or lowering the bound of $k = 14 $.
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\linewidth]{eps/RMYS_case_one_cone_empty.eps}
-\caption{}
+\caption{An example graph with specific edges drawn which are incident on $v $. The blue circle symbolize the unit disk. The dotted circles are Gabriel circles and the green one proofs the existence of $uv $ and $pv $ in the PDT graph.}
 \label{fig:RMYS_case_one_cone_empty}
 \end{figure}
 
