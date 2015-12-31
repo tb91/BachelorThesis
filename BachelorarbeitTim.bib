@@ -1,13 +1,52 @@
-% This file was created with JabRef 2.10b2.
-% Encoding: UTF8
+% Encoding: UTF-8
 
+
+@InProceedings{Benter2013,
+  Title                    = {{Reactive Planar Spanner Construction in Wireless Ad Hoc and Sensor Networks}},
+  Author                   = {Benter, Markus and Neumann, Florentin and Frey, Hannes},
+  Booktitle                = {In Proceedings of 32nd IEEE International Conference on Computer Communications (INFOCOM)},
+  Year                     = {2013},
+  Month                    = apr,
+  Pages                    = {2193--2201},
+  Abstract                 = {Within reactive topology control, a node determines its adjacent edges of a network subgraph without prior knowledge of its neighborhood. The goal is to construct a local view on a topology which provides certain desired properties such as planarity. During algorithm execution, a node, in general, is not allowed to determine all its neighbors of the network graph. There are well-known reactive algorithms for computing planar subgraphs. However, the subgraphs obtained do not have constant Euclidean spanning ratio. This means that routing along these subgraphs may result in potentially long detours. So far, it has been unknown if planar spanners can be constructed reactively. In this work, we show that at least under the unit disk network model, this is indeed possible, by proposing an algorithm for reactive construction of the partial Delaunay triangulation, which recently turned out to be a spanner. Furthermore, we show that our algorithm is message-optimal as a node will only exchange messages with nodes that are also neighbors in the spanner. The algorithm's presentation is complemented by a rigorous proof of correctness.},
+  Annote                   = {From Duplicate 1 ( },
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Benter, Neumann, Frey - 2013 - Reactive Planar Spanner Construction in Wireless Ad Hoc and Sensor Networks.pdf:pdf},
+  Keywords                 = {beaconless,reactive},
+  Mendeley-tags            = {beaconless,reactive}
+}
+
+@Article{Chawla2006,
+  Title                    = {{Beaconless Position-Based Routing with Guaranteed Delivery for Wireless Ad hoc and Sensor Networks}},
+  Author                   = {Chawla, Mohit and Goel, Nishith and Kalaichelvan, Kalai and Nayak, Amiya and Stojmenovi\'{c}, Ivan},
+  Journal                  = {Acta Automatica Sinica},
+  Year                     = {2006},
+  Month                    = nov,
+  Number                   = {6},
+  Pages                    = {846--855},
+  Volume                   = {32},
+  Abstract                 = {Existing position-based routing algorithms, where packets are forwarded in the geographic direction of the destination, normally require that the forwarding node should know the positions of all neighbors in its transmission range. This information on direct neighbors is gained by observing beacon messages that each node sends out periodically. Several beaconless greedy routing schemes have been proposed recently. However, none of the existing beaconless schemes guarantee the delivery of packets. Moreover, they incur communication overhead by sending excessive control messages or by broadcasting data packets. In this paper, we describe how existing localized position based routing schemes that guarantee delivery can be made beaconless, while preserving the same routes. In our guaranteed delivery beaconless routing scheme, the next hop is selected through the use of control RTS/CTS messages and biased timeouts. In greedy mode, the neighbor closest to destination responds first. In recovery mode, nodes closer to the source will select shorter timeouts, so that other neighbors, overhearing CTS packets, can eliminate their own CTS packets if they realize that their link to the source is not part of Gabriel graph. Nodes also cancel their packets after receiving data message sent by source to the selected neighbor. We analyze the behavior of our scheme on our simulation environment assuming ideal MAC, following GOAFR+ and GFG routing schemes. Our results demonstrate low communication overhead in addition to guaranteed delivery.},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Chawla et al. - 2006 - Beaconless Position-Based Routing with Guaranteed Delivery for Wireless Ad hoc and Sensor Networks.pdf:pdf},
+  Keywords                 = {Beaconless,Gabriel Graph,Geographic Routing,Reactive,UDG,beaconless routing,geometric routing,guaranteed delivery,position-based,sensor networks},
+  Mendeley-tags            = {Beaconless,Gabriel Graph,Geographic Routing,Reactive,UDG,position-based}
+}
+
+@Article{Damian2010,
+  Title                    = {{Localized Spanners for Ad Hoc Wireless Networks}},
+  Author                   = {Damian, Mirela and Pemmaraju, Sriram V.},
+  Journal                  = {Ad Hoc \& Sensor Wireless Networks},
+  Year                     = {2010},
+  Number                   = {3/4},
+  Pages                    = {305--328},
+  Volume                   = {9},
+  Abstract                 = {We present a new efficient localized algorithm to construct, for any given quasi-unit disk graph G = (V,E) and any $\epsilon$ > 0, a (1+$\epsilon$)-spanner for G of maximum degree O(1) and total weight O($\omega$(MST)), where $\omega$(MST) denotes the weight of a minimum spanning tree for V. We further show that similar localized techniques can be used to construct, for a given unit disk graph G = (V,E), a planarCdel (1+$\epsilon$)(1+$\pi$/2 )-spanner for G of maximum degree O(1) and total weight O($\omega$(MST)). Here Cdel denotes the stretch factor of the unit Delaunay triangulation for V. Both constructions can be completed in O(1) rounds of communication, and require each node to know its own coordinates.},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Damian, Pemmaraju - 2010 - Localized Spanners for Ad Hoc Wireless Networks.pdf:pdf}
+}
 
 @Article{FaceRouting,
   Title                    = {On Delivery Guarantees of Face and Combined Greedy-face Routing in Ad Hoc and Sensor Networks},
   Author                   = {Frey, Hannes and Stojmenovic, Ivan},
   Journal                  = {MobiCom 2006},
   Pages                    = {390--401},
-
   Acmid                    = {1161133},
   Address                  = {New York, USA},
   ISBN                     = {1-59593-286-0},
@@ -18,15 +57,168 @@
   Series                   = {MobiCom 2006}
 }
 
+@Article{Gabriel1969,
+  Title                    = {{A New Statistical Approach to Geographic Variation Analysis}},
+  Author                   = {Gabriel, K. Ruben and Sokal, Robert R.},
+  Journal                  = {Systematic Zoology},
+  Year                     = {1969},
+  Month                    = sep,
+  Number                   = {3},
+  Pages                    = {259--278},
+  Volume                   = {18},
+  Abstract                 = {The authors discuss the problems of describing geographic variation data and develop statistical methods for categorizing sets of populations sampled from different localities. The general approach of the simultaneous test procedures, available with a variety of statistical tests and for continuous as well as for categorical data, is employed with these techniques. Geographical regions are defined as sets of connected localities, with connectedness being defined geometrically. Maximal acceptable connected sets of localities (defined as regions) or coarsest acceptable connected partitions of the entire set of localities are found by these procedures. These are illustrated with several examples.},
+  DOI                      = {10.2307/2412323},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Gabriel, Sokal - 1969 - A New Statistical Approach to Geographic Variation Analysis.pdf:pdf},
+  ISSN                     = {00397989},
+  URL                      = {http://sysbio.oxfordjournals.org/cgi/content/abstract/18/3/259}
+}
+
 @Article{kanj,
   Title                    = {On Geometric Spanners of Euclidean and Unit Disk Graphs},
   Author                   = {Iyad A. Kanj and Ljubomir Perkovic},
   Journal                  = {CoRR},
   Year                     = {2008},
-
   Bibsource                = {dblp computer science bibliography, http://dblp.org},
   Biburl                   = {http://dblp.uni-trier.de/rec/bib/journals/corr/abs-0802-2864},
   Timestamp                = {Mon, 05 Dec 2011 18:03:35 +0100}
+}
+
+@InProceedings{Kanj2006,
+  Title                    = {{Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks}},
+  Author                   = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir},
+  Booktitle                = {2nd International Workshop on Algorithmic Aspects of Wireless Sensor Networks (ALGOSENSORS)},
+  Year                     = {2006},
+  Pages                    = {95--106},
+  Publisher                = {Springer},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovi\'{c} - 2006 - Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks.pdf:pdf}
+}
+
+@InProceedings{Kanj2006a,
+  Title                    = {{Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks}},
+  Author                   = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir},
+  Booktitle                = {2nd International Workshop on Algorithmic Aspects of Wireless Sensor Networks (ALGOSENSORS)},
+  Year                     = {2006},
+  Pages                    = {95--106},
+  Publisher                = {Springer},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovi\'{c} - 2006 - Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks.pdf:pdf}
+}
+
+@InProceedings{Kanj2007,
+  Title                    = {{Strictly-Localized Construction of Near-Optimal Power Spanners for Wireless Ad-Hoc Networks}},
+  Author                   = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
+  Booktitle                = {4th ACM SIGACT-SIGOPS International Workshop on Foundations of Mobile Computing (DIALM-POMC)},
+  Year                     = {2007},
+  Month                    = aug,
+  Pages                    = {1--6},
+  File                     = {::}
+}
+
+@InProceedings{Kanj2007a,
+  Title                    = {{Strictly-Localized Construction of Near-Optimal Power Spanners for Wireless Ad-Hoc Networks}},
+  Author                   = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
+  Booktitle                = {4th ACM SIGACT-SIGOPS International Workshop on Foundations of Mobile Computing (DIALM-POMC)},
+  Year                     = {2007},
+  Month                    = aug,
+  Pages                    = {1--6},
+  File                     = {::}
+}
+
+@InProceedings{Kanj2008,
+  Title                    = {{Computing Lightweight Spanners Locally}},
+  Author                   = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
+  Booktitle                = {22nd International Symposium on Distributed Computing (DISC)},
+  Year                     = {2008},
+  Month                    = sep,
+  Pages                    = {365--378},
+  Abstract                 = {We consider the problem of computing bounded-degree lightweight plane spanners of unit disk graphs in the local distributed model of computation. We are motivated by the hypothesis that such subgraphs can provide the underlying network topology for efficient unicasting and multicasting in wireless distributed systems. We present the first local distributed algorithm that computes a bounded-degree plane lightweight spanner of a given unit disk graph. The upper bounds on the degree, the stretch factor, and the weight of the spanner, are very small. For example, our results imply a local distributed algorithm that computes a plane spanner of a given unit disk graph U, whose degree is at most 14, stretch factor at most 8.81, and weight at most 8.81 times the weight of a Euclidean Minimum Spanning Tree of V(U). We show a wider application of our techniques by giving an O(nlogn) time centralized algorithm that constructs bounded-degree plane lightweight spanners of unit disk graphs (which include Euclidean graphs), with the best upper bounds on the spanner degree, stretch factor, and weight.},
+  File                     = {::},
+  Keywords                 = {Definition k-locality},
+  Mendeley-tags            = {Definition k-locality}
+}
+
+@Article{Kanj2008a,
+  Title                    = {{On Geometric Spanners of Euclidean and Unit Disk Graphs}},
+  Author                   = {Kanj, Iyad a. and Perkovic, Ljubomir},
+  Year                     = {2008},
+  Pages                    = {409--420},
+  Volume                   = {2008},
+  Abstract                 = {We consider the problem of constructing bounded-degree planar geometric spanners of Euclidean and unit-disk graphs. It is well known that the Delaunay subgraph is a planar geometric spanner with stretch factor \$C\_\{del\backslash approx 2.42\$; however, its degree may not be bounded. Our first result is a very simple linear time algorithm for constructing a subgraph of the Delaunay graph with stretch factor \$\backslash rho =1+2\backslash pi(k\backslash cos\{\backslash frac\{\backslash pi\{k)\^{}\{-1\$ and degree bounded by \$k\$, for any integer parameter \$k\backslash geq 14\$. This result immediately implies an algorithm for constructing a planar geometric spanner of a Euclidean graph with stretch factor \$\backslash rho \backslash cdot C\_\{del\$ and degree bounded by \$k\$, for any integer parameter \$k\backslash geq 14\$. Moreover, the resulting spanner contains a Euclidean Minimum Spanning Tree (EMST) as a subgraph. Our second contribution lies in developing the structural results necessary to transfer our analysis and algorithm from Euclidean graphs to unit disk graphs, the usual model for wireless ad-hoc networks. We obtain a very simple distributed, \{$\backslash$em strictly-localized algorithm that, given a unit disk graph embedded in the plane, constructs a geometric spanner with the above stretch factor and degree bound, and also containing an EMST as a subgraph. The obtained results dramatically improve the previous results in all aspects, as shown in the paper.}}}}}}}},
+  Archiveprefix            = {arXiv},
+  Arxivid                  = {0802.2864},
+  Eprint                   = {0802.2864},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovic - 2008 - On Geometric Spanners of Euclidean and Unit Disk Graphs.pdf:pdf},
+  ISBN                     = {9783939897064},
+  Keywords                 = {and phrases,depaul university competitive research,euclidean graph,first author was supported,geometric spanner,grant,in part by a,the work of the,unit disk graph,wireless ad-hoc networks},
+  URL                      = {http://arxiv.org/abs/0802.2864}
+}
+
+@Article{Kanj2009,
+  Title                    = {{Local Construction of Near-Optimal Power Spanners for Wireless Ad Hoc Networks}},
+  Author                   = {Kanj, Iyad A. and Perkovic, L.},
+  Journal                  = {IEEE Transactions on Mobile Computing},
+  Year                     = {2009},
+  Month                    = apr,
+  Number                   = {4},
+  Pages                    = {460--474},
+  Volume                   = {8},
+  Abstract                 = {We present a local distributed algorithm that, given a wireless ad hoc network modeled as a unit disk graph U in the plane, constructs a planar power spanner of U whose degree is bounded by k and whose stretch factor is bounded by 1 + (2sin pi/k)p, where k ges 10 is an integer parameter and p isin [2, 5] is the power exponent constant. For the same degree bound k, the stretch factor of our algorithm significantly improves the previous best bounds by Song et al. We show that this bound is near-optimal by proving that the slightly smaller stretch factor of 1 + (2sin pi/k+1)p is unattainable for the same degree bound k. In contrast to previous algorithms for the problem, the presented algorithm is local. As a consequence, the algorithm is highly scalable and robust. Finally, while the algorithm is efficient and easy to implement in practice, it relies on deep insights on the geometry of unit disk graphs and novel techniques that are of independent interest.},
+  DOI                      = {10.1109/TMC.2008.132},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovic - 2009 - Local Construction of Near-Optimal Power Spanners for Wireless Ad Hoc Networks.pdf:pdf},
+  ISSN                     = {1536-1233},
+  Keywords                 = {Algorithm/protocol design and analysis,Gabriel graphs,Graph algorithms,Spanners,Yao graphs,ad hoc networks,distributed algorithms,graph theory,local distributed algorithm,local distributed algorithms.,near-optimal power spanners,power exponent constant,unit disk graphs,wireless ad hoc networks},
+  Shorttitle               = {Mobile Computing, IEEE Transactions on},
+  URL                      = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4624269}
+}
+
+@Article{Kanj2010,
+  Title                    = {{On Spanners and Lightweight Spanners of Geometric Graphs}},
+  Author                   = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
+  Journal                  = {SIAM Journal on Computing},
+  Year                     = {2010},
+  Month                    = jan,
+  Number                   = {6},
+  Pages                    = {2132--2161},
+  Volume                   = {39},
+  Abstract                 = {We consider the problem of computing spanners of Euclidean and unit disk graphs embedded in the two-dimensional Euclidean plane. We are particularly interested in spanners that possess useful properties such as planarity, bounded degree, and/or light weight. Such spanners have been extensively studied in the area of computational geometry and have been used as the building block for constructing efficient and reliable wireless network communication topologies. We study the above problem under two computational models: the centralized and the distributed model. In the distributed model we focus on algorithms that are local. Such algorithms are suitable for the relevant applications (e.g., wireless computing). Under the centralized model, we present an \$O(n\backslash lg n)\$ time algorithm that computes a bounded-degree plane spanner of a complete Euclidean graph, where n is the number of points in the graph. Both upper bounds on the degree and the stretch factor significantly improve the previous bounds. We extend th...},
+  DOI                      = {10.1137/080737708},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovi\'{c}, Xia - 2010 - On Spanners and Lightweight Spanners of Geometric Graphs.pdf:pdf},
+  ISSN                     = {0097-5397},
+  Keywords                 = {05C10,68U05,68W15,Delaunay triangulations,bounded degree,lightweight,local distributed algorithms,spanners,unit disk graphs},
+  Language                 = {en},
+  Publisher                = {Society for Industrial and Applied Mathematics},
+  URL                      = {http://epubs.siam.org/doi/abs/10.1137/080737708}
+}
+
+@InProceedings{Kanj2010,
+  Title                    = {{Improved Local Algorithms for Spanner Construction}},
+  Author                   = {Kanj, Iyad A. and Xia, Ge},
+  Booktitle                = {6th International Workshop on Algorithms for Sensor Systems, Wireless Ad Hoc Networks, and Autonomous Mobile Entities (ALGOSENSORS)},
+  Year                     = {2010},
+  Editor                   = {Scheideler, Christian},
+  Pages                    = {1--15},
+  Publisher                = {Springer Berlin Heidelberg},
+  Series                   = {Lecture Notes in Computer Science},
+  Abstract                 = {Let S be a set of n points in the plane, let  be the complete Euclidean graph whose point-set is S, and let G be the Delaunay triangulation of S. We present a very simple local algorithm that, given G, constructs a subgraph of G of degree at most 11 that is a geometric spanner of G with stretch factor 2.86, and hence a geometric spanner of  with stretch factor < 7. This algorithm gives an O(nlgn) time centralized algorithm for constructing a subgraph of G that is a geometric spanner of  of degree at most 11 and stretch factor < 7. The algorithm can be generalized to unit disk graphs to give a local algorithm for constructing a plane spanner of a unit disk graph of degree at most 11 and stretch factor < 7.},
+  DOI                      = {10.1007/978-3-642-16988-5},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Xia - 2010 - Improved Local Algorithms for Spanner Construction(4).pdf:pdf},
+  ISBN                     = {978-3-642-16987-8},
+  URL                      = {http://www.springerlink.com/index/10.1007/978-3-642-16988-5}
+}
+
+@Article{Kanj2012,
+  Title                    = {{Improved local algorithms for spanner construction}},
+  Author                   = {Kanj, Iyad A. and Xia, Ge},
+  Journal                  = {Theoretical Computer Science},
+  Year                     = {2012},
+  Month                    = sep,
+  Pages                    = {54--64},
+  Volume                   = {453},
+  Abstract                 = {Let SS be a set of nn points in the plane, let EE be the complete Euclidean graph whose point set is SS, and let GG be the Delaunay triangulation of SS. We present a very simple local algorithm that, given GG, constructs a subgraph of GG of degree at most 11 that is a geometric spanner of GG with stretch factor 2.86, and hence a geometric spanner of EE with stretch factor < 7. This algorithm gives an O(nlgn)O(nlgn) time centralized algorithm for constructing a subgraph of GG that is a geometric spanner of EE of degree at most 11 and stretch factor <7.},
+  DOI                      = {10.1016/j.tcs.2011.05.027},
+  File                     = {::},
+  ISSN                     = {03043975},
+  Keywords                 = {delaunay triangulations,spanners},
+  URL                      = {http://dx.doi.org/10.1016/j.tcs.2011.05.027}
 }
 
 @Article{keil,
@@ -37,14 +229,87 @@
   Number                   = {1},
   Pages                    = {13-28},
   Volume                   = {7},
-
-  Doi                      = {10.1007/BF02187821},
+  DOI                      = {10.1007/BF02187821},
   ISSN                     = {0179-5376},
   Language                 = {English},
   Owner                    = {timmy},
   Publisher                = {Springer-Verlag},
   Timestamp                = {2015.06.29},
-  Url                      = {http://dx.doi.org/10.1007/BF02187821}
+  URL                      = {http://dx.doi.org/10.1007/BF02187821}
+}
+
+@Article{Keil1992,
+  Title                    = {{Classes of graphs which approximate the complete euclidean graph}},
+  Author                   = {Keil, J. Mark and Gutwin, Carl a.},
+  Journal                  = {Discrete \& Computational Geometry},
+  Year                     = {1992},
+  Number                   = {1},
+  Pages                    = {13--28},
+  Volume                   = {7},
+  Abstract                 = {Let S be a set of N points in the Euclidean plane, and let d ( p, q ) be the Euclidean distance between points p and q in S . Let G ( S ) be a Euclidean graph based on S and let G ( p, q ) be the length of the shortest path in G ( S ) between p and q . We say a Euclidean graph G ( S ) t -approximates the complete Euclidean graph if, for every p, q $\epsilon$ S, G ( p, q )/ d ( p, q ) ≤ t . In this paper we present two classes of graphs which closely approximate the complete Euclidean graph. We first consider the graph of the Delaunay triangulation of S , DT( S ). We show that DT( S ) (2 $\pi$ /(3 cos( $\pi$ /6)) ≈ 2.42)-approximates the complete Euclidean graph. Secondly, we define $\theta$ ( S ), the fixed-angle $\theta$ -graph (a type of geometric neighbor graph) and show that $\theta$ ( S ) ((1/cos $\theta$ )(1/(1−tan $\theta$ )))-approximates the complete Euclidean graph.},
+  DOI                      = {10.1007/BF02187821},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Keil, Gutwin - 1992 - Classes of graphs which approximate the complete euclidean graph.pdf:pdf},
+  ISBN                     = {0179-5376},
+  ISSN                     = {01795376}
+}
+
+@Article{Li2001,
+  Title                    = {{Power Efficient and Sparse Spanner for Wireless Ad Hoc Networks}},
+  Author                   = {Li, Xiang-Yang and Wan, Peng-Jun and Wang, Yu},
+  Journal                  = {Proceedings of the Conference on Computer Communications and Networks},
+  Year                     = {2001},
+  Number                   = {C},
+  Pages                    = {564--567},
+  Volume                   = {00},
+  Abstract                 = {Due to the limited resources available in the wireless ad hoc networking nodes, the scalability is crucial for network operations. One effective approach is to maintain only a sparse spanner of a linear number of links while still preseving the power-efficient route for any pair of nodes. For any spanner G, its power stretch factor is defined as the maximum ratio of the minimum power needed to support any link in this spanner to the least necessary. In this paper, we first consider several well-known proximity graphs including the relative neighborhood graph, Gabriel graph and Yao graph. These graphs are sparse and can be constructed locally in an efficient way. We show that the power stretch factor of the Gabriel graph is always one, and the power stretch factor of the Yao graph is bounded by a constant while the power stretch factor of the relative neighborhood graph could be as large as the network size minus one. Notice that all of these graphs do not have constant degrees. We further propose another sparse spanner that has both constant degree and constant power stretch factor. An efficient local algorithm is presented for the construction of this spanner},
+  DOI                      = {10.1109/ICCCN.2001.956322},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Li, Wan, Wang - 2001 - Power Efficient and Sparse Spanner for Wireless Ad Hoc Networks.pdf:pdf},
+  ISBN                     = {0780371283},
+  Keywords                 = {net-,power consumption,topology control,wireless ad hoc networks}
+}
+
+@InProceedings{Li2002,
+  Title                    = {{Distributed construction of a planar spanner and routing for ad hoc wireless networks}},
+  Author                   = {Li, Xiang-Yang and Calinescu, Gruia and Wan, Peng-Jun},
+  Booktitle                = {21th Annual Joint Conference of the IEEE Computer and Communications Societies (INFOCOM)},
+  Year                     = {2002},
+  Pages                    = {1268--1277},
+  Publisher                = {IEEE},
+  Volume                   = {3},
+  Abstract                 = {Several localized routing protocols (see Bose, P. and Morin, P., Proc. 10th Annual Int. Symp. on Algorithms and Computation ISAAC, 1999) guarantee the delivery of packets when the underlying network topology is the Delaunay triangulation of all wireless nodes. However, it is expensive to construct the Delaunay triangulation in a distributed manner. Given a set of wireless nodes, we more accurately model the network as a unit-disk graph, UDG, in which a link between two nodes exists only if the distance between them is at most the maximum transmission range. Given a graph H, a spanning subgraph G of H is a t-spanner if the length of the shortest path connecting any two points in G is no more than t times the length of the shortest path connecting the two points in H. We present a novel localized networking protocol that constructs a planar 2.5-spanner of UDG, called the localized Delaunay triangulation, as network topology. It contains all edges that are in both the UDG and the Delaunay triangulation of all wireless nodes. Our experiments show that the delivery rates of existing localized routing protocols are increased when localized Delaunay triangulation is used instead of several previously proposed topologies. The total communication cost of our networking protocol is O(n log n) bits. Moreover, the computation cost of each node u is O(du log du), where du is the number of 1-hop neighbors of u in UDG.},
+  Annote                   = {From Duplicate 1 ( },
+  DOI                      = {10.1109/INFCOM.2002.1019377},
+  File                     = {::},
+  ISBN                     = {0-7803-7476-2},
+  URL                      = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1019377 http://ieeexplore.ieee.org/xpl/freeabs\_all.jsp?arnumber=1019377}
+}
+
+@Article{Li2003,
+  Title                    = {{Localized Delaunay triangulation with application in ad hoc wireless networks}},
+  Author                   = {Li, Xiang-Yang and Calinescu, Gruia and Peng-Jun, Wan and Wang, Yu},
+  Journal                  = {IEEE Transactions on Parallel and Distributed Systems},
+  Year                     = {2003},
+  Number                   = {10},
+  Pages                    = {1035----1047},
+  Volume                   = {14},
+  Abstract                 = {Several localized routing protocols guarantee the delivery of the packets when the underlying network topology is a planar graph. Typically, relative neighborhood graph (RING) or Gabriel graph (GG) is used as such planar structure. However, it is well-known that the spanning ratios of these two graphs are not bounded by any constant (even for uniform randomly distributed points). Bose et al. (1999) recently developed a localized routing protocol that guarantees that the distance traveled by the packets is within a constant factor of the minimum if Delaunay triangulation of all wireless nodes is used, in addition, to guarantee the delivery of the packets. However, it is expensive to construct the Delaunay triangulation in a distributed manner. Given a set of wireless nodes, we model the network as a unit-disk graph (UDG), in which a link uv exists only if the distance ||uv|| is at most the maximum transmission range. In this paper, we present a novel localized networking protocol that constructs a planar 2 5-spanner of UDG, called the localized Delaunay triangulation (LDEL), as network topology. It contains all edges that are both in the unit-disk graph and the Delaunay triangulation of all nodes. The total communication cost of our networking protocol is O(n log n) bits, which is within a constant factor of the optimum to construct any structure in a distributed manner. Our experiments show that the delivery rates of some of the existing localized routing protocols are increased when localized Delaunay triangulation is used instead of several previously proposed topologies. Our simulations also show that the traveled distance of the packets is significantly less when the FACE routing algorithm is applied on LDEL, rather than applied on GG.},
+  DOI                      = {10.1109/TPDS.2003.1239871},
+  File                     = {::},
+  ISSN                     = {1045-9219}
+}
+
+@InProceedings{Neumann2012,
+  Title                    = {{On the Spanning Ratio of Partial Delaunay Triangulation}},
+  Author                   = {Neumann, Florentin and Frey, Hannes},
+  Booktitle                = {9th IEEE International Conference on Mobile Ad hoc and Sensor Systems (MASS)},
+  Year                     = {2012},
+  Month                    = oct,
+  Pages                    = {434--442},
+  Publisher                = {Ieee},
+  DOI                      = {10.1109/MASS.2012.6502544},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Neumann, Frey - 2012 - On the Spanning Ratio of Partial Delaunay Triangulation.pdf:pdf},
+  ISBN                     = {978-1-4673-2433-5},
+  URL                      = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6502544}
 }
 
 @Article{pdt,
@@ -52,18 +317,35 @@
   Author                   = {Li, Xiang Yang and Stojmenovic, Ivan and Wang, Yu},
   Journal                  = {IEEE Transactions on Parallel and Distributed Systems},
   Year                     = {2004},
-
   Month                    = apr,
   Number                   = {4},
   Pages                    = {350--361},
   Volume                   = {15},
-
   Abstract                 = { We address the problem of localized scatternet formation for multihop Bluetooth-based personal area ad hoc networks. Nodes are assumed to know their positions and are able to establish connections with any of their neighboring nodes, located within their transmission radius, in the neighbor discovery phase. The next phase of the proposed formation algorithm is optional and can be applied to construct a sparse geometric structure in a localized manner. We propose here a new sparse planar structure, namely, partial Delaunay triangulation (PDT), which can be constructed locally and is denser than other known localized planar structures. In the next mandatory phase, the degree of each node is limited to seven by applying the Yao structure, and the master-slave relations in piconets are formed in created subgraphs. This phase consists of several iterations. In each iteration, undecided nodes with higher keys than any of their undecided neighbors apply the Yao structure to bound the degrees, decide master-slave relations on the remaining edges, and inform all neighbors about either deleting edges or master-slave decisions. To the best of our knowledge, our schemes are the first schemes that construct degree limited (a node has at most seven slaves) and connected piconets in multihop networks, without parking any node. The creation and maintenance require small overhead in addition to maintaining accurate location information for one-hop neighbors. The experiments confirm good functionality of created Bluetooth networks in addition to their fast creation and straightforward maintenance.},
-  Doi                      = {10.1109/TPDS.2004.1271184},
+  DOI                      = {10.1109/TPDS.2004.1271184},
   File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Li, Stojmenovi\'{c}, Wang - 2004 - Partial delaunay triangulation and degree limited localized bluetooth scatternet formation.pdf:pdf},
   ISSN                     = {10459219},
   Keywords                 = {Bluetooth,Delaunay triangulation,Scatternet formation},
-  Url                      = {http://ieeexplore.ieee.org/xpl/freeabs\_all.jsp?arnumber=1271184}
+  URL                      = {http://ieeexplore.ieee.org/xpl/freeabs\_all.jsp?arnumber=1271184}
+}
+
+@Article{Ruhrup2010,
+  Title                    = {{Message-Efficient Beaconless Georouting With Guaranteed Delivery in Wireless Sensor, Ad Hoc, and Actuator Networks}},
+  Author                   = {R\"{u}hrup, Stefan and Kalosha, H. and Nayak, Amiya and Stojmenovi\'{c}, Ivan},
+  Journal                  = {IEEE/ACM Transactions on Networking},
+  Year                     = {2010},
+  Month                    = feb,
+  Number                   = {1},
+  Pages                    = {95--108},
+  Volume                   = {18},
+  Abstract                 = {Beaconless georouting algorithms are fully reactive and work without prior knowledge of their neighbors. However, existing approaches can either not guarantee delivery or they require the exchange of complete neighborhood information. We describe two general methods for completely reactive face routing with guaranteed delivery. The beaconless forwarder planarization (BFP) scheme determines correct edges of a local planar subgraph without hearing from all neighbors. Face routing then continues properly. Angular relaying determines directly the next hop of a face traversal. Both schemes are based on the select-and-protest principle. Neighbors respond according to a delay function, but only if they do not violate a planar subgraph condition. Protest messages are used to remove falsely selected neighbors that are not in the planar subgraph. We show that a correct beaconless planar subgraph construction is not possible without protests. We also show the impact of the chosen planar subgraph on the message complexity. With the new circlunar neighborhood graph (CNG) we can bound the worst case message complexity of BFP, which is not possible when using the Gabriel graph (GG) for planarization. Simulation results show similar message complexities in the average case when using CNG and GG. Angular relaying uses a delay function that is based on the angular distance to the previous hop. We develop a theoretical framework for delay functions and show both theoretically and in simulations that with a function of angle and distance we can reduce the number of protests by a factor of 2 compared to a simple angle-based delay function.},
+  Annote                   = {From Duplicate 2 ( },
+  DOI                      = {10.1109/TNET.2009.2022084},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/R\"{u}hrup et al. - 2010 - Message-Efficient Beaconless Georouting With Guaranteed Delivery in Wireless Sensor, Ad Hoc, and Actuator Networ.pdf:pdf},
+  ISSN                     = {1063-6692},
+  Keywords                 = {Gabriel Graph,ad hoc networks,beaconless,beaconless routing,contention-based,contention-based forwarding,geographic routing,reactive,wireless sensor networks},
+  Mendeley-tags            = {Gabriel Graph,beaconless,contention-based,geographic routing,reactive},
+  URL                      = {http://dl.acm.org/citation.cfm?id=1816288.1816296}
 }
 
 @Article{strictlyLocal,
@@ -71,7 +353,6 @@
   Author                   = {Suomela, Jukka},
   Journal                  = {ACM Comput. Surv., 2013},
   Pages                    = {24:1--24:40},
-
   Acmid                    = {2431223},
   Address                  = {New York, NY, USA},
   Articleno                = {24},
@@ -82,338 +363,58 @@
   Publisher                = {ACM}
 }
 
+@Article{Toussaint1980,
+  Title                    = {{The relative neighbourhood graph of a finite planar set}},
+  Author                   = {Toussaint, Godfried T.},
+  Journal                  = {Pattern Recognition},
+  Year                     = {1980},
+  Number                   = {4},
+  Pages                    = {261--268},
+  Volume                   = {12},
+  Abstract                 = {The relative neighbourhood graph (RNG) of a set of n points on the plane is defined. The ability of the RNG to extract a perceptually meaningful structure from the set of points is briefly discussed and compared to that of two other graph structures: the minimal spanning tree (MST) and the Delaunay (Voronoi) triangulation (DT). It is shown that the RNG is a superset of the MST and a subset of the DT. Two algorithms for obtaining the RNG of n points on the plane are presented. One algorithm runs in 0(n2) time and the other runs in 0(n3) time but works also for the d-dimensional case. Finally, several open problems concerning the RNG in several areas such as geometric complexity, computational perception, and geometric probability, are outlined.},
+  DOI                      = {10.1016/0031-3203(80)90066-7},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Toussaint - 1980 - The relative neighbourhood graph of a finite planar set.pdf:pdf},
+  ISSN                     = {00313203},
+  Keywords                 = {algorithms,computational perception,delaunay triangulation,dot patterns,geometric complexity geometric probability,minimal spanning tree,pattern recognition,relative neighbourhood graph,triangulations},
+  URL                      = {http://dx.doi.org/10.1016/0031-3203(80)90066-7}
+}
+
 @Article{wangLi,
   Title                    = {Distributed Construction of a Planar Spanner and Routing for Ad Hoc Wireless Networks},
   Author                   = {Xiang-Yang Li., Gruia Calinescu., Peng-Jun Wan.},
   Journal                  = {INFOCOM},
   Year                     = {2002},
-
   Owner                    = {Tim},
   Timestamp                = {2015.01.30}
 }
 
-Automatically generated by Mendeley Desktop 1.14
-Any changes to this file will be lost if it is regenerated by Mendeley.
-
-BibTeX export options can be customized via Options -> BibTeX in Mendeley Desktop
-
-@article{Keil1992,
-abstract = {Let S be a set of N points in the Euclidean plane, and let d ( p, q ) be the Euclidean distance between points p and q in S . Let G ( S ) be a Euclidean graph based on S and let G ( p, q ) be the length of the shortest path in G ( S ) between p and q . We say a Euclidean graph G ( S ) t -approximates the complete Euclidean graph if, for every p, q $\epsilon$ S, G ( p, q )/ d ( p, q ) ≤ t . In this paper we present two classes of graphs which closely approximate the complete Euclidean graph. We first consider the graph of the Delaunay triangulation of S , DT( S ). We show that DT( S ) (2 $\pi$ /(3 cos( $\pi$ /6)) ≈ 2.42)-approximates the complete Euclidean graph. Secondly, we define $\theta$ ( S ), the fixed-angle $\theta$ -graph (a type of geometric neighbor graph) and show that $\theta$ ( S ) ((1/cos $\theta$ )(1/(1−tan $\theta$ )))-approximates the complete Euclidean graph.},
-author = {Keil, J. Mark and Gutwin, Carl a.},
-doi = {10.1007/BF02187821},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Keil, Gutwin - 1992 - Classes of graphs which approximate the complete euclidean graph.pdf:pdf},
-isbn = {0179-5376},
-issn = {01795376},
-journal = {Discrete \& Computational Geometry},
-number = {1},
-pages = {13--28},
-title = {{Classes of graphs which approximate the complete euclidean graph}},
-volume = {7},
-year = {1992}
-}
-@inproceedings{Kanj2006a,
-address = {Venice, Italy},
-author = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir},
-booktitle = {2nd International Workshop on Algorithmic Aspects of Wireless Sensor Networks (ALGOSENSORS)},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovi\'{c} - 2006 - Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks.pdf:pdf},
-pages = {95--106},
-publisher = {Springer},
-title = {{Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks}},
-year = {2006}
-}
-@article{Kanj2008a,
-abstract = {We consider the problem of constructing bounded-degree planar geometric spanners of Euclidean and unit-disk graphs. It is well known that the Delaunay subgraph is a planar geometric spanner with stretch factor \$C\_\{del\backslash approx 2.42\$; however, its degree may not be bounded. Our first result is a very simple linear time algorithm for constructing a subgraph of the Delaunay graph with stretch factor \$\backslash rho =1+2\backslash pi(k\backslash cos\{\backslash frac\{\backslash pi\{k)\^{}\{-1\$ and degree bounded by \$k\$, for any integer parameter \$k\backslash geq 14\$. This result immediately implies an algorithm for constructing a planar geometric spanner of a Euclidean graph with stretch factor \$\backslash rho \backslash cdot C\_\{del\$ and degree bounded by \$k\$, for any integer parameter \$k\backslash geq 14\$. Moreover, the resulting spanner contains a Euclidean Minimum Spanning Tree (EMST) as a subgraph. Our second contribution lies in developing the structural results necessary to transfer our analysis and algorithm from Euclidean graphs to unit disk graphs, the usual model for wireless ad-hoc networks. We obtain a very simple distributed, \{$\backslash$em strictly-localized algorithm that, given a unit disk graph embedded in the plane, constructs a geometric spanner with the above stretch factor and degree bound, and also containing an EMST as a subgraph. The obtained results dramatically improve the previous results in all aspects, as shown in the paper.}}}}}}}},
-archivePrefix = {arXiv},
-arxivId = {0802.2864},
-author = {Kanj, Iyad a. and Perkovic, Ljubomir},
-eprint = {0802.2864},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovic - 2008 - On Geometric Spanners of Euclidean and Unit Disk Graphs.pdf:pdf},
-isbn = {9783939897064},
-keywords = {and phrases,depaul university competitive research,euclidean graph,first author was supported,geometric spanner,grant,in part by a,the work of the,unit disk graph,wireless ad-hoc networks},
-pages = {409--420},
-title = {{On Geometric Spanners of Euclidean and Unit Disk Graphs}},
-url = {http://arxiv.org/abs/0802.2864},
-volume = {2008},
-year = {2008}
-}
-@inproceedings{Li2002,
-abstract = {Several localized routing protocols (see Bose, P. and Morin, P., Proc. 10th Annual Int. Symp. on Algorithms and Computation ISAAC, 1999) guarantee the delivery of packets when the underlying network topology is the Delaunay triangulation of all wireless nodes. However, it is expensive to construct the Delaunay triangulation in a distributed manner. Given a set of wireless nodes, we more accurately model the network as a unit-disk graph, UDG, in which a link between two nodes exists only if the distance between them is at most the maximum transmission range. Given a graph H, a spanning subgraph G of H is a t-spanner if the length of the shortest path connecting any two points in G is no more than t times the length of the shortest path connecting the two points in H. We present a novel localized networking protocol that constructs a planar 2.5-spanner of UDG, called the localized Delaunay triangulation, as network topology. It contains all edges that are in both the UDG and the Delaunay triangulation of all wireless nodes. Our experiments show that the delivery rates of existing localized routing protocols are increased when localized Delaunay triangulation is used instead of several previously proposed topologies. The total communication cost of our networking protocol is O(n log n) bits. Moreover, the computation cost of each node u is O(du log du), where du is the number of 1-hop neighbors of u in UDG.},
-annote = {From Duplicate 1 ( },
-author = {Li, Xiang-Yang and Calinescu, Gruia and Wan, Peng-Jun},
-booktitle = {21th Annual Joint Conference of the IEEE Computer and Communications Societies (INFOCOM)},
-doi = {10.1109/INFCOM.2002.1019377},
-file = {::},
-isbn = {0-7803-7476-2},
-pages = {1268--1277},
-publisher = {IEEE},
-title = {{Distributed construction of a planar spanner and routing for ad hoc wireless networks}},
-url = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1019377 http://ieeexplore.ieee.org/xpl/freeabs\_all.jsp?arnumber=1019377},
-volume = {3},
-year = {2002}
-}
-@article{Li2003,
-abstract = {Several localized routing protocols guarantee the delivery of the packets when the underlying network topology is a planar graph. Typically, relative neighborhood graph (RING) or Gabriel graph (GG) is used as such planar structure. However, it is well-known that the spanning ratios of these two graphs are not bounded by any constant (even for uniform randomly distributed points). Bose et al. (1999) recently developed a localized routing protocol that guarantees that the distance traveled by the packets is within a constant factor of the minimum if Delaunay triangulation of all wireless nodes is used, in addition, to guarantee the delivery of the packets. However, it is expensive to construct the Delaunay triangulation in a distributed manner. Given a set of wireless nodes, we model the network as a unit-disk graph (UDG), in which a link uv exists only if the distance ||uv|| is at most the maximum transmission range. In this paper, we present a novel localized networking protocol that constructs a planar 2 5-spanner of UDG, called the localized Delaunay triangulation (LDEL), as network topology. It contains all edges that are both in the unit-disk graph and the Delaunay triangulation of all nodes. The total communication cost of our networking protocol is O(n log n) bits, which is within a constant factor of the optimum to construct any structure in a distributed manner. Our experiments show that the delivery rates of some of the existing localized routing protocols are increased when localized Delaunay triangulation is used instead of several previously proposed topologies. Our simulations also show that the traveled distance of the packets is significantly less when the FACE routing algorithm is applied on LDEL, rather than applied on GG.},
-author = {Li, Xiang-Yang and Calinescu, Gruia and Peng-Jun, Wan and Wang, Yu},
-doi = {10.1109/TPDS.2003.1239871},
-file = {::},
-issn = {1045-9219},
-journal = {IEEE Transactions on Parallel and Distributed Systems},
-number = {10},
-pages = {1035----1047},
-title = {{Localized Delaunay triangulation with application in ad hoc wireless networks}},
-volume = {14},
-year = {2003}
-}
-@article{Li2001,
-abstract = {Due to the limited resources available in the wireless ad hoc networking nodes, the scalability is crucial for network operations. One effective approach is to maintain only a sparse spanner of a linear number of links while still preseving the power-efficient route for any pair of nodes. For any spanner G, its power stretch factor is defined as the maximum ratio of the minimum power needed to support any link in this spanner to the least necessary. In this paper, we first consider several well-known proximity graphs including the relative neighborhood graph, Gabriel graph and Yao graph. These graphs are sparse and can be constructed locally in an efficient way. We show that the power stretch factor of the Gabriel graph is always one, and the power stretch factor of the Yao graph is bounded by a constant while the power stretch factor of the relative neighborhood graph could be as large as the network size minus one. Notice that all of these graphs do not have constant degrees. We further propose another sparse spanner that has both constant degree and constant power stretch factor. An efficient local algorithm is presented for the construction of this spanner},
-author = {Li, Xiang-Yang and Wan, Peng-Jun and Wang, Yu},
-doi = {10.1109/ICCCN.2001.956322},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Li, Wan, Wang - 2001 - Power Efficient and Sparse Spanner for Wireless Ad Hoc Networks.pdf:pdf},
-isbn = {0780371283},
-journal = {Proceedings of the Conference on Computer Communications and Networks},
-keywords = {net-,power consumption,topology control,wireless ad hoc networks},
-number = {C},
-pages = {564--567},
-title = {{Power Efficient and Sparse Spanner for Wireless Ad Hoc Networks}},
-volume = {00},
-year = {2001}
-}
-@inproceedings{Kanj2007a,
-address = {Portland, OR, USA},
-author = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
-booktitle = {4th ACM SIGACT-SIGOPS International Workshop on Foundations of Mobile Computing (DIALM-POMC)},
-file = {::},
-month = aug,
-pages = {1--6},
-title = {{Strictly-Localized Construction of Near-Optimal Power Spanners for Wireless Ad-Hoc Networks}},
-year = {2007}
-}
-@inproceedings{Neumann2012,
-address = {Las Vegas, Nevada, USA},
-author = {Neumann, Florentin and Frey, Hannes},
-booktitle = {9th IEEE International Conference on Mobile Ad hoc and Sensor Systems (MASS)},
-doi = {10.1109/MASS.2012.6502544},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Neumann, Frey - 2012 - On the Spanning Ratio of Partial Delaunay Triangulation.pdf:pdf},
-isbn = {978-1-4673-2433-5},
-month = oct,
-pages = {434--442},
-publisher = {Ieee},
-title = {{On the Spanning Ratio of Partial Delaunay Triangulation}},
-url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6502544},
-year = {2012}
-}
-@article{Kanj2009,
-abstract = {We present a local distributed algorithm that, given a wireless ad hoc network modeled as a unit disk graph U in the plane, constructs a planar power spanner of U whose degree is bounded by k and whose stretch factor is bounded by 1 + (2sin pi/k)p, where k ges 10 is an integer parameter and p isin [2, 5] is the power exponent constant. For the same degree bound k, the stretch factor of our algorithm significantly improves the previous best bounds by Song et al. We show that this bound is near-optimal by proving that the slightly smaller stretch factor of 1 + (2sin pi/k+1)p is unattainable for the same degree bound k. In contrast to previous algorithms for the problem, the presented algorithm is local. As a consequence, the algorithm is highly scalable and robust. Finally, while the algorithm is efficient and easy to implement in practice, it relies on deep insights on the geometry of unit disk graphs and novel techniques that are of independent interest.},
-author = {Kanj, Iyad A. and Perkovic, L.},
-doi = {10.1109/TMC.2008.132},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovic - 2009 - Local Construction of Near-Optimal Power Spanners for Wireless Ad Hoc Networks.pdf:pdf},
-issn = {1536-1233},
-journal = {IEEE Transactions on Mobile Computing},
-keywords = {Algorithm/protocol design and analysis,Gabriel graphs,Graph algorithms,Spanners,Yao graphs,ad hoc networks,distributed algorithms,graph theory,local distributed algorithm,local distributed algorithms.,near-optimal power spanners,power exponent constant,unit disk graphs,wireless ad hoc networks},
-month = apr,
-number = {4},
-pages = {460--474},
-shorttitle = {Mobile Computing, IEEE Transactions on},
-title = {{Local Construction of Near-Optimal Power Spanners for Wireless Ad Hoc Networks}},
-url = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4624269},
-volume = {8},
-year = {2009}
-}
-@article{Ruhrup2010,
-abstract = {Beaconless georouting algorithms are fully reactive and work without prior knowledge of their neighbors. However, existing approaches can either not guarantee delivery or they require the exchange of complete neighborhood information. We describe two general methods for completely reactive face routing with guaranteed delivery. The beaconless forwarder planarization (BFP) scheme determines correct edges of a local planar subgraph without hearing from all neighbors. Face routing then continues properly. Angular relaying determines directly the next hop of a face traversal. Both schemes are based on the select-and-protest principle. Neighbors respond according to a delay function, but only if they do not violate a planar subgraph condition. Protest messages are used to remove falsely selected neighbors that are not in the planar subgraph. We show that a correct beaconless planar subgraph construction is not possible without protests. We also show the impact of the chosen planar subgraph on the message complexity. With the new circlunar neighborhood graph (CNG) we can bound the worst case message complexity of BFP, which is not possible when using the Gabriel graph (GG) for planarization. Simulation results show similar message complexities in the average case when using CNG and GG. Angular relaying uses a delay function that is based on the angular distance to the previous hop. We develop a theoretical framework for delay functions and show both theoretically and in simulations that with a function of angle and distance we can reduce the number of protests by a factor of 2 compared to a simple angle-based delay function.},
-annote = {From Duplicate 2 ( },
-author = {R\"{u}hrup, Stefan and Kalosha, H. and Nayak, Amiya and Stojmenovi\'{c}, Ivan},
-doi = {10.1109/TNET.2009.2022084},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/R\"{u}hrup et al. - 2010 - Message-Efficient Beaconless Georouting With Guaranteed Delivery in Wireless Sensor, Ad Hoc, and Actuator Networ.pdf:pdf},
-issn = {1063-6692},
-journal = {IEEE/ACM Transactions on Networking},
-keywords = {Gabriel Graph,ad hoc networks,beaconless,beaconless routing,contention-based,contention-based forwarding,geographic routing,reactive,wireless sensor networks},
-mendeley-tags = {Gabriel Graph,beaconless,contention-based,geographic routing,reactive},
-month = feb,
-number = {1},
-pages = {95--108},
-title = {{Message-Efficient Beaconless Georouting With Guaranteed Delivery in Wireless Sensor, Ad Hoc, and Actuator Networks}},
-url = {http://dl.acm.org/citation.cfm?id=1816288.1816296},
-volume = {18},
-year = {2010}
-}
-@article{Kanj2010,
-abstract = {We consider the problem of computing spanners of Euclidean and unit disk graphs embedded in the two-dimensional Euclidean plane. We are particularly interested in spanners that possess useful properties such as planarity, bounded degree, and/or light weight. Such spanners have been extensively studied in the area of computational geometry and have been used as the building block for constructing efficient and reliable wireless network communication topologies. We study the above problem under two computational models: the centralized and the distributed model. In the distributed model we focus on algorithms that are local. Such algorithms are suitable for the relevant applications (e.g., wireless computing). Under the centralized model, we present an \$O(n\backslash lg n)\$ time algorithm that computes a bounded-degree plane spanner of a complete Euclidean graph, where n is the number of points in the graph. Both upper bounds on the degree and the stretch factor significantly improve the previous bounds. We extend th...},
-author = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
-doi = {10.1137/080737708},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovi\'{c}, Xia - 2010 - On Spanners and Lightweight Spanners of Geometric Graphs.pdf:pdf},
-issn = {0097-5397},
-journal = {SIAM Journal on Computing},
-keywords = {05C10,68U05,68W15,Delaunay triangulations,bounded degree,lightweight,local distributed algorithms,spanners,unit disk graphs},
-language = {en},
-month = jan,
-number = {6},
-pages = {2132--2161},
-publisher = {Society for Industrial and Applied Mathematics},
-title = {{On Spanners and Lightweight Spanners of Geometric Graphs}},
-url = {http://epubs.siam.org/doi/abs/10.1137/080737708},
-volume = {39},
-year = {2010}
-}
-@inproceedings{Kanj2008,
-abstract = {We consider the problem of computing bounded-degree lightweight plane spanners of unit disk graphs in the local distributed model of computation. We are motivated by the hypothesis that such subgraphs can provide the underlying network topology for efficient unicasting and multicasting in wireless distributed systems. We present the first local distributed algorithm that computes a bounded-degree plane lightweight spanner of a given unit disk graph. The upper bounds on the degree, the stretch factor, and the weight of the spanner, are very small. For example, our results imply a local distributed algorithm that computes a plane spanner of a given unit disk graph U, whose degree is at most 14, stretch factor at most 8.81, and weight at most 8.81 times the weight of a Euclidean Minimum Spanning Tree of V(U). We show a wider application of our techniques by giving an O(nlogn) time centralized algorithm that constructs bounded-degree plane lightweight spanners of unit disk graphs (which include Euclidean graphs), with the best upper bounds on the spanner degree, stretch factor, and weight.},
-address = {Arcachon, France},
-author = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
-booktitle = {22nd International Symposium on Distributed Computing (DISC)},
-file = {::},
-keywords = {Definition k-locality},
-mendeley-tags = {Definition k-locality},
-month = sep,
-pages = {365--378},
-title = {{Computing Lightweight Spanners Locally}},
-year = {2008}
-}
-@inproceedings{Kanj2006,
-address = {Venice, Italy},
-author = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir},
-booktitle = {2nd International Workshop on Algorithmic Aspects of Wireless Sensor Networks (ALGOSENSORS)},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Perkovi\'{c} - 2006 - Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks.pdf:pdf},
-pages = {95--106},
-publisher = {Springer},
-title = {{Improved Stretch Factor for Bounded-Degree Planar Power Spanners of Wireless Ad-Hoc Networks}},
-year = {2006}
+@Article{Xiang-Yang2004,
+  Title                    = {{Partial Delaunay triangulation and degree limited localized bluetooth scatternet formation}},
+  Author                   = {Li, Xiang Yang and Stojmenovic, Ivan and Wang, Yu},
+  Journal                  = {IEEE Transactions on Parallel and Distributed Systems},
+  Year                     = {2004},
+  Month                    = apr,
+  Number                   = {4},
+  Pages                    = {350--361},
+  Volume                   = {15},
+  Abstract                 = { We address the problem of localized scatternet formation for multihop Bluetooth-based personal area ad hoc networks. Nodes are assumed to know their positions and are able to establish connections with any of their neighboring nodes, located within their transmission radius, in the neighbor discovery phase. The next phase of the proposed formation algorithm is optional and can be applied to construct a sparse geometric structure in a localized manner. We propose here a new sparse planar structure, namely, partial Delaunay triangulation (PDT), which can be constructed locally and is denser than other known localized planar structures. In the next mandatory phase, the degree of each node is limited to seven by applying the Yao structure, and the master-slave relations in piconets are formed in created subgraphs. This phase consists of several iterations. In each iteration, undecided nodes with higher keys than any of their undecided neighbors apply the Yao structure to bound the degrees, decide master-slave relations on the remaining edges, and inform all neighbors about either deleting edges or master-slave decisions. To the best of our knowledge, our schemes are the first schemes that construct degree limited (a node has at most seven slaves) and connected piconets in multihop networks, without parking any node. The creation and maintenance require small overhead in addition to maintaining accurate location information for one-hop neighbors. The experiments confirm good functionality of created Bluetooth networks in addition to their fast creation and straightforward maintenance.},
+  DOI                      = {10.1109/TPDS.2004.1271184},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Li, Stojmenovic, Wang - 2004 - Partial Delaunay triangulation and degree limited localized bluetooth scatternet formation(2).pdf:pdf},
+  ISSN                     = {10459219},
+  Keywords                 = {Bluetooth,Delaunay triangulation,Scatternet formation},
+  URL                      = {http://ieeexplore.ieee.org/xpl/freeabs\_all.jsp?arnumber=1271184}
 }
 
-@article{Chawla2006,
-abstract = {Existing position-based routing algorithms, where packets are forwarded in the geographic direction of the destination, normally require that the forwarding node should know the positions of all neighbors in its transmission range. This information on direct neighbors is gained by observing beacon messages that each node sends out periodically. Several beaconless greedy routing schemes have been proposed recently. However, none of the existing beaconless schemes guarantee the delivery of packets. Moreover, they incur communication overhead by sending excessive control messages or by broadcasting data packets. In this paper, we describe how existing localized position based routing schemes that guarantee delivery can be made beaconless, while preserving the same routes. In our guaranteed delivery beaconless routing scheme, the next hop is selected through the use of control RTS/CTS messages and biased timeouts. In greedy mode, the neighbor closest to destination responds first. In recovery mode, nodes closer to the source will select shorter timeouts, so that other neighbors, overhearing CTS packets, can eliminate their own CTS packets if they realize that their link to the source is not part of Gabriel graph. Nodes also cancel their packets after receiving data message sent by source to the selected neighbor. We analyze the behavior of our scheme on our simulation environment assuming ideal MAC, following GOAFR+ and GFG routing schemes. Our results demonstrate low communication overhead in addition to guaranteed delivery.},
-author = {Chawla, Mohit and Goel, Nishith and Kalaichelvan, Kalai and Nayak, Amiya and Stojmenovi\'{c}, Ivan},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Chawla et al. - 2006 - Beaconless Position-Based Routing with Guaranteed Delivery for Wireless Ad hoc and Sensor Networks.pdf:pdf},
-journal = {Acta Automatica Sinica},
-keywords = {Beaconless,Gabriel Graph,Geographic Routing,Reactive,UDG,beaconless routing,geometric routing,guaranteed delivery,position-based,sensor networks},
-mendeley-tags = {Beaconless,Gabriel Graph,Geographic Routing,Reactive,UDG,position-based},
-month = nov,
-number = {6},
-pages = {846--855},
-title = {{Beaconless Position-Based Routing with Guaranteed Delivery for Wireless Ad hoc and Sensor Networks}},
-volume = {32},
-year = {2006}
+@Article{Xu2011,
+  Title                    = {{A Partial Unit Delaunay graph with Planar and Spanner for Ad hoc Wireless Networks}},
+  Author                   = {Xu, Pengfei and Chen, Zhigang and Deng, Xiaoheng and Yu, Jianping},
+  Journal                  = {Advanced Materials Research},
+  Year                     = {2011},
+  Pages                    = {322--327},
+  Volume                   = {267},
+  Abstract                 = {This paper proposes a new geometry structure, namely Partial unit Delaunay graph (PuDel), to be as the underlying network topology of Ad hoc wireless networks. PuDel has the following attractive properties: (1) PuDel is a connected subgraph of unit Delaunay triangulation; (2) PuDel is a planar spanner of Unit Disk Graph (UDG) whose length stretch factor is at most 1.21$\backslash$pi; and (3) PuDel can be locally constructed only based on the position information of 1-hops neighbors, and requires no message exchange between nodes in addition to maintaining UDG.},
+  File                     = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Xu et al. - 2011 - A Partial Unit Delaunay graph with Planar and Spanner for Ad hoc Wireless Networks.pdf:pdf},
+  Keywords                 = {1-hop spanner,Delaunay triangulation,delaunay triangulation,planar,spanner,unit disc,voronoi diagram},
+  Mendeley-tags            = {1-hop spanner,delaunay triangulation,planar,unit disc,voronoi diagram}
 }
-@article{Xu2011,
-abstract = {This paper proposes a new geometry structure, namely Partial unit Delaunay graph (PuDel), to be as the underlying network topology of Ad hoc wireless networks. PuDel has the following attractive properties: (1) PuDel is a connected subgraph of unit Delaunay triangulation; (2) PuDel is a planar spanner of Unit Disk Graph (UDG) whose length stretch factor is at most 1.21$\backslash$pi; and (3) PuDel can be locally constructed only based on the position information of 1-hops neighbors, and requires no message exchange between nodes in addition to maintaining UDG.},
-author = {Xu, Pengfei and Chen, Zhigang and Deng, Xiaoheng and Yu, Jianping},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Xu et al. - 2011 - A Partial Unit Delaunay graph with Planar and Spanner for Ad hoc Wireless Networks.pdf:pdf},
-journal = {Advanced Materials Research},
-keywords = {1-hop spanner,Delaunay triangulation,delaunay triangulation,planar,spanner,unit disc,voronoi diagram},
-mendeley-tags = {1-hop spanner,delaunay triangulation,planar,unit disc,voronoi diagram},
-pages = {322--327},
-title = {{A Partial Unit Delaunay graph with Planar and Spanner for Ad hoc Wireless Networks}},
-volume = {267},
-year = {2011}
-}
-@article{Toussaint1980,
-abstract = {The relative neighbourhood graph (RNG) of a set of n points on the plane is defined. The ability of the RNG to extract a perceptually meaningful structure from the set of points is briefly discussed and compared to that of two other graph structures: the minimal spanning tree (MST) and the Delaunay (Voronoi) triangulation (DT). It is shown that the RNG is a superset of the MST and a subset of the DT. Two algorithms for obtaining the RNG of n points on the plane are presented. One algorithm runs in 0(n2) time and the other runs in 0(n3) time but works also for the d-dimensional case. Finally, several open problems concerning the RNG in several areas such as geometric complexity, computational perception, and geometric probability, are outlined.},
-author = {Toussaint, Godfried T.},
-doi = {10.1016/0031-3203(80)90066-7},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Toussaint - 1980 - The relative neighbourhood graph of a finite planar set.pdf:pdf},
-issn = {00313203},
-journal = {Pattern Recognition},
-keywords = {algorithms,computational perception,delaunay triangulation,dot patterns,geometric complexity geometric probability,minimal spanning tree,pattern recognition,relative neighbourhood graph,triangulations},
-number = {4},
-pages = {261--268},
-title = {{The relative neighbourhood graph of a finite planar set}},
-url = {http://dx.doi.org/10.1016/0031-3203(80)90066-7},
-volume = {12},
-year = {1980}
-}
-@inproceedings{Kanj2010,
-abstract = {Let S be a set of n points in the plane, let  be the complete Euclidean graph whose point-set is S, and let G be the Delaunay triangulation of S. We present a very simple local algorithm that, given G, constructs a subgraph of G of degree at most 11 that is a geometric spanner of G with stretch factor 2.86, and hence a geometric spanner of  with stretch factor < 7. This algorithm gives an O(nlgn) time centralized algorithm for constructing a subgraph of G that is a geometric spanner of  of degree at most 11 and stretch factor < 7. The algorithm can be generalized to unit disk graphs to give a local algorithm for constructing a plane spanner of a unit disk graph of degree at most 11 and stretch factor < 7.},
-address = {Bordeaux, France},
-author = {Kanj, Iyad A. and Xia, Ge},
-booktitle = {6th International Workshop on Algorithms for Sensor Systems, Wireless Ad Hoc Networks, and Autonomous Mobile Entities (ALGOSENSORS)},
-doi = {10.1007/978-3-642-16988-5},
-editor = {Scheideler, Christian},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Kanj, Xia - 2010 - Improved Local Algorithms for Spanner Construction(4).pdf:pdf},
-isbn = {978-3-642-16987-8},
-pages = {1--15},
-publisher = {Springer Berlin Heidelberg},
-series = {Lecture Notes in Computer Science},
-title = {{Improved Local Algorithms for Spanner Construction}},
-url = {http://www.springerlink.com/index/10.1007/978-3-642-16988-5},
-year = {2010}
-}
-@article{Xiang-Yang2004,
-abstract = { We address the problem of localized scatternet formation for multihop Bluetooth-based personal area ad hoc networks. Nodes are assumed to know their positions and are able to establish connections with any of their neighboring nodes, located within their transmission radius, in the neighbor discovery phase. The next phase of the proposed formation algorithm is optional and can be applied to construct a sparse geometric structure in a localized manner. We propose here a new sparse planar structure, namely, partial Delaunay triangulation (PDT), which can be constructed locally and is denser than other known localized planar structures. In the next mandatory phase, the degree of each node is limited to seven by applying the Yao structure, and the master-slave relations in piconets are formed in created subgraphs. This phase consists of several iterations. In each iteration, undecided nodes with higher keys than any of their undecided neighbors apply the Yao structure to bound the degrees, decide master-slave relations on the remaining edges, and inform all neighbors about either deleting edges or master-slave decisions. To the best of our knowledge, our schemes are the first schemes that construct degree limited (a node has at most seven slaves) and connected piconets in multihop networks, without parking any node. The creation and maintenance require small overhead in addition to maintaining accurate location information for one-hop neighbors. The experiments confirm good functionality of created Bluetooth networks in addition to their fast creation and straightforward maintenance.},
-author = {Li, Xiang Yang and Stojmenovic, Ivan and Wang, Yu},
-doi = {10.1109/TPDS.2004.1271184},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Li, Stojmenovic, Wang - 2004 - Partial Delaunay triangulation and degree limited localized bluetooth scatternet formation(2).pdf:pdf},
-issn = {10459219},
-journal = {IEEE Transactions on Parallel and Distributed Systems},
-keywords = {Bluetooth,Delaunay triangulation,Scatternet formation},
-month = apr,
-number = {4},
-pages = {350--361},
-title = {{Partial Delaunay triangulation and degree limited localized bluetooth scatternet formation}},
-url = {http://ieeexplore.ieee.org/xpl/freeabs\_all.jsp?arnumber=1271184},
-volume = {15},
-year = {2004}
-}
-@inproceedings{Benter2013,
-abstract = {Within reactive topology control, a node determines its adjacent edges of a network subgraph without prior knowledge of its neighborhood. The goal is to construct a local view on a topology which provides certain desired properties such as planarity. During algorithm execution, a node, in general, is not allowed to determine all its neighbors of the network graph. There are well-known reactive algorithms for computing planar subgraphs. However, the subgraphs obtained do not have constant Euclidean spanning ratio. This means that routing along these subgraphs may result in potentially long detours. So far, it has been unknown if planar spanners can be constructed reactively. In this work, we show that at least under the unit disk network model, this is indeed possible, by proposing an algorithm for reactive construction of the partial Delaunay triangulation, which recently turned out to be a spanner. Furthermore, we show that our algorithm is message-optimal as a node will only exchange messages with nodes that are also neighbors in the spanner. The algorithm's presentation is complemented by a rigorous proof of correctness.},
-address = {Torino, Italy},
-annote = {From Duplicate 1 ( },
-author = {Benter, Markus and Neumann, Florentin and Frey, Hannes},
-booktitle = {In Proceedings of 32nd IEEE International Conference on Computer Communications (INFOCOM)},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Benter, Neumann, Frey - 2013 - Reactive Planar Spanner Construction in Wireless Ad Hoc and Sensor Networks.pdf:pdf},
-keywords = {beaconless,reactive},
-mendeley-tags = {beaconless,reactive},
-month = apr,
-pages = {2193--2201},
-title = {{Reactive Planar Spanner Construction in Wireless Ad Hoc and Sensor Networks}},
-year = {2013}
-}
-@article{Gabriel1969,
-abstract = {The authors discuss the problems of describing geographic variation data and develop statistical methods for categorizing sets of populations sampled from different localities. The general approach of the simultaneous test procedures, available with a variety of statistical tests and for continuous as well as for categorical data, is employed with these techniques. Geographical regions are defined as sets of connected localities, with connectedness being defined geometrically. Maximal acceptable connected sets of localities (defined as regions) or coarsest acceptable connected partitions of the entire set of localities are found by these procedures. These are illustrated with several examples.},
-author = {Gabriel, K. Ruben and Sokal, Robert R.},
-doi = {10.2307/2412323},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Gabriel, Sokal - 1969 - A New Statistical Approach to Geographic Variation Analysis.pdf:pdf},
-issn = {00397989},
-journal = {Systematic Zoology},
-month = sep,
-number = {3},
-pages = {259--278},
-title = {{A New Statistical Approach to Geographic Variation Analysis}},
-url = {http://sysbio.oxfordjournals.org/cgi/content/abstract/18/3/259},
-volume = {18},
-year = {1969}
-}
-@article{Kanj2012,
-abstract = {Let SS be a set of nn points in the plane, let EE be the complete Euclidean graph whose point set is SS, and let GG be the Delaunay triangulation of SS. We present a very simple local algorithm that, given GG, constructs a subgraph of GG of degree at most 11 that is a geometric spanner of GG with stretch factor 2.86, and hence a geometric spanner of EE with stretch factor < 7. This algorithm gives an O(nlgn)O(nlgn) time centralized algorithm for constructing a subgraph of GG that is a geometric spanner of EE of degree at most 11 and stretch factor <7.},
-author = {Kanj, Iyad A. and Xia, Ge},
-doi = {10.1016/j.tcs.2011.05.027},
-file = {::},
-issn = {03043975},
-journal = {Theoretical Computer Science},
-keywords = {delaunay triangulations,spanners},
-month = sep,
-pages = {54--64},
-title = {{Improved local algorithms for spanner construction}},
-url = {http://dx.doi.org/10.1016/j.tcs.2011.05.027},
-volume = {453},
-year = {2012}
-}
-@inproceedings{Kanj2007,
-address = {Portland, OR, USA},
-author = {Kanj, Iyad A. and Perkovi\'{c}, Ljubomir and Xia, Ge},
-booktitle = {4th ACM SIGACT-SIGOPS International Workshop on Foundations of Mobile Computing (DIALM-POMC)},
-file = {::},
-month = aug,
-pages = {1--6},
-title = {{Strictly-Localized Construction of Near-Optimal Power Spanners for Wireless Ad-Hoc Networks}},
-year = {2007}
-}
-@article{Damian2010,
-abstract = {We present a new efficient localized algorithm to construct, for any given quasi-unit disk graph G = (V,E) and any $\epsilon$ > 0, a (1+$\epsilon$)-spanner for G of maximum degree O(1) and total weight O($\omega$(MST)), where $\omega$(MST) denotes the weight of a minimum spanning tree for V. We further show that similar localized techniques can be used to construct, for a given unit disk graph G = (V,E), a planarCdel (1+$\epsilon$)(1+$\pi$/2 )-spanner for G of maximum degree O(1) and total weight O($\omega$(MST)). Here Cdel denotes the stretch factor of the unit Delaunay triangulation for V. Both constructions can be completed in O(1) rounds of communication, and require each node to know its own coordinates.},
-author = {Damian, Mirela and Pemmaraju, Sriram V.},
-file = {:home/timmy/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Damian, Pemmaraju - 2010 - Localized Spanners for Ad Hoc Wireless Networks.pdf:pdf},
-journal = {Ad Hoc \& Sensor Wireless Networks},
-number = {3/4},
-pages = {305--328},
-title = {{Localized Spanners for Ad Hoc Wireless Networks}},
-volume = {9},
-year = {2010}
-}
+
