@@ -8,7 +8,7 @@ Possibly, this message needs to travel a long distance which one node cannot cov
 The solution is to send the message to a neighbor of this node and this node forwards the message to another, and so on, until the message arrives at its destination.
 While sending from one node to another it may happen that the message gets lost or stuck in a loop, thus, never arriving at its destination.
 This must be prohibited.
-There are several routing algorithms which guarantee message delivery, but these require the graph to satisfy a specific property called planarity.
+There are several routing algorithms which guarantee message delivery, if the graph satisfies a specific property called planarity.
 
 Explaining planarity imagine a graph setup watched from above. 
 It creates a 2d-view of this graph.
@@ -17,10 +17,10 @@ Planarity says that from this view no two edges are allowed to cross each other 
 One approach to planarize a graph is removing edges.
 If edges are arbitrarily removed from a graph it may result in a disconnected graph or at least randomly long paths.
 This needs to be prohibited and can be achieved if a so called \emph{euclidian t-spanner} property is satisfied.
-With this property satisfied any shortest path in a subgraph $H $ of supergraph $P $ between two points $u $ and $v $ may be not longer than a fixed constant multiplied with the length of this path.
 
-The mechanisms to achieve these properties require the nodes to communicate with each other.
-A naive approach to gather needed information is to let each node send out beacons.
-This approach needs a lot of messages and is not robust in terms of network changes.
-A more sophisticated approach is a reactive one where nodes only send message if they are really needed and otherwise remain silent. 
+The mechanisms to achieve these properties require nodes to be aware of other node's position which require communication between the nodes.
+A naive approach to gather needed information is to let each node send out messages and every node which hears them answer this node.
+This approach is called beaconing.
+It needs a lot of messages and is not robust in terms of network changes.
+A more sophisticated approach is a reactive one where nodes only send message if they are really needed, e.g. they are definitely nodes of the subgraph, and otherwise remain silent. 
 
