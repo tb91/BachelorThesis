@@ -51,14 +51,14 @@ $\Updelta _{11-Spanner} $ & \ding{56} & \ding{56} & < 7 & 11 & \cite{Kanj2012} \
 $PuDel $ & \ding{52} & \ding{52} & $7.98 $ & $\mathcal{O}(n) $ & \cite{Xu2011} \\ 
 \hline 
 \end{tabular} 
-\caption{Different topology controls ordered by appearance in this work.}
+\caption{Different topology controls ordered by appearance in this chapter.}
 \label{table:topologies}
 \end{table}
 
 First, we describe an algorithm briefly and in the following there is a short section about properties of the produced graph.
 In addition, table \ref{table:topologies} provides an overview of all discussed graphs.
 
-The BFP-algorithm (\cite{Ruhrup2010}) is divided into two phases.
+The BFP-algorithm \cite{Ruhrup2010} is divided into two phases.
 First, in the Selection Phase the executing node $F $ starts the algorithm by sending a RTS message. 
 In the following every node, which receives this message, starts a timer corresponding to a specific delay function.
 The closer a node resides to the executing node, the earlier it answers with a CTS. 
@@ -81,7 +81,7 @@ If the timer of a node expires and there are still nodes which are memorized, th
 The forwarder node $F $ removes violating edges when it receives protests.
 
 This algorithm performed on each node of a graph $G $ produces a planar subgraph $G' $.
-However, $G' $ is not a t-spanner of $G $ and has no constant node degree despite the underlying region ($GG, RNG, CNG $) (refer to figure \ref{fig:GG_CNG_RNG} for an example of these three regions).
+However, $G' $ is not a t-spanner of $G $ and has no constant node degree despite the underlying graphs Gabriel graph ($GG $), relative neighborhood graph ($RN $), circular neighborhood graph ($CN$) (refer to figure \ref{fig:GG_CNG_RNG} for an example of these three regions).
 
 
 \begin{figure}[h!]

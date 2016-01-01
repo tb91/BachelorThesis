@@ -171,4 +171,21 @@ The small difference of less than $1 \% $ between both subgraphs and the fact th
 However, both cases might be relevant for theoretical proofs concerning the spanning ratio or lowering the bound of $k = 14 $.
 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\linewidth]{eps/PDT_linearer_Knotengrad.eps}
+\caption{Example point constellation which proofs that PDT not has a constant node degree. }
+\label{fig:PDT_linearer_Knotengrad}
+\end{figure}
+
+Another interesting aspect to consider is the example which proofs that PDT has a worst case node degree of $\mathcal{O}(n) $.
+Refer to figure \ref{fig:PDT_linearer_Knotengrad} to see an example.
+The nodes around node $a $ are positioned in a way that every Gabriel circle between $a $ and its neighbors is empty.
+In other words if you start with node $b $ every next node in clockwise order is a little further away from $a $.
+In this case all of these neighbors are PDT neighbors and hence, there can be arbitrarily many nodes the worst case node degree of PDT is $\mathcal{O}(n) $.
+In addition, since all of these neighbors are $GG $ neighbors the node degree of the Gabriel graph is the same.
+RMYS selects for every cone the shortest node as neighbor and hence, the node degree of this scenario is bounded by $k=14 $.
+
+
+
 
