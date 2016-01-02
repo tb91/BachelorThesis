@@ -1,7 +1,7 @@
 \section{Simulation results}
 This section is about the simulation results which were achieved.
-First, these results are presented.
-......
+First, these results are presented, then several graph properties RMYS inherits are shown and at last, there is a discussion of the results.
+
 The simulation was performed in Sinalgo\footnote{http://www.disco.ethz.ch/projects/sinalgo/}.
 Sinalgo is a simulation framework which can test and validate network algorithms and at the same time it offers a graphical view on the programmed processes as well as a fast batch mode.
 
@@ -125,8 +125,10 @@ At density $20 $ PDT on neighbors uses $8.4 $ and RMYS $8.6 $ messages per neigh
 \section{Discussion}
 In the following the simulation results are interpreted and explained.
 Additionally, 
-There are two cases where RMYS does not select all neighbors of a node, even if the count of these neighbors is below the limit of $k=14 $.
+There are two cases where RMYS does not select all PDT neighbors of a node, even if the count of these neighbors is below the limit of $k=14 $.
 Both cases are presented briefly in the following.
+At last, it is shown how RMYS handles the nodes if they are positioned in a helix around one node $a $ resulting in arbitrarily many PDT neighbors of $a $.
+
 First, notice figure \ref{fig:RMYS_case_error_bidirectional}.
 This figure contains two nodes $u $ and $v $ with one of their RMYS cones drawn.
 The blue circles and the dotted line marked with $R $ symbolize the unit disk radius of both nodes.
@@ -147,7 +149,7 @@ As a result of this behavior the edge $uv $ was selected from only one, namely $
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{eps/RMYS_case_one_cone_empty.eps}
+\includegraphics[width=0.5\linewidth]{eps/RMYS_case_one_cone_empty.eps}
 \caption{An example graph with specific edges drawn which are incident on $v $. The blue circle symbolize the unit disk. The dotted circles are Gabriel circles and the green one proofs the existence of $uv $ and $pv $ in the PDT graph.}
 \label{fig:RMYS_case_one_cone_empty}
 \end{figure}
@@ -173,7 +175,7 @@ However, both cases might be relevant for theoretical proofs concerning the span
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.7\linewidth]{eps/PDT_linearer_Knotengrad.eps}
+\includegraphics[width=0.4\linewidth]{eps/PDT_linearer_Knotengrad.eps}
 \caption{Example point constellation which proofs that PDT not has a constant node degree. }
 \label{fig:PDT_linearer_Knotengrad}
 \end{figure}
@@ -182,9 +184,9 @@ Another interesting aspect to consider is the example which proofs that PDT has 
 Refer to figure \ref{fig:PDT_linearer_Knotengrad} to see an example.
 The nodes around node $a $ are positioned in a way that every Gabriel circle between $a $ and its neighbors is empty.
 In other words if you start with node $b $ every next node in clockwise order is a little further away from $a $.
-In this case all of these neighbors are PDT neighbors and hence, there can be arbitrarily many nodes the worst case node degree of PDT is $\mathcal{O}(n) $.
+In this case all of these neighbors are PDT neighbors and hence, arbitrarily many nodes can be positioned in this way the worst case node degree of PDT is $\mathcal{O}(n) $.
 In addition, since all of these neighbors are $GG $ neighbors the node degree of the Gabriel graph is the same.
-RMYS selects for every cone the shortest node as neighbor and hence, the node degree of this scenario is bounded by $k=14 $.
+RMYS executed on node $a $ selects for every cone the closest node to $a $ as neighbor and hence, the node degree of this scenario is bounded by $k=14 $ as well.
 
 
 

@@ -108,7 +108,7 @@ GDBF can be extended to reactively produce a planar subgraph of a given input gr
 Since this graph is equal to the Gabriel graph, this is not a t-spanner of the input graph and also has no constant node degree.
 
 The understanding of the Partial Delaunay Triangulation is crucial to follow this work and, thus, it is already explained in the preamble.
-PDT has a constant spanning ratio of at most $\frac{1+\sqrt{5}}{4}\pi^2 \approx 7.98 $ to the Euclidean graph.
+PDT has a constant spanning ratio of at most $\frac{1+\sqrt{5}}{4}\pi^2 \approx 7.98 $ with respect to the Euclidean graph.
 In addition, the output is a planar graph, but it has no constant bounded degree.
 
 
@@ -125,7 +125,7 @@ However, it needs a node to be aware of its complete 2-hop-neighborhood.
 $\Updelta _{11-Spanner} $ \cite{Kanj2012} constructs a spanner with an upper bound of $7 $ and a constant node degree of at most $11 $.
 The obtained graph is not planar and the algorithm needs a node to know its 4-hop-neighborhood.
 
-$PuDel $ \cite{Xu2011} is a graph which is equal to the $PDT $ graph \cite{Neumann2012} and hence, it has an Euclidean stretch-factor of $\approx 7.98 $ to the Euclidean graph.
+$PuDel $ \cite{Xu2011} is a graph which is equal to the $PDT $ graph \cite{Neumann2012} and hence, it has an Euclidean stretch-factor of $\approx 7.98 $ with respect to the Euclidean graph.
 The graph is planar, it has, however, no constant node degree. 
 Table \ref{table:topologies} states that $PuDel $ can be constructed reactively which is true since $PDT $ can be constructed in a reactive way and both graphs are equal.
 
