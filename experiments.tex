@@ -18,7 +18,7 @@ Hereby, $D_x=1000 $ and $D_y=1000 $ are the dimension of the simulation plane an
 
 The simulations are based on the following assumptions.
 \begin{itemize}
-\item All nodes are static meaning they cannot move.
+\item All nodes are static which means they cannot move.
 \item All calculations are ordered into synchronous rounds. 
 At the beginning a node receives all messages sent in the round before.
 It follows a general calculation phase and at last a node can send messages.
@@ -56,7 +56,7 @@ The measured values increase from $3 $ hops at density $5 $ to approximately $4.
 
 
 In figure \ref{fig:RMYS_PDT_Beaconing_Neighbors.eps} is the message consumption with respect to node density shown.
-"PDT on neighbors" shows the amount of messages PDT uses to create the 2 hop PDT neighborhood of one random node within the graph borders and at least unit disk radius $R=100 $ away from the borders to ensure the correct node density.
+``PDT on neighbors'' shows the amount of messages PDT uses to create the 2 hop PDT neighborhood of one random node within the graph borders and at least unit disk radius $R=100 $ away from the borders to ensure the correct node density.
 In this example the amount of messages RMYS and PDT on neighbors uses are almost equal.
 The messages used in 2 hop beaconing are much more.
 Additionally, the increase from one density to another is greater than the increase in PDT and RMYS.
@@ -86,7 +86,7 @@ For reference, the message consumption for PDT on one node is shown as well.
 Refer to figure \ref{fig:RMYS_PDT_avrNeighbors} to see the average and maximal neighbors of the RMYS and the PDT graph.
 Density $5 $ leads to approximately $3.6 $ neighbors and almost $6 $ neighbors at density $20 $.
 The maximal neighbors differ for both graphs from $6.89 $ at density $5 $ to approximately $10.35 $ for RMYS and $10.44 $ for PDT at density $20 $.
-The differences of the maximal neighbors for RMYS and PDT at high densities is explained in REF.
+The differences of the maximal neighbors for RMYS and PDT at high densities is explained in chapter \ref{discussion}.
 
 \begin{figure}[h!]
 \centering
@@ -123,9 +123,9 @@ PDT on neighbors and RMYS send $6.2 $ and $6.5 $, respectively, messages per nei
 At density $20 $ PDT on neighbors uses $8.4 $ and RMYS $8.6 $ messages per neighbor.
 
 \section{Discussion}
+\label{discussion}
 In the following the simulation results are interpreted and explained.
-Additionally, 
-There are two cases where RMYS does not select all PDT neighbors of a node, even if the count of these neighbors is below the limit of $k=14 $.
+Additionally, there are two cases where RMYS does not select all PDT neighbors of a node, even if the count of these neighbors is below the limit of $k=14 $.
 Both cases are presented briefly in the following.
 At last, it is shown how RMYS handles the nodes if they are positioned in a helix around one node $a $ resulting in arbitrarily many PDT neighbors of $a $.
 

@@ -65,8 +65,8 @@ Afterwards, we see which properties the graph produced by RMYS obtains and which
 \end{algorithm}
  
 Algorithm \ref{MYS} does not tell, in particular, how this can be computed on a node.
-However, my reactive approach, called rMYS, is the following: Since every node knows its PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute this algorithm from line 1 to 14 without further knowledge about its neighborhood and hence, does not need to send any messages at all.
-My approach of RMYS needs to send a RTS-message to each possible neighbor which send a message back if they did not select this edge.
+However, the reactive approach, called rMYS, is the following: Since every node knows its PDT-neighborhood (refer to algorithm \ref{RMYS}) which is used by the Modified Yao Step, it can execute this algorithm from line 1 to 14 without further knowledge about its neighborhood and hence, does not need to send any messages at all.
+This approach of RMYS needs to send a RTS-message to each possible neighbor which send a message back if they did not select this edge.
 This ensures that only bidirectional edges are used.
 Since in most cases the edges are bidirectional a node sends only a so called protestmessage if it did not select an edge and thus, protests against the selection of this edge.
 
@@ -112,7 +112,7 @@ In figure \ref{fig:RMYS_2} these steps has been executed.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\linewidth]{eps/RMYS_2.eps}
-\caption{An example graph with equally sized cones around $a $ and all edges drawn which are incident on $a $. All orange edges has been selected by reason of being the shortest edge in their cone.}
+\caption{An example graph with equally sized cones around $a $ and all edges drawn which are incident on $a $. All orange edges have been selected by the reason of being the shortest edge in their cone.}
 \label{fig:RMYS_2}
 \end{figure}
 Then, consider all maximal sequences of empty cones.
@@ -123,7 +123,7 @@ Counterclockwise the next $\lceil \frac{|s|}{2} \rceil = 2$ unselected edges are
 For this reason edges $af $ and $ae $ are additionally selected.
 The next empty sequence to analyze is cone 7.
 In this case the next edge incident on $a $ clockwise and counterclockwise, respectively, from this cone has to be tested.
-Since both edges $ae $ and $af $ are selected yet, none of these edge will be selected again.
+Since both edges $ae $ and $af $ are selected yet, none of these edges will be selected again.
 Moving on, the next empty sequence which is cone 10 must be inspected.
 In this example $ao $ is already selected. 
 However, $ab $ is not selected yet.
@@ -146,7 +146,6 @@ Figure \ref{fig:RMYS_3} contains the final graph.
 
 
 \subsection{Proof of correctness}
-\begin{proof}
 \begin{equation*}
 \begin{split}
 	MYS(PDT) &\leftrightarrow RMYS\\
@@ -164,29 +163,29 @@ The executing node $v $ sends a broadcast which must be overheard by all $PDT $ 
 Because of the assumptions that every message arrives and arrives instantaneously, the message cannot get lost.
 Every informed node checks whether or not it selects $v $ to be in its RMYS-Neighborhood.
 If yes, it remains silent and otherwise it sends a protest message causing $v $ to remove this edge.
-Hence, $v $ can check whether or not each node in it's neighborhood accepts this edge.
+Hence, $v $ can check whether or not each node in its neighborhood accepts this edge.
 This leads to the same behavior MYS does and therefore, c) is true and completing this proof.
-\end{proof}
+
 
 \subsection{Message Complexity}
 \label{message_complexity}
 Let $N_{PDT}(u) $ be the message complexity of $PDT $ creating the neighborhood of Node $u \in G$.
 First, $rPDT $ needs at most $n $ messages to create the $PDT $-neighborhood.
-Next, the executing node sends at most $k $ messages to its neighbors to ask whether they accept their connection.
-At most $k $ answers come back and therefore $k * 2 $.
-Every one of this $k $ neighbors needs to calculate it's $PDT $-neighborhood and hence, $k*N_{PDT}(u) $.
+Next, the executing node sends one RTS message to its neighbors to ask whether they accept their connection.
+At most $k $ answers return.
+Every one of this $k $ neighbors needs to calculate its $PDT $-neighborhood and hence, $k*N_{PDT}(u) $.
 The following equation put these reflections into one formula.
 \begin{equation*}
 \begin{split}
-N_{RMYS}(u) &= \underbrace{N_{PDT}(u)}_{\theta (n)} +k *\underbrace{2}_{\theta (1)} + k*\underbrace{N_{PDT}(v)}_{\theta (n)} \\
-\theta (N_{RMYS}(u)) &= \theta (n) 
+N_{RMYS}(u) &<= \underbrace{N_{PDT}(u)}_{\theta (n)} + \underbrace{1 + k}_{\theta (1)} + k*\underbrace{N_{PDT}(v)}_{\theta (n)} \\
+\mathcal{O}(N_{RMYS}(u)) &= \mathcal{O}(n) 
 \end{split}
 \end{equation*}
 Since $k $ is a constant it can be omitted in $O $-Notation.
-The sum of the same complexity remains in the same complexity and hence, the message complexity of this algorithm is $\theta (n) $.
+The sum of the same complexity remains in the same complexity and hence, the worst case message complexity of this algorithm is $\mathcal{O}(n) $.
 
 \subsection{Message Size}
-If the assumption that every node has a unique position holds, this position can be used to identify each node uniquely.
+If the assumption that every node has an unique position holds, this position can be used to identify each node uniquely.
 Hence, two floats can be used to save this position resulting in a constant number of bits.
 %Other information needed to send are only these node ids or a constant amount of it
 

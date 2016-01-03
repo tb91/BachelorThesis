@@ -76,9 +76,9 @@ If it does, $v $ cancels its timer and remains silent.
 %\end{enumerate}
 %\end{definition}
 
-\begin{figure}[h!]
+\begin{figure}[p]
 \centering
-\includegraphics[width=0.5\linewidth]{eps/PDT_1.eps}
+\includegraphics[width=0.35\linewidth]{eps/PDT_1.eps}
 \caption{An example graph with unit disk radius $R $ with all edges drawn which are incident on $a $.}
 \label{fig:PDT_1}
 \end{figure}
@@ -91,9 +91,9 @@ Since $e \in disk(a,f) $ is indeed true, $af \notin GG $.
 However, $af $ is still a PDT edge.
 The current angle maximizing node $e $ for edge $af $ ($\angle{aef} $) satisfies the conditions that first, $\bigcirc{aef} $ is empty and second, that $\sin{\angle{aef}} \geq\frac{|af|}{R} $ which means that $\bigcirc{aef} $ does not overlap the unit disk of $a $ and hence, $a $ can decide with only one-hop neighborhood information available that $af \in PDT(U)$.
 These steps are visualized in figure \ref{fig:PDT_2}.
-\begin{figure}[h!]
+\begin{figure}[p]
 \centering
-\includegraphics[width=0.5\linewidth]{eps/PDT_2.eps}
+\includegraphics[width=0.35\linewidth]{eps/PDT_2.eps}
 \caption{The dashed Gabriel Circle of edge $ae $ and $\bigcirc{aef} $ proof that both edges $ae $ and $af $ are PDT-edges.}
 \label{fig:PDT_2}
 \end{figure}
@@ -103,9 +103,9 @@ From that point $d $ did not stop its timer yet.
 When the CTS from node $c $ arrives at $d $, $\bigcirc{abd} $ is not empty anymore and there cannot be another circle which is empty.
 $d $ cancels its timer since it is no PDT neighbor.
 Figure \ref{fig:PDT_3} shows also the final edge selection of node $a $ after execution of rPDT.
-\begin{figure}[h!]
+\begin{figure}[p]
 \centering
-\includegraphics[width=0.5\linewidth]{eps/PDT_3.eps}
+\includegraphics[width=0.35\linewidth]{eps/PDT_3.eps}
 \caption{All endpoints of orange edges are PDT neighbors of $a $. Dotted circles are Gabriel circles and the red circle proofs that $af $ is a PDT edge.}
 \label{fig:PDT_3}
 \end{figure}
