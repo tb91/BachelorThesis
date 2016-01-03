@@ -86,11 +86,11 @@ Koblenz, den \today \\[10mm]
 %% uncomment for english thesis
 \selectlanguage{english}
 
-%% TOC, LOT and LOF
+%% TOC
 \tableofcontents
-\listoftables
-\listoffigures
 
+%clear headline...
+\markboth{}{}
 %% include your chapters here
 \include{Intro}
 \include{preamble}
@@ -98,9 +98,15 @@ Koblenz, den \today \\[10mm]
 \include{Algorithm}
 \include{experiments}
 \include{Proof}
-\include{reactive_Construction}
 \include{Conclusio}
 \include{Programming}
+
+%% LOT and LOF
+\listoftables
+\begingroup
+\let\clearpage\relax
+\listoffigures
+\endgroup
 
 \begin{appendix}
 %% include your appendices here
