@@ -21,7 +21,7 @@ This needs to be prohibited and can be achieved if a so called \emph{euclidian t
 The mechanisms to achieve these properties require nodes to be aware of other node's position which require communication between the nodes.
 A naive approach to gather needed information is to let each node send out messages and every node which hears them answer this node.
 This approach is called beaconing.
-It needs a lot of messages and is not robust in terms of network changes.
+It requires a lot of messages and is not robust in terms of network changes.
 A more sophisticated approach is a reactive one where nodes only send message if they are really needed, e.g. they are definitely nodes of the subgraph, and otherwise remain silent. 
 
 This work starts now with a preamble where important definitions and notations are clarified.
