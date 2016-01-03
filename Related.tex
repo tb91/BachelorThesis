@@ -10,7 +10,7 @@ The following is an extract of these approaches and can be divided into two main
 \end{enumerate}
 
 Reactive algorithms generally need less messages as only localized algorithms due to the lack of beaconing.
-They do not need the whole $k $-neighborhood of every node to function, but only a fractional amount of their direct neighbors.
+They do not need the whole $p\in \mathcal{N} $ neighborhood of every node to function, but only a fractional amount of their direct neighbors.
 As time of writing there are three reactive algorithms:
 \begin{enumerate}
 \item Beaconless Forwarder Planarization (BFP)
@@ -45,26 +45,26 @@ First, we describe an algorithm briefly and in the following there is a short se
 In addition, table \ref{table:topologies} provides an overview of all discussed graphs.
 
 The BFP-algorithm \cite{Ruhrup2010} is divided into two phases.
-First, in the Selection Phase the executing node $F $ starts the algorithm by sending a RTS message. 
+First, in the Selection Phase the executing node $f $ starts the algorithm by sending a RTS message. 
 In the following every node, which receives this message, starts a timer corresponding to a specific delay function.
 The closer a node resides to the executing node, the earlier it answers with a CTS. 
-If a node $W $ overhears a CTS of a node $W' $ it checks whether or not it is contained in a certain area corresponding to node $W' $ and $F $.
-This area is defined by geometric regions, in the following denoted as $Reg(A, B) $, with $A $ and $B $ being two nodes specifying this region.
-The minimum region $Reg(F, W') $ is the Gabriel circle $disk(F, W') $ and the maximum region $Reg(F, W') $ is the Relative Neighborhood Graph lune over $F $ and $W' $.
-The latter describes the area of the intersection of two circles around two neighboring nodes $UV $ with radii equal to $|UV| $ and with middlepoints $U $ and $V $, respectively.
+If a node $w $ overhears a CTS of a node $w' $ it checks whether or not it is contained in a certain area corresponding to node $w' $ and $f $.
+This area is defined by geometric regions, in the following denoted as $Reg(a, b) $, with $a $ and $b $ being two nodes specifying this region.
+The minimum region $Reg(f, w') $ is the Gabriel circle $disk(f, w') $ and the maximum region $Reg(f, w') $ is the Relative Neighborhood Graph lune over $f $ and $w' $.
+The latter describes the area of the intersection of two circles around two neighboring nodes $uv $ with radii equal to $|uv| $ and with middlepoints $u $ and $v $, respectively.
 Different regions cause the algorithm to use different amounts of messages.
 
-Suppose $W $ is contained in such an area it cancels its timer and is, henceforth, called a \emph{hidden node}.
+Suppose $w $ is contained in such an area it cancels its timer and is, henceforth, called a \emph{hidden node}.
 Hidden nodes further participate in the algorithm.
-If a hidden node $H $ receives a message from another node $T $, it memorizes this node if $H $ lies in the former defined region. 
+If a hidden node $h $ receives a message from another node $t $, it memorizes this node if $h $ lies in the former defined region. 
 
 The Protest Phase lets hidden nodes protest against violating edges.
-An edge $UV $ is called a violating edge if there is a node in $Reg(U, V) $.
+An edge $uv $ is called a violating edge if there is a node in $Reg(u, v) $.
 If hidden nodes have nodes they memorize they restart the above timer.
-As soon as a message from another hidden node $W' $ arrives at hidden node $W $, the latter checks its memorized nodes:
-A node $X $ can be removed from the set of memorized nodes if $W' \in Reg(F,X) $.
+As soon as a message from another hidden node $w' $ arrives at hidden node $w $, the latter checks its memorized nodes:
+A node $x $ can be removed from the set of memorized nodes if $w' \in Reg(f,x) $.
 If the timer of a node expires and there are still nodes which are memorized, the node sends a protest message consisting of the violating node.
-The forwarder node $F $ removes violating edges when it receives protests.
+The forwarder node $f $ removes violating edges when it receives protests.
 
 This algorithm performed on each node of a graph $G $ produces a planar subgraph $G' $.
 However, $G' $ is not a t-spanner of $G $ and has no constant node degree despite the underlying graphs Gabriel graph ($GG $), relative neighborhood graph ($RN $), circular neighborhood graph ($CN$) (refer to figure \ref{fig:GG_CNG_RNG} for an example of these three regions).
@@ -86,8 +86,8 @@ Nodes closer to the destination answer earlier.
 A CTS-message is sent as soon as the timer expires and the message holder forwards the message to its sender. 
 Every other node cancels its timer and remains silent.
 In recovery mode a RTS message from the message holder is sent as well.
-Now, all neighbors instantiate a timer corresponding to the distance to the message holder $M $ (closer nodes respond first).
-If a neighbor $N $ overhears another nodes $N' $ message, it cancels its timer if $N' \in disk(M, N) $.
+Now, all neighbors instantiate a timer corresponding to the distance to the message holder $m $ (closer nodes respond first).
+If a neighbor $n $ overhears another nodes $n' $ message, it cancels its timer if $n' \in disk(m, n) $.
 For more detailed information, refer to \cite{Chawla2006}.
 
 GDBF can be extended to reactively produce a planar subgraph of a given input graph. 
