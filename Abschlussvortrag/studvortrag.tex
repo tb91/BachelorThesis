@@ -17,6 +17,7 @@
 \usepackage{calc}
 \usepackage{tabularx}
 \usepackage{enumerate}
+\usepackage{algorithm,algorithmic}
 
 
 % --------------------------- Helpers ----------------------------
@@ -83,6 +84,13 @@
 %   \end{columns}
 % ---------------------------------------------------------------------------
 
+%\begin{frame}
+%\frametitle{}
+%\begin{itemize}
+%
+%\end{itemize}
+%\end{frame}
+
 \subsection{Introduction}
 \begin{frame}
 \begin{itemize}
@@ -93,7 +101,24 @@
 \end{frame}
 
 \begin{frame}
-\frametitle
+\frametitle{Goal}
+Algorithm which satisfies the following graph-properties:
+\begin{itemize}
+\item planar
+\item Euklidean t-spanner
+\item constant node degree
+\item constructed in a reactive way (beaconless, without any prior neighborhood information)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Motivation}
+Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in large areas)
+\begin{itemize}
+\item reactive: saves a lot of messages
+\item constant node degree: safes some more messages
+\item theoretical aspect: more properties may lead to possibly better results
+\end{itemize}
 \end{frame}
 
 \subsection{Algorithm}
@@ -104,6 +129,35 @@
 \item MYS
 \item RMYS
 \end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{rPDT}
+	\begin{itemize}
+    \begin{columns}[T]
+	\begin{column}[T]{.3\linewidth}
+    \includegraphics[width=\linewidth]{eigenschaft-beispiel.eps}
+	\end{column}
+	\begin{column}[T]{.7\linewidth}
+	\item Beweis, dass PDT alle modified Yao Step Eigenschaften erfüllt, die $LDel^{(2)}(U) $ erfüllt
+	\end{column}
+   \end{columns}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{algorithm}[H]
+\begin{algorithmic}[0]
+\STATE \textbf{Input:} any connected graph $G $; integer $k\geq 14 $
+\STATE \textbf{Output:} planar, connected graph $G' $ with constant node degree of at most $k $
+\FOR{each node $p \in G $}
+\STATE create the PDT-Neighborhood of $p $ using rPDT
+\STATE apply rMYS to $p $ using PDT-graph
+\STATE let each neighbor of $p $ create its RMYS neighbors and send a protest message if $p $ \indent is not among them causing $p $ to remove this edge
+\ENDFOR
+\end{algorithmic}
+\caption{RMYS}
+\end{algorithm}
 \end{frame}
 
 
