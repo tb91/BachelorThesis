@@ -92,13 +92,13 @@
 %\end{frame}
 
 \subsection{Introduction}
-\begin{frame}
-\begin{itemize}
-\item Was ich gemacht habe
-\item erklärungen reactive, planar, t-spanner, constant node degree
-\item motivation warum ich das gemacht habe
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\begin{itemize}
+%\item Was ich gemacht habe
+%\item erklärungen reactive, planar, t-spanner, constant node degree
+%\item motivation warum ich das gemacht habe
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Goal}
@@ -122,14 +122,14 @@ Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in la
 \end{frame}
 
 \subsection{Algorithm}
-\begin{frame}
-\begin{itemize}
-\item wie der algorithmus läuft
-\item rPDT
-\item MYS
-\item RMYS
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\begin{itemize}
+%\item wie der algorithmus läuft
+%\item rPDT
+%\item MYS
+%\item RMYS
+%\end{itemize}
+%\end{frame}
 
 \begin{frame} 
 \frametitle{rPDT}
@@ -208,12 +208,17 @@ Output: constand node degree of $k = 14 $
 
 
 \subsection{Results}
-\begin{frame}
-\begin{itemize}
-\item Plots und Erklärung dazu
-\item Eigenschaften zeigen
-\item Warum formaler Beweis für Spanner nicht geklappt hat.
-\end{itemize}
+%\begin{frame}
+%\begin{itemize}
+%\item Plots und Erklärung dazu
+%\item Eigenschaften zeigen
+%\item Warum formaler Beweis für Spanner nicht geklappt hat.
+%\end{itemize}
+%\end{frame}
+
+\begin{frame} 
+\frametitle{Average neighbors}
+\center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_avrNeighbors.eps}
 \end{frame}
 
 \begin{frame} 
@@ -226,6 +231,44 @@ Output: constand node degree of $k = 14 $
 \center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_SpanningRatio-hd.eps}
 \end{frame}
 
+\begin{frame} 
+\frametitle{Hop spanning-ratio}
+\center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_HopSpanningRatio.eps}
+\end{frame}
+
+
+\begin{frame} 
+\frametitle{Number of messages with respect to node density}
+\center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_Beaconing_Neighbors.eps}
+\end{frame}
+
+\begin{frame} 
+\frametitle{Number of messages with respect to node density}
+\center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_Neighbors.eps}
+\end{frame}
+
+\begin{frame} 
+\frametitle{Neighbors per UDG-neighbors}
+\center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_UDGNeighborsRatio.eps}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results}
+RMYS:
+\begin{itemize}
+\item planar
+\item constant node degree
+\item reactive construction
+\item connected graph
+\item Euklidean t-spanner (empirical proof)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Problem with spanner property}
+\center for any connected unit disk graph $U $ the following is true:
+\center $PDT(U) \subseteq UDEL(U) \subseteq LDEL^2(U) $
+\end{frame}
 
 \subsection{}
 \begin{frame}
@@ -235,11 +278,13 @@ Output: constand node degree of $k = 14 $
 
 %ein Punkt p im roten Bereich sorgt dafür, dass u v auswählt als nächsten Nachbarn, v wählt jedoch p aus und nicht u. (uv kann trotzdem noch RMYS kannte sein, muss aber nicht, wenn alle anderen Cones voll sind.
 \begin{frame}
+	\frametitle{Non-bidirectional edge $uv$}
 	\center \includegraphics[width=1\linewidth]{RMYS_case_error_bidirectional.eps}
 \end{frame}
 
 %PDT Kante pv wird nicht ausgewählt, weil uv kürzeste ist und sonst keine sequence mit mehr als 1 leeren Cone existiert und beide angrenzenden cones nicht leer sind.
 \begin{frame}
+	\frametitle{PDT edge is not always a RMYS edge}
 	\center \includegraphics[width=0.7\linewidth]{RMYS_case_one_cone_empty.eps}
 \end{frame}
 
