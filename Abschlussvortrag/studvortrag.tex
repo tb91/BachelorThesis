@@ -18,6 +18,9 @@
 \usepackage{tabularx}
 \usepackage{enumerate}
 \usepackage{algorithm,algorithmic}
+\usepackage{pifont}
+\usepackage{upgreek}
+
 
 
 % --------------------------- Helpers ----------------------------
@@ -31,12 +34,14 @@
 % --------------------------------------------------------------------
 
 
-\bibliographystyle{alphadin}
+\bibliographystyle{ieeetr}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
 \graphicspath{{images/}}
 
 
 % --------------------------------------------------------------------
-\title{Reactive Construction Of Planar, Euklidean t-Spanners With Constant Node Degree}
+\title{Reactive Construction Of Planar, Euclidean t-Spanners With Constant Node Degree}
 \subtitle{Antrittsvortrag zur Bachelorarbeit}
 \author[T. Budweg]{Tim Budweg}
 \institute{
@@ -53,7 +58,6 @@
 
 % document
 \begin{document}
-
 \frame{\titlepage}
 
 %\logo{...} erst hier, damit es nicht mit auf die Titelseite kommt!
@@ -105,7 +109,7 @@
 Algorithm which satisfies the following graph-properties:
 \begin{itemize}
 \item planar
-\item Euklidean t-spanner
+\item Euclidean t-spanner
 \item constant node degree
 \item constructed in a reactive way (beaconless, without any prior neighborhood information)
 \end{itemize}
@@ -116,7 +120,7 @@ Algorithm which satisfies the following graph-properties:
 Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in large areas)
 \begin{itemize}
 \item reactive: saves a lot of messages
-\item constant node degree: safes some more messages
+\item constant node degree: only constant number of node addresses has to be stored
 \item theoretical aspect: more properties may lead to possibly better results and graphs
 \end{itemize}
 \end{frame}
@@ -132,7 +136,7 @@ Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in la
 %\end{frame}
 
 \begin{frame} 
-\frametitle{rPDT}
+\frametitle{rPDT \footcite{pdt, Neumann2012}}
 	\begin{itemize}
     \begin{columns}[T]
 	\begin{column}[T]{.3\linewidth}
@@ -160,7 +164,7 @@ Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in la
 
 %MYS
 \begin{frame}
-\frametitle{Modified Yao Step}
+\frametitle{Modified Yao Step \cite{kanj}}
 Input: planar, t-spanner (PDT)\\
 Output: constand node degree of $k = 14 $
 	\begin{enumerate}
@@ -222,12 +226,12 @@ Output: constand node degree of $k = 14 $
 \end{frame}
 
 \begin{frame} 
-\frametitle{Euklidean spanning-ratio}
+\frametitle{Euclidean spanning-ratio}
 \center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_SpanningRatio.eps}
 \end{frame}
 
 \begin{frame} 
-\frametitle{Euklidean spanning-ratio}
+\frametitle{Euclidean spanning-ratio}
 \center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_SpanningRatio-hd.eps}
 \end{frame}
 
@@ -253,6 +257,28 @@ Output: constand node degree of $k = 14 $
 \end{frame}
 
 \begin{frame}
+\frametitle{Related work}
+\begin{table}[h!]
+\centering
+\hspace*{-5mm}
+\begin{tabular}{ccccc}
+\hline 
+Algorithm & Graph & Eucl. stretch & Max node degree & Ref. \\ 
+\hline
+BFP & GG & $\Theta{(\sqrt{n})} $ & $\mathcal{O}(n) $ & \cite{Ruhrup2010} \\ 
+
+GDBF & GG & $\Theta{(\sqrt{n})} $ & $\mathcal{O}(n) $ & \cite{Chawla2006} \\ 
+
+rPDT & PDT & $7.98 $ & $\mathcal{O}(n) $ & \cite{pdt, Neumann2012} \\ 
+
+RMYS & S(PDT) & $\approx 7.98 $ \footnote{empirical proof} & 14 & my work \\
+\hline 
+\end{tabular} 
+\label{table:topologies}
+\end{table}
+\end{frame}
+
+\begin{frame}
 \frametitle{Results}
 RMYS:
 \begin{itemize}
@@ -260,14 +286,23 @@ RMYS:
 \item constant node degree
 \item reactive construction
 \item connected graph
-\item Euklidean t-spanner (empirical proof)
+\item Euclidean t-spanner (empirical proof)
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Problem with spanner property}
 \center for any connected unit disk graph $U $ the following is true:
-\center $PDT(U) \subseteq UDEL(U) \subseteq LDEL^2(U) $
+\center $PDT(U) \subseteq UDEL(U) \subseteq LDEL^{(2)}(U) $
+\end{frame}
+
+\begin{frame}
+\frametitle{Future work}
+\begin{itemize}
+\item formal proof that RMYS is indeed a spanner
+\item consider reducing constant degree bound of $14 $ without increasing spanning ratio significantly.
+\item consider reducing the message overhead when RMYS is executed on only one node
+\end{itemize}
 \end{frame}
 
 \subsection{}
@@ -275,6 +310,7 @@ RMYS:
 \center \Large Thanks for listening!
 \center Do you have any questions?
 \end{frame}
+
 
 %ein Punkt p im roten Bereich sorgt dafür, dass u v auswählt als nächsten Nachbarn, v wählt jedoch p aus und nicht u. (uv kann trotzdem noch RMYS kannte sein, muss aber nicht, wenn alle anderen Cones voll sind.
 \begin{frame}
@@ -287,6 +323,5 @@ RMYS:
 	\frametitle{PDT edge is not always a RMYS edge}
 	\center \includegraphics[width=0.7\linewidth]{RMYS_case_one_cone_empty.eps}
 \end{frame}
-
 
 \end{document}
