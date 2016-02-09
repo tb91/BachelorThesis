@@ -42,7 +42,7 @@
 
 % --------------------------------------------------------------------
 \title{Reactive Construction Of Planar, Euclidean t-Spanners With Constant Node Degree}
-\subtitle{Antrittsvortrag zur Bachelorarbeit}
+\subtitle{Final Presentation}
 \author[T. Budweg]{Tim Budweg}
 \institute{
   \texttt{tbudweg@uni-koblenz.de} \\
@@ -95,7 +95,7 @@
 %\end{itemize}
 %\end{frame}
 
-\subsection{Introduction}
+\section{Introduction}
 %\begin{frame}
 %\begin{itemize}
 %\item Was ich gemacht habe
@@ -104,20 +104,22 @@
 %\end{itemize}
 %\end{frame}
 
+\subsection{}
 \begin{frame}
 \frametitle{Goal}
 Algorithm which satisfies the following graph-properties:
 \begin{itemize}
-\item planar
+\item planarity
 \item Euclidean t-spanner
 \item constant node degree
-\item constructed in a reactive way (beaconless, without any prior neighborhood information)
+\item constructed reactively (beaconless, without any prior neighborhood information)
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Motivation}
-Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in large areas)
+Use case: large ad-hoc networks (e.g. caution for tsunamis or fire in large areas)
 \begin{itemize}
 \item reactive: saves a lot of messages
 \item constant node degree: only constant number of node addresses has to be stored
@@ -125,7 +127,7 @@ Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in la
 \end{itemize}
 \end{frame}
 
-\subsection{Algorithm}
+\section{Algorithm}
 %\begin{frame}
 %\begin{itemize}
 %\item wie der algorithmus läuft
@@ -135,8 +137,9 @@ Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in la
 %\end{itemize}
 %\end{frame}
 
+\subsection{}
 \begin{frame} 
-\frametitle{rPDT \footcite{pdt, Neumann2012}}
+\frametitle{rPDT\footnote{[Li et al. 2004, Benter et al. 2013]}}
 	\begin{itemize}
     \begin{columns}[T]
 	\begin{column}[T]{.3\linewidth}
@@ -145,11 +148,12 @@ Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in la
 	\begin{column}[T]{.7\linewidth}
 	\item $a $ broadcasts start.
 	\item All other nodes create timer.
-	\item As soon as a timer stops related node sends a message to $a $, if a geometric condition is still satisfied.
+	\item As soon as a timer expires the related node sends a message to $a $, if a geometric condition is still satisfied.
 	\end{column}
    \end{columns}
 	\end{itemize}
 \end{frame}
+
 
 %geometric condition: circles -> Gabriel circle or PDT-circles with 
 \begin{frame} 
@@ -157,14 +161,16 @@ Use case: large, static ad-hoc networks (e.g. caution for tsunamis or fire in la
 \center \includegraphics[width=0.7\linewidth]{PDT_3.eps}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{rPDT}
 \center \includegraphics[width=0.7\linewidth]{PDT_angle.eps}
 \end{frame}
 
+\subsection{}
 %MYS
 \begin{frame}
-\frametitle{Modified Yao Step \cite{kanj}}
+\frametitle{Modified Yao Step \footnote{[Kanj et al. 2008/2010]}}
 Input: planar, t-spanner (PDT)\\
 Output: constand node degree of $k = 14 $
 	\begin{enumerate}
@@ -195,6 +201,7 @@ Output: constand node degree of $k = 14 $
 	\center \includegraphics[width=0.65\linewidth]{RMYS_3.eps}
 \end{frame}
 
+\subsection{}
 \begin{frame}
 \begin{algorithm}[H]
 \begin{algorithmic}[0]
@@ -211,7 +218,7 @@ Output: constand node degree of $k = 14 $
 \end{frame}
 
 
-\subsection{Results}
+\section{Results}
 %\begin{frame}
 %\begin{itemize}
 %\item Plots und Erklärung dazu
@@ -219,6 +226,32 @@ Output: constand node degree of $k = 14 $
 %\item Warum formaler Beweis für Spanner nicht geklappt hat.
 %\end{itemize}
 %\end{frame}
+
+\subsection{}
+
+\begin{frame}
+\frametitle{Simulation}
+\begin{itemize}
+\item $round(\frac{D_x \cdot D_y}{\pi \cdot R^2} \cdot density) $
+\item 1000 simulations per density
+\end{itemize}
+\begin{itemize}
+\item neighbor count
+\item spanning ratio
+\item messages
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Assumptions}
+\begin{itemize}
+\item nodes are static
+\item synchronous rounds
+\item messages arrive instantaneously and cannot get lost
+\item all random graphs are connected
+\item no four nodes which are co-circular
+\end{itemize}
+\end{frame}
 
 \begin{frame} 
 \frametitle{Average neighbors}
@@ -240,7 +273,6 @@ Output: constand node degree of $k = 14 $
 \center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_HopSpanningRatio.eps}
 \end{frame}
 
-
 \begin{frame} 
 \frametitle{Number of messages with respect to node density}
 \center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_Beaconing_Neighbors.eps}
@@ -256,22 +288,23 @@ Output: constand node degree of $k = 14 $
 \center	\includegraphics[width=1.0\linewidth]{RMYS_PDT_UDGNeighborsRatio.eps}
 \end{frame}
 
+\subsection{}
 \begin{frame}
 \frametitle{Related work}
 \begin{table}[h!]
 \centering
 \hspace*{-5mm}
-\begin{tabular}{ccccc}
+\begin{tabular}{cccc}
 \hline 
-Algorithm & Graph & Eucl. stretch & Max node degree & Ref. \\ 
+Algorithm & Graph & Eucl. stretch & Max node degree \\ 
 \hline
-BFP & GG & $\Theta{(\sqrt{n})} $ & $\mathcal{O}(n) $ & \cite{Ruhrup2010} \\ 
+BFP & GG & $\Theta{(\sqrt{n})} $ & $\mathcal{O}(n) $ \\ 
 
-GDBF & GG & $\Theta{(\sqrt{n})} $ & $\mathcal{O}(n) $ & \cite{Chawla2006} \\ 
+GDBF & GG & $\Theta{(\sqrt{n})} $ & $\mathcal{O}(n) $ \\ 
 
-rPDT & PDT & $7.98 $ & $\mathcal{O}(n) $ & \cite{pdt, Neumann2012} \\ 
+rPDT & PDT & $7.98 $ & $\mathcal{O}(n) $ \\ 
 
-RMYS & S(PDT) & $\approx 7.98 $ \footnote{empirical proof} & 14 & my work \\
+RMYS & S(PDT) & $\approx 7.98 $ \footnote{empirical proof} & 14 \\
 \hline 
 \end{tabular} 
 \label{table:topologies}
@@ -290,12 +323,14 @@ RMYS:
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Problem with spanner property}
 \center for any connected unit disk graph $U $ the following is true:
 \center $PDT(U) \subseteq UDEL(U) \subseteq LDEL^{(2)}(U) $
 \end{frame}
 
+\subsection{}
 \begin{frame}
 \frametitle{Future work}
 \begin{itemize}
@@ -304,13 +339,6 @@ RMYS:
 \item consider reducing the message overhead when RMYS is executed on only one node
 \end{itemize}
 \end{frame}
-
-\subsection{}
-\begin{frame}
-\center \Large Thanks for listening!
-\center Do you have any questions?
-\end{frame}
-
 
 %ein Punkt p im roten Bereich sorgt dafür, dass u v auswählt als nächsten Nachbarn, v wählt jedoch p aus und nicht u. (uv kann trotzdem noch RMYS kannte sein, muss aber nicht, wenn alle anderen Cones voll sind.
 \begin{frame}
@@ -323,5 +351,14 @@ RMYS:
 	\frametitle{PDT edge is not always a RMYS edge}
 	\center \includegraphics[width=0.7\linewidth]{RMYS_case_one_cone_empty.eps}
 \end{frame}
+
+
+\begin{frame}
+\center \Large Thanks for listening!
+\center Do you have any questions?
+\end{frame}
+
+
+
 
 \end{document}
